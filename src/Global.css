@@ -1,0 +1,61 @@
+.large-header {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+
+}
+
+.contactbox {
+  border: solid white 0.5px !important;
+  background-color: rgba(175, 160, 101, 0.7) !important;
+  color: #4B573F !important;
+  width: 100% !important;
+  /* color: rgb(175, 160, 101); */
+}
+.contacttext {
+  text-align: left !important;
+  padding-bottom: 15px !important;
+  color: #231F1E !important;
+  font-weight: bolder !important;
+}
+.css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input,
+.css-12tl3rr-MuiInputBase-input-MuiOutlinedInput-input,
+.css-1o6z5ng {
+  color: white !important;
+}
+
+main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+main > section {
+  min-height: 100vh !important;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   color:rgb(251, 227, 132);
+}
+
+@media screen and (max-width: 900px) {
+  main > section {
+    min-height: auto !important;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: auto; */
+  }
+}
+
+
+
+
+
+
+
