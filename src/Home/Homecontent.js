@@ -7,6 +7,7 @@ import MajorCategory from "./MajorCategory";
 import NewLaunchBanners from "./NewLaunchBanners";
 import Homeprivatelabelling from "./Homeprivatelabelling";
 import Footer from "../Comp/Footer";
+import Try from "./Try";
 
 
 const Homecontent = () => {
@@ -42,8 +43,11 @@ const Homecontent = () => {
 
   
       </main> */}
-            <Homesection1 />
-            <Section2 />
+      <Homesection1 />
+      <Try />
+      <Section2 />
+
+ 
     </>
   );
 };
