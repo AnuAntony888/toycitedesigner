@@ -43,7 +43,8 @@ const Homecontent = () => {
   
       </main> */}
             <Homesection1 />
-            <Section2 />
+            <Section2/>
+        
     </>
   );
 };

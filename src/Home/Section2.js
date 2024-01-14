@@ -122,29 +122,9 @@ const Section2 = () => {
             md={12}
             sm={12}
             xs={12}
-            // sx={{
-            //   backgroundImage: `url(${img1})`,
-            //   backgroundSize: "cover",
-            //   objectFit: "cover",
-            //   height: "100%",
-            //   display: "flex",
-            //   alignItems: "center",
-
-            //   backgroundRepeat: "no-repeat",
-            //   backgroundPosition: "bottom",
-            // }}
+      
           >
-            <Box
-              sx={{
-                position: "absolute",
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-                opacity: ".4",
-                 backgroundColor: "#000000", // Adjust color and opacity as needed
-              }}
-            ></Box>
+          
 
             <Grid
               container
