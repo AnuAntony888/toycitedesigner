@@ -9,14 +9,14 @@ const Homesection1 = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
-      <Grid container>
+      <Grid container spacing={3}>
         <Grid
           xs={12}
           md={12}
           lg={12}
           sm={12}
           className="large-header"
-          sx={{ height: !isSmallScreen ? "105vh" : "105vh" }}
+          sx={{ height: !isSmallScreen ? "100vh" : "100vh" }}
         >
           <Box
             sx={{

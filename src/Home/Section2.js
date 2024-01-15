@@ -6,7 +6,7 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import "aos/dist/aos.css";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import { Parallax, Background } from "react-parallax";
+import { Parallax } from "react-parallax";
 const Section2 = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -27,7 +27,7 @@ const Section2 = () => {
       <Grid
         container
         spacing={2}
-        className="large-header"
+        // className="large-header"
         sx={{ height: !isSmallScreen ? "105vh" : "auto" }}
       >
         <Grid
@@ -37,7 +37,7 @@ const Section2 = () => {
           sm={12}
           xs={12}
           sx={{
-            backgroundImage: `url(${img1})`,
+            backgroundImage: `url(https://img.freepik.com/premium-photo/playroom-without-furniture-with-decoration-backgroun-wall_244125-316.jpg?w=1060)`,
             backgroundSize: "cover",
             objectFit: "cover",
             height: "100%",
@@ -55,7 +55,7 @@ const Section2 = () => {
               right: 0,
               bottom: 0,
               left: 0,
-              opacity: ".4",
+              opacity: ".2",
               backgroundColor: "#000000", // Adjust color and opacity as needed
             }}
           ></Box>
@@ -69,7 +69,7 @@ const Section2 = () => {
               <TypographyText
                 Typography={<>Pre-School</>}
                 color="#fff"
-                fontWeight="600"
+                fontWeight="400"
                 textAlign={!isSmallScreen ? "left" : "centre"}
                 variant={!isSmallScreen ? "h2" : "h4"}
               />
@@ -104,73 +104,7 @@ const Section2 = () => {
       </Grid>
 
       {/************************************************* */}
-      <Parallax
-        bgImage="https://cdn.firstcry.com/education/2022/11/06094158/Toy-Names-For-Kids.jpg"
-        bgImageAlt="the cat"
-        strength={200}
-        style={{ zIndex: -1 }}
-      >
-        <Grid
-          container
-          spacing={2}
-          className="large-header"
-          sx={{ height: !isSmallScreen ? "105vh" : "auto" }}
-        >
-          <Grid
-            item
-            lg={12}
-            md={12}
-            sm={12}
-            xs={12}
-      
-          >
-          
-
-            <Grid
-              container
-              Spacing={3}
-              sx={{ zIndex: 1, p: "12%", textAlign: "justify" }}
-            >
-              <Grid item lg={6} md={6} sm={12} xs={12}>
-                <TypographyText
-                  Typography={<>Pre-School</>}
-                  color="#fff"
-                  fontWeight="600"
-                  textAlign={!isSmallScreen ? "left" : "centre"}
-                  variant={!isSmallScreen ? "h2" : "h4"}
-                />
-                <br />
-                <TypographyText
-                  Typography={
-                    <>
-                      Ignite young minds with our captivating preschool toys
-                      collection! Specially designed for early learners, these
-                      toys blend fun and education seamlessly. Explore the joy
-                      of learning with our thoughtfully curated selection for
-                      the littlest adventurers.
-                    </>
-                  }
-                  color="#fff"
-                  textAlign="left"
-                />
-                <br />
-                <ArrowCircleRightIcon
-                  sx={{ color: "white", fontSize: "3rem" }}
-                />
-              </Grid>
-              <Grid item lg={6} md={6} sm={12} xs={12} sx={{ margin: "auto" }}>
-                <Grid container Spacing={2}>
-                  {imagelogo.map((data, index) => (
-                    <Grid item xs={3} key={index}>
-                      <img src={data.img} alt="" width={"100%"} />
-                    </Grid>
-                  ))}
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Parallax>
+    
     </>
   );
 };

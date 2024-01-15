@@ -7,46 +7,36 @@ import MajorCategory from "./MajorCategory";
 import NewLaunchBanners from "./NewLaunchBanners";
 import Homeprivatelabelling from "./Homeprivatelabelling";
 import Footer from "../Comp/Footer";
-
+import Try from "./Try";
+import Floatingactions from "./Floatingactions";
+import { Link } from "react-router-dom";
+import { Box } from "@mui/system";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import Partnerreview from "./Partnerreview";
 
 const Homecontent = () => {
   return (
     <>
-      {/* <main>
-        <section>
-          {" "}
-          <Homesection1 />
-        </section>
-        <section>
-          {" "}
-          <Section2 />
-        </section>
-        <section>
-          {" "}
-      <Keybrand/>
-        </section>
-        <section>
-          {" "}
-<MajorCategory/>
-        </section>
-        <section>
-          {" "}
-<Homeprivatelabelling/>
-        </section>
-        <section>      <NewLaunchBanners/></section>
-        <section>
-          {" "}
-          <Sectioncontact />{" "}
-          
-        </section>
 
-  
-      </main> */}
-            <Homesection1 />
-            <Section2/>
-        
+      <Try />
+
+      <Partnerreview />
+      <Floatingactions></Floatingactions>
     </>
   );
 };
 
 export default Homecontent;
+const Social = [
+  {
+    icon: (
+      <Link to={"https://www.facebook.com/toycityme/"}>
+        <FacebookIcon className="fixediconsize" />
+      </Link>
+    ),
+  },
+  {
+    icon: <InstagramIcon className="fixediconsize" />,
+  },
+];
