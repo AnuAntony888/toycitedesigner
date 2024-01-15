@@ -7,7 +7,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Link } from "react-router-dom";
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button, Divider, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ResponsiveHeader from "./ResponsiveHeader";
@@ -37,7 +37,7 @@ export default function Header() {
         <AppBar
           sx={{
             width: "100%",
-            minHeight: "130px",
+            minHeight:!matches?"80px": "120px",
             backgroundColor: "rgba(0, 0, 0, 0.239)",
             justifyContent: "space-between",
             position: "sticky !impoertant",
@@ -65,27 +65,34 @@ export default function Header() {
                 />
 
                 <Box sx={{ pr: "5%" }}>
-                  {navItems.map((item) => (
+                <div data-aos="fade-right">
+                  {navItems.map((item,index) => (
                     <Button
                       key={item}
                       sx={{
                         fontFamily: "'Poppins', sans-serif",
                         color: "white",
-                        fontSize: "16px",
+                        fontSize: ".9rem",
                         textTransform: "capitalize",
 
-                        minWidth: "100px",
+                        minWidth: "150px",
                       }}
                     >
                       {item}
-                    </Button>
-                  ))}
+                      <div class="verticalline"></div>
+                    </Button> 
+                 
+                  
+              
+                    
+               ))}
+               </div>
                 </Box>
               </>
             ) : (
               <>
                 <img
-                  src={logo}
+                  src='https://toycity.me/assets/img/logo_new.png'
                   width={70}
                   height={"auto"}
                   onClick={refreshPage}
@@ -103,9 +110,9 @@ export default function Header() {
 
 export const navItems = [
   <Link to="/">Home</Link>,
-  <Link to={"/ourcompany"}>Our Company</Link>,
-  <Link to={"/privatelabelling"}>Private Labelling</Link>,
-  <Link to={"/Blogs"}>Blogs</Link>,
+  <Link to={"/ourcompany"}>Retail Partner</Link>,
+  <Link to={"/privatelabelling"}>News and Events</Link>,
+
 
   <Link to={"/Contact"}>Contact</Link>,
 ];

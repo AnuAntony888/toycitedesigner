@@ -25,7 +25,18 @@ const Try = () => {
     scroll.scrollTo(scrollDistance);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const sectionIndex = Math.floor(scrollPosition / window.innerHeight);
+      setActiveSection(sectionIndex);
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -35,7 +46,7 @@ const Try = () => {
         return (
           <div key={indexs}>
             <Parallax
-              bgImage={data.imges}
+              bgImage={!isSmallScreen ? data.imges: data.imge1}
               strength={300}
               style={{
                 backgroundSize: "cover",
@@ -73,10 +84,11 @@ const Try = () => {
                   Spacing={3}
                   sx={{
                     zIndex: 1,
-                    pl: "12%",
-                    pr: "12%",
-                    pt: !isSmallScreen ? "15%" : "10%",
-                    pb: !isSmallScreen ? "15%" : "10%",
+                  
+                    paddingLeft:!isSmallScreen ? "15%" : "20%",
+                    paddingRight:!isSmallScreen ? "15%" : "20%",
+                    paddingTop:!isSmallScreen ? "15%" : "10%",
+                    paddingBottom:!isSmallScreen ? "15%" : "10%",
                     textAlign: "justify",
                   }}
                 >
@@ -125,11 +137,15 @@ const Try = () => {
               </Grid>
             </Parallax>
 
-            <Box
+           
+          </div>
+        );
+      })}
+       <Box
               sx={{
                 position: "fixed",
                 bottom: 200,
-                left: 50,
+                left:!isSmallScreen ? 50: 10,
                 zIndex: 1000,
                 boxShadow: "none",
               }}
@@ -143,9 +159,9 @@ const Try = () => {
                     margin: "10px",
                     cursor: "pointer",
                     display: "flex",
-                    width: "15px",
-                    height: "15px",
-                    minHeight: "15px",
+                    width: "12px",
+                    height: "12px",
+                    minHeight: "12px",
                     border: "solid white .5px",
                     backgroundColor:
                       activeSection === 0 ? "white" : "transparent",
@@ -162,9 +178,9 @@ const Try = () => {
                     margin: "10px",
                     cursor: "pointer",
                     display: "flex",
-                    width: "15px",
-                    height: "15px",
-                    minHeight: "15px",
+                    width: "12px",
+                    height: "12px",
+                    minHeight: "12px",
                     border: "solid white .5px",
                     backgroundColor:
                       activeSection === indexs + 1 ? "white" : "transparent",
@@ -173,9 +189,6 @@ const Try = () => {
                 />
               ))}
             </Box>
-          </div>
-        );
-      })}
     </>
   );
 };
@@ -183,8 +196,8 @@ const Try = () => {
 export default Try;
 
 const Data = [
-  {
-    imges:
+  {imge1:'https://static.wixstatic.com/media/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg/v1/fill/w_1024,h_524,fp_0.62_0.97,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg'
+  ,  imges:
       "https://static.wixstatic.com/media/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg/v1/fill/w_768,h_1048,fp_0.62_0.97,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg",
     Typography: "pre-school",
     Typography1:
@@ -213,9 +226,10 @@ const Data = [
     ],
   },
   {
-    imges:
-      "https://static.wixstatic.com/media/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg/v1/fill/w_768,h_1048,fp_0.61_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg",
-    Typography: "Collectibles",
+    imges:'https://static.wixstatic.com/media/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg/v1/fill/w_2096,h_1166,fp_0.61_0.50,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg'
+      ,
+   imge1:"https://static.wixstatic.com/media/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg/v1/fill/w_768,h_1048,fp_0.61_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg",
+      Typography: "Collectibles",
     Typography1:
       "Dive into a world of enchantment with our exclusive Collectible Toys. Unearth rare gems and cherished editions that elevate your collection to new heights. From iconic franchises to limited releases, our carefully curated selection promises to delight enthusiasts and collectors alike.",
 
@@ -231,8 +245,8 @@ const Data = [
       },
     ],
   },
-  {
-    imges:
+  {imges:'https://static.wixstatic.com/media/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png/v1/fill/w_1442,h_616,fp_0.61_0.33,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png'
+   , imge1:
       "https://static.wixstatic.com/media/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png/v1/fill/w_768,h_699,fp_0.61_0.33,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png",
     Typography: "RC Toys",
     Typography1:
@@ -251,8 +265,8 @@ const Data = [
     ],
   },
 
-  {
-    imges:
+  {imges:'https://static.wixstatic.com/media/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg/v1/fill/w_1442,h_616,fp_0.35_0.45,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg'
+   , imge1:
       "https://static.wixstatic.com/media/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg/v1/fill/w_751,h_524,fp_0.35_0.45,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg",
     Typography: "Cosmetics",
     Typography1:
@@ -271,8 +285,8 @@ const Data = [
     ],
   },
 
-  {
-    imges:
+  {imges:'https://static.wixstatic.com/media/3fff3e_427843dfb30c43c29a1dbddc3625e639~mv2.jpg/v1/fill/w_1442,h_721,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_427843dfb30c43c29a1dbddc3625e639~mv2.jpg'
+   , imge1:
       "https://static.wixstatic.com/media/3fff3e_427843dfb30c43c29a1dbddc3625e639~mv2.jpg/v1/fill/w_751,h_528,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_427843dfb30c43c29a1dbddc3625e639~mv2.jpg",
     Typography: "Learning, Art and Crafts",
     Typography1:
@@ -291,8 +305,8 @@ const Data = [
     ],
   },
 
-  {
-    imges:
+  {imges:'https://static.wixstatic.com/media/9aa0592cbdc1457089abf42b4929e03a.jpg/v1/fill/w_1442,h_616,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9aa0592cbdc1457089abf42b4929e03a.jpg'
+  ,  imge1:
       "https://static.wixstatic.com/media/9aa0592cbdc1457089abf42b4929e03a.jpg/v1/fill/w_751,h_524,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9aa0592cbdc1457089abf42b4929e03a.jpg",
     Typography: "Other",
     Typography1:

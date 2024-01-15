@@ -42,12 +42,12 @@ function SampleNextArrow(props) {
 const settings = {
   dots: true,
   infinite: true,
-//   speed: 500,
+  speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
 
   infinite: true,
-//   autoplay: true,
+  autoplay: true,
   speed: 2000,
   autoplaySpeed: 2000,
   responsive: [
@@ -164,8 +164,9 @@ const Partnerreview = () => {
           sm={12}
           xs={12}
           sx={{
-            backgroundImage: `url(
-                https://static.wixstatic.com/media/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg/v1/fill/w_751,h_975,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg)`,
+            backgroundImage: !isSmallScreen
+              ? `url(https://static.wixstatic.com/media/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg/v1/fill/w_1442,h_852,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg)`
+              : `url( https://static.wixstatic.com/media/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg/v1/fill/w_751,h_975,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg)`,
             backgroundSize: "cover",
             objectFit: "cover",
             height: "100%",
@@ -216,32 +217,28 @@ const Partnerreview = () => {
                         p: "3%",
                       }}
                     >
-                      <Card sx={{ bgcolor: "transparent", boxShadow: "none",display:'grid',placeItems:'center',position:'relative' }}>
-                        {/* <Box
+                      <Card
+                        sx={{
+                          bgcolor: "transparent",
+                          boxShadow: "none",
+                          display: "grid",
+                          placeItems: "center",
+                          position: "relative",
+                        }}
+                      >
+                        <FormatQuoteIcon
                           sx={{
-                            height: "100%",
-                            width: "100%",
-                    
+                            height: "120px",
+                            width: "120px",
+
+                            position: "absolute",
+
+                            fill: "pink",
                           }}
-                        > */}
-                          <FormatQuoteIcon
-                            sx={{
-                           
-                                height: "120px",
-                                width: "120px",
-                         
-
-                     
-                              position: "absolute",
-                         
-                        
-
-                              fill: "pink",
-                            }}
-                          />
+                        />
                         {/* </Box> */}
 
-                        <CardContent sx={{ zIndex: 50 ,}}>
+                        <CardContent sx={{ zIndex: 50 }}>
                           <TypographyText
                             Typography={post.text}
                             textAlign={"centre"}
@@ -272,11 +269,48 @@ const Partnerreview = () => {
       </Grid>
       {/********************last**************************** */}
       <Grid
-            container
-            Spacing={3}
-            // sx={{ zIndex: 1, p: "10%", textAlign: "justify" }}
-          >
-            </Grid>
+        container
+        Spacing={3}
+        sx={{ bgcolor: "#C8C8C8", margin: "auto", justifyContent: "center" }}
+      >
+        <Grid
+          item
+          xs={12}
+          lg={6}
+          md={6}
+          sm={12}
+          sx={{ margin: "auto", justifyContent: "center", p: "5%" }}
+        >
+          <TypographyText
+            Typography={"Latest Brand Launch"}
+            textAlign={"centre"}
+            fontWeight="400"
+            variant={!isSmallScreen ? "h2" : "h4"}
+            color="black"
+          />
+          <br />
+          <br />
+          <TypographyText
+            Typography={
+              "A Spectacle of Smiles at Our Grand Toyventure Launch! Join us for an enchanting evening as we introduce our latest collection of wonders, sparking imagination and playfulness. Let the excitement begin!"
+            }
+            textAlign={"centre"}
+            color="black"
+          />
+        </Grid>
+        <Grid item xs={12} lg={6} md={6} sm={12}>
+          <img
+            src={
+              !isSmallScreen
+                ? "https://static.wixstatic.com/media/3fff3e_bb190292b9e643a5b0cb4e31e06636b3~mv2.jpg/v1/fill/w_900,h_1020,fp_0.51_0.40,q_85,usm_0.66_1.00_0.01,enc_auto/Excited%20Girl.jpg"
+                : "https://static.wixstatic.com/media/3fff3e_bb190292b9e643a5b0cb4e31e06636b3~mv2.jpg/v1/fill/w_399,h_323,fp_0.51_0.40,q_80,usm_0.66_1.00_0.01,enc_auto/Excited%20Girl.jpg"
+            }
+            alt=""
+            width={"100%"}
+            height={!isSmallScreen ? "500px" : "100%"}
+          />
+        </Grid>
+      </Grid>
     </>
   );
 };
@@ -287,7 +321,7 @@ const Data = [
   {
     text: (
       <>
-     &ldquo;You and your team are doing a fantastic job by bringing in the
+        &ldquo;You and your team are doing a fantastic job by bringing in the
         right products at the right time, and the customer service is
         consistently doing good, please continue the same&rdquo;
       </>

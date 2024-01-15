@@ -8,6 +8,7 @@ import Blog from "../Blogs/Blog";
 import Privatelabelling from "../Privatelabelling/Privatelabelling";
 import Footer from "../Comp/Footer";
 import Home from "../Home/Home";
+import Footers from "../Comp/Footers";
 
 
 
@@ -27,10 +28,11 @@ const Navigate = () => {
         <Route path="/privatelabelling" element={<Privatelabelling/>}></Route>
         <Route path="/Blogs" element={<Blog/>}></Route>
       </Routes>
-{/* 
+
       <div>
-        <Footer/>
-      </div> */}
+        {/* <Footer/> */}
+        <Footers />
+      </div>
 
     </Router>
   );
