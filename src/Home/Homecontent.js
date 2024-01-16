@@ -1,13 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import Homesection1 from "./Homesection1";
 import Section2 from "./Section2";
-import Sectioncontact from "./Sectioncontact";
-import Keybrand from "./Keybrand";
-import MajorCategory from "./MajorCategory";
-import NewLaunchBanners from "./NewLaunchBanners";
-import Homeprivatelabelling from "./Homeprivatelabelling";
-import Footer from "../Comp/Footer";
+
 import Try from "./Try";
+
 
 
 const Homecontent = () => {
@@ -43,9 +39,12 @@ const Homecontent = () => {
 
   
       </main> */}
+  
+
       <Homesection1 />
       <Try />
-      <Section2 />
+
+
 
  
     </>
