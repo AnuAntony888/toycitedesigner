@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import bg2 from "../Assets/pexels-valeriia-miller-3910069.jpg";
+
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { TypographyText } from "../Reusable/Reusable";
@@ -9,14 +9,14 @@ const Homesection1 = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
-      <Grid container>
+      <Grid container spacing={0}>
         <Grid
           xs={12}
           md={12}
           lg={12}
           sm={12}
           className="large-header"
-          sx={{ height: !isSmallScreen ? "105vh" : "105vh" }}
+          sx={{ height: !isSmallScreen ? "100vh" : "100vh" }}
         >
           <Box
             sx={{

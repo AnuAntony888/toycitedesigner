@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { TypographyText } from "../Reusable/Reusable";
-import img1 from "../Assets/second.jpg";
+
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import "aos/dist/aos.css";
@@ -91,8 +91,8 @@ const Section2 = () => {
       {/* <Grid
         container
         spacing={2}
-        className="large-header"
-        sx={{ height: !isSmallScreen ? "100vh" : "auto" }}
+        // className="large-header"
+        sx={{ height: !isSmallScreen ? "105vh" : "auto" }}
       >
         <Grid
           item
