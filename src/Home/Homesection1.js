@@ -21,9 +21,9 @@ const Homesection1 = () => {
           <Box
             sx={{
               position: "absolute",
-              top: "60%",
-              left: "40%",
-              transform: "translate(-35%, -50%)",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
               textAlign: "center",
 
               zIndex: "1",
@@ -40,7 +40,7 @@ const Homesection1 = () => {
               <TypographyText
                 Typography={<>Together Let's Inspire a Child</>}
                 color="#fff"
-                fontWeight="600"
+                fontWeight="400"
                 variant={!isSmallScreen ? "h2" : "h4"}
               />
             </div>

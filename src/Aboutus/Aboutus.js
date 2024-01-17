@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, CardMedia, Grid } from "@mui/material";
@@ -7,7 +7,13 @@ import { TypographyText } from "../Reusable/Reusable";
 const Aboutus = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+  useEffect(() => {
+    // Scroll to the top of the page on component mount (page load)
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   return (
     <>
       <Grid container spacing={0}>

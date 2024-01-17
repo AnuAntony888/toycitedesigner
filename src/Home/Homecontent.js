@@ -18,7 +18,7 @@ const Homecontent = () => {
       <Try />
 
       <Partnerreview />
-      <Floatingactions></Floatingactions>
+      {/* <Floatingactions></Floatingactions> */}
     </>
   );
 };

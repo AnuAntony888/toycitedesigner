@@ -20,7 +20,7 @@
 // }
 
 // export default
-import React from "react";
+import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, Grid } from "@mui/material";
@@ -34,6 +34,13 @@ import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const Learning = () => {
   const theme = useTheme();
+  useEffect(() => {
+    // Scroll to the top of the page on component mount (page load)
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {

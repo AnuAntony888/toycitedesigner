@@ -3,14 +3,17 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import  '../Global.css'
+import "../Global.css";
 import { Link } from "react-router-dom";
 import { Box, Button, Divider, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ResponsiveHeader from "./ResponsiveHeader";
-
+import { usePoPupContext } from "../PopupContext";
+import logo from "../Assets/Toycity logo-01.webp";
 export default function Header() {
+  const { setopenpopup, openpopup } = usePoPupContext();
+  console.log(openpopup, "openpopup");
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("lg"));
   console.log(matches, "matches");
@@ -35,7 +38,7 @@ export default function Header() {
         <AppBar
           sx={{
             width: "100%",
-            minHeight:!matches?"80px": "120px",
+            minHeight: !matches ? "80px" : "120px",
             backgroundColor: "rgba(0, 0, 0, 0.239)",
             justifyContent: "space-between",
             position: "sticky !impoertant",
@@ -55,7 +58,7 @@ export default function Header() {
             {matches ? (
               <>
                 <img
-                  src="https://toycity.me/assets/img/logo_new.png "
+                  src={logo}
                   width={120}
                   height={"auto"}
                   onClick={refreshPage}
@@ -63,34 +66,26 @@ export default function Header() {
                 />
 
                 <Box sx={{ pr: "5%" }}>
-                <div data-aos="fade-right">
-                  {navItems.map((item,index) => (
-                    <Button
-                      key={item}
-                      sx={{
-                        fontFamily: "'Poppins', sans-serif",
-                        color: "white",
-                        fontSize: ".9rem",
-                        textTransform: "capitalize",
-
-                        minWidth: "150px",
-                      }}
+                  <div data-aos="fade-right">
+                    {navItems.map((item, index) => (
+                      <Button key={item} className="buttton_eader">
+                        {item}
+                        <div class="verticalline"></div>
+                      </Button>
+                    ))}
+                    {/* <Button
+                      className="buttton_eader"
+                      onClick={() => setopenpopup(true)}
                     >
-                      {item}
-                      <div class="verticalline"></div>
-                    </Button> 
-                 
-                  
-              
-                    
-               ))}
-               </div>
+                      Contact
+                    </Button> */}
+                  </div>
                 </Box>
               </>
             ) : (
               <>
                 <img
-                  src='https://toycity.me/assets/img/logo_new.png'
+                  src={logo}
                   width={70}
                   height={"auto"}
                   onClick={refreshPage}
@@ -109,9 +104,8 @@ export default function Header() {
 export const navItems = [
   <Link to="/">Home</Link>,
   <Link to={"/aboutus"}>Aboutus</Link>,
-  <Link to={"/"}>Retail Partner</Link>,
-  <Link to={"/"}>News and Events</Link>,
-
-
-  <Link to={"/"}>Contact</Link>,
+  <Link to={"/RetailPartners"}>Retail Partner</Link>,
+  <Link to={"/NewsandEvents"}>News and Events</Link>,
+  <Link to={"/Contact"}>Contact</Link>,
+  // <a href="#" onClick={openPopup}>Contact</a>,
 ];

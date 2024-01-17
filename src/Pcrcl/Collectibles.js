@@ -10,7 +10,7 @@
 
 // export default Collectibles
 
-import React from "react";
+import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, Grid } from "@mui/material";
@@ -26,6 +26,13 @@ import img4 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const Collectibles = () => {
+  useEffect(() => {
+    // Scroll to the top of the page on component mount (page load)
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [

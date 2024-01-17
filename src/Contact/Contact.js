@@ -12,10 +12,10 @@ import {
 import useMediaQuery from "@mui/material/useMediaQuery";
 import "../Global.css";
 import HomeIcon from "@mui/icons-material/Home";
-
+import PublicIcon from "@mui/icons-material/Public";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
-import bg from "../Assets/pexels-mareefe-672051.jpg";
+
 import { useTheme } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
 
@@ -23,6 +23,7 @@ import { Buttons, TypographyText } from "../Reusable/Reusable";
 const Contact = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const matches = useMediaQuery(theme.breakpoints.up("lg"));
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -94,43 +95,45 @@ const Contact = () => {
   }, []);
   return (
     <div>
-      <main>
-        <section>
-      <Grid container>
-        <Grid item xs={12}>
-          <Box
-            sx={{
-              backgroundImage: `url(${bg})`,
-              backgroundSize: "cover",
-              backgroundPosition: "centre",
+  
+   
+      <Box sx={{ position: "relative", textAlign: "center" , pt: !matches ? "80px" : "120px",}}>
+        <img
+          src="https://toycity.me/assets/img/background/BG_4.jpg" // Replace with your image path
+          alt="Your Image Alt Text"
+          style={{
+            width: "100%",
+            height: "100vh",
 
-              height: "105vh",
-            }}
-          >
-            <div data-aos="fade-up">
-              <TypographyText
-                Typography={<>Contact Us</>}
-                fontWeight="bolder"
-                variant={!isSmallScreen ? "h3" : "h4"}
-                textAlign="centre"
-                color="#4B573F"
-                paddingTop={isSmallScreen ? "100px" : "250px"}
-              />
-            </div>
-          </Box>
-        </Grid>
-      </Grid>
-      </section>
+            opacity: ".8",
+          }}
+        />
+        <Box
+          style={{
+            position: "absolute",
+
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <TypographyText
+            Typography={<>Contact Us</>}
+            fontWeight="400"
+            variant={!isSmallScreen ? "h2" : "h4"}
+          />
+          <br />
+
+        </Box>
+      </Box>
       {/****************************************** */}
-      <section>
+
       <Grid
         container
         spacing={2}
         sx={{
           p: "8%",
-          backgroundSize: "cover",
-          backgroundPosition: "centre",
-          backgroundImage: `url(https://img.freepik.com/premium-photo/dry-floral-branch-white_408798-3612.jpg?w=900)`,
+         
         }}
       >
         {/**********************section1************************************ */}
@@ -286,9 +289,9 @@ const Contact = () => {
               <Buttons
                 Buttonname={"Contact Us"}
          
-                fontWeight="bolder"
+        
                 color="#fff"
-                bgcolor="#4B573F"
+                bgcolor="black"
                 bgcolor1="red"
                 color1="#AFA065"
                 textAlign="left"
@@ -299,8 +302,7 @@ const Contact = () => {
           </Grid>
         </Grid>
       </Grid>
-      </section>
-      </main>
+  
     </div>
   );
 };
@@ -309,25 +311,54 @@ export default Contact;
 
 const Address = [
   {
-    SocialIcon: <HomeIcon />,
-
-    text1: <>Verona Perfumes Industry</>,
+    SocialIcon: <HomeIcon sx={{ color: "black" }} />,
+    text: <> Corporate Office</>,
+    text1: (
+      <>
+        PO Box No : 87665, Suite No : 521, Block B,
+        <br />
+        Business Village, Opp Clock Tower, Deira,
+        <br />
+        Dubai, United Arab Emirates.
+      </>
+    ),
+  },
+];
+const Addresssoud = [
+  {
+    SocialIcon: <HomeIcon sx={{ color: "black" }} />,
+    text: <> Saudi Distribution Office</>,
+    text1: (
+      <>
+        Al Khomra, Faisal St,
+        <br />
+        PO Box No : 14335,
+        <br />
+        Jeddah, Saudi Arabia.
+        <br />
+      </>
+    ),
   },
 ];
 
 const Address1 = [
   {
-    SocialIcon: <EmailIcon  />,
+    SocialIcon: <EmailIcon sx={{ color: "black" }} />,
 
-    text1: <>info@veronaperfumesindustry.com</>,
+    text1: <>rajiv@toycity.me</>,
   },
 ];
 const Address2 = [
   {
-    SocialIcon: <PhoneIcon  />,
+    SocialIcon: <PhoneIcon sx={{ color: "black" }} />,
 
-    text1: <>+971 58 911 224
-    <br/>+971 54 426 1159</>
-    
+    text1: <>+971 55 2101764</>,
+  },
+];
+const Address3 = [
+  {
+    SocialIcon: <PublicIcon sx={{ color: "black" }} />,
+
+    text1: <>www.toycity.me</>,
   },
 ];

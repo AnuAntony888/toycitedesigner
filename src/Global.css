@@ -10,9 +10,8 @@
 }
 
 .contactbox {
-  border: solid white 0.5px !important;
-  background-color: rgba(175, 160, 101, 0.7) !important;
-  color: #4B573F !important;
+  border: solid rgb(18, 18, 18) 0.5px !important;
+
   width: 100% !important;
   /* color: rgb(175, 160, 101); */
 }
@@ -160,4 +159,13 @@ main > section {
     width: 90%;
     height: auto;
     transform: translateX(6%);
+    }
+
+    .buttton_eader{
+      font-family: 'Poppins', sans-serif !important;
+   color: white !important;
+   font-size: .9rem !important;
+text-transform: capitalize !important;
+min-width: 150px;
+  
     }

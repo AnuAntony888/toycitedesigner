@@ -11,6 +11,11 @@ import RCToys from "../Pcrcl/RCToys";
 import Cosmetics from "../Pcrcl/Cosmetics";
 import Learning from "../Pcrcl/Learning";
 import Other from "../Pcrcl/Other";
+import NewsandEvents from "../NewsandEvents/NewsandEvents";
+import Contactus from "../Contact/Contactus";
+import Ourretail from "../Ourretail/Ourretail";
+import Contact from "../Contact/Contact";
+
 
 
 
@@ -31,7 +36,11 @@ const Navigate = () => {
         <Route path="/RCToys" element={<RCToys />}></Route> 
         <Route path="/Cosmetics" element={<Cosmetics />}></Route> 
         <Route path="/LearningArtandCrafts" element={<Learning />}></Route> 
-        <Route path="/Other" element={<Other/>}></Route> 
+        <Route path="/Other" element={<Other />}></Route>
+        <Route path="/NewsandEvents" element={<NewsandEvents />}></Route>
+        <Route path="/Contact" element={<Contact />}></Route>
+        <Route path="/RetailPartners" element={<Ourretail />}></Route>
+        <Route path="/Contactus" element={<Contactus />}></Route>
       </Routes>
 
       <div>
