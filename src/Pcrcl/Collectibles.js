@@ -37,13 +37,13 @@ const Collectibles = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: '',
+      video: 'https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4',
       text1: "Monster JAM",
       text2:
         "Monster Jam lets you create your own epic stunts, just like the live show! Take control with our RC vehicles, go all out with our playsets, and collect all of our authentic trucks. Real toys, real action, Monster Jam!",
     },
     {
-      video: '',
+      video: 'https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4',
       text1: "Bakugan",
       text2:
         "Inspired by the hit animated series, Bakugan toys offer thrilling strategic gameplay and fierce competition. Collect, roll, and transform these magnetic creatures to conquer the Bakugan battlefield. Dive into the action-packed world of Bakugan with our extensive collection of Bakugan toys.",
@@ -53,7 +53,8 @@ const Collectibles = () => {
 
   const Data1 = [
     {
-      img: '',
+      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
+  
       text1: "Hatchimals Alive",
       text2:
         "Unwrap the excitement as these adorable Hatchimals reveal their unique personalities and interactive features. Stay tuned for the latest additions to the Hatchimals family!",

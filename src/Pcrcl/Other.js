@@ -4,7 +4,7 @@
 import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import { Box, Grid } from "@mui/material";
+import { Box, Card, CardContent, Grid } from "@mui/material";
 import { TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
 import pp1 from "../Assets/Pre School/pp1.mp4";
@@ -28,7 +28,7 @@ const Other = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: '',
+      video: 'https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4',
       text1: "Bitzee",
       text2:
         "What’s in the box? Introducing Bitzee: the digital pet you can really touch™! Bitzee reacts to your swipes, tilts, shakes and touch. With your love and care, help your pets grow from baby, to adult, to Super Bitzee!!",
@@ -39,13 +39,13 @@ const Other = () => {
 
   const Data1 = [
     {
-      img: '',
+      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
       text1: "WWF",
       text2:
         "WWF Collection! You don’t have to be a little person to love our WWF luxury super cuddly soft toys – enjoy your very own wild animal at home and support them in the wild.",
     },
     {
-      img: '',
+      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
       text1: "Bonikka Collection",
       text2:
         "Our beautifully handcrafted soft dolls and rag dolls are created using soft and comforting fabrics, perfect for lots of cuddles and to take away on childhood adventures. They make perfect presents and will encourage imaginative child play which is valuable for learning and development skills.",
@@ -107,21 +107,24 @@ const Other = () => {
         {Data1.map((curelem, index) => (
           <>
             <Grid item xs={12} lg={6} md={6} sm={12} key={index}>
+            <Card sx={{width:'100%' ,boxShadow:'none',}}>
               <img src={curelem.img} alt="" width={"100%"} height={"auto"} />
-              <br />
-              <br />
+          <CardContent sx={{height:!isSmallScreen?'250px':'auto'}}>
               <TypographyText
                 Typography={curelem.text1}
                 fontWeight="400"
                 variant={!isSmallScreen ? "h5" : "h5"}
               />
-              <br />
+          
 
               <TypographyText
                 Typography={curelem.text2}
-                textAlign="center"
-                fontWeight="400"
-              />
+ 
+           fontSize='.9rem'
+
+                />
+                </CardContent>
+                </Card>
             </Grid>
           </>
         ))}

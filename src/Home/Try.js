@@ -99,9 +99,9 @@ const Try = () => {
                   sx={{
                     zIndex: 1,
 
-                    paddingLeft: !isSmallScreen ? "12%" : "20%",
-                    paddingRight: !isSmallScreen ? "15%" : "20%",
-                    paddingTop: !isSmallScreen ? "10%" : "10%",
+                    paddingLeft: !isSmallScreen ? "12%" : "10%",
+                    paddingRight: !isSmallScreen ? "15%" : "10%",
+                    paddingTop: !isSmallScreen ? "10%" : "20%",
                     paddingBottom: !isSmallScreen ? "15%" : "10%",
                     textAlign: "justify",
                   }}
@@ -266,7 +266,7 @@ const Data = [
       },
     ],
   },
-  {
+  { links: "/RCToys",
     imges:
       "https://static.wixstatic.com/media/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png/v1/fill/w_1442,h_616,fp_0.61_0.33,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png",
     imge1:
@@ -288,7 +288,7 @@ const Data = [
     ],
   },
 
-  {
+  {    links: "/Cosmetics",
     imges:
       "https://static.wixstatic.com/media/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg/v1/fill/w_1442,h_616,fp_0.35_0.45,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg",
     imge1:

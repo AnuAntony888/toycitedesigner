@@ -44,31 +44,31 @@ const Learning = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: "",
+      video: "https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4",
       text1: "Rubik's Cube",
       text2:
         "The Rubik's Cube is the world’s most successful toy, selling hundreds of millions of units, and inspiring and challenging both young and old for over 40 years. As a STEM-accredited puzzle, the Rubik's Cube nurtures smarter future generations through play. Are you up for the challenge? We offer original Rubik's Cube from Spin Master.",
     },
     {
-      video: "",
+      video: "https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4",
       text1: "Kinetic Sand",
       text2:
         "Kinetic Sand The original squeezable sand that is so oddly satisfying, you can’t put it down! Made with natural sand, Kinetic Sand magically sticks together and never dries out. So you can create again, and again, and again!",
     },
     {
-      video: "",
+      video: "https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4",
       text1: "Spin Master Games: Cardinal Games",
       text2:
         "Whether you’re entertaining the kids or adult friends, we’ve got great games to make your time together fun and memorable.",
     },
 
     {
-      video: "",
+      video: "https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4",
       text1: "Etch A Sketch",
       text2: "It’s the one and only Etch A Sketch, the classic drawing toy that’s been challenging artists with its magic and mystery since 1960! Use the knobs to create anything your imagination dreams up, then give it a shake, shake, shake to erase and start all over again. ",
       },
       {
-          video: "",
+          video: "https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4",
           text1: "Cool Maker",
           text2: 'Cool Maker is the DIY brand that lets you create and customize your style! Whether you’re stamping matching mani-pedis with your bffs or spinning up cute friendship bracelets, Cool Maker lets you switch, switch, switch it up to style cool looks that are totally you!'
       }

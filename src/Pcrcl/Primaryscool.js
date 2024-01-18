@@ -64,7 +64,7 @@ const Primaryscool = () => {
         "Toy Collection! Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film.",
     },
     {
-      img: '',
+      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
       text1: "Winfun",
       text2:
         "WinFun Toys captivate young minds with innovative designs, educational value, and endless fun. From interactive learning gadgets to whimsical playsets, WinFun Toys redefine playtime, sparking imagination and joy in every child.",

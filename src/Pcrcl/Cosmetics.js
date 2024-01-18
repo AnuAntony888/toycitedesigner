@@ -26,7 +26,7 @@ const Cosmetics = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: '',
+      video: 'https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4',
       text1: "Townley",
       text2:
         "Explore a world of beauty and fun with Townley Girl, the captivating kids' cosmetics brand at Toycity. Offering a kaleidoscope of colors and safe formulations, Townley Girl lets young imaginations shine, transforming playtime into a vibrant and magical experience.",
@@ -37,13 +37,13 @@ const Cosmetics = () => {
 
   const Data1 = [
     {
-      img: '',
+      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
       text1: "Twinkle Twinkle",
       text2:
         "Twinkle Twinkle, the enchanting kids' cosmetics line at Toycity, adds a touch of magic to playtime. With vibrant colors and gentle formulas, these cosmetics are specially designed for little ones to explore their creativity and sparkle with joy.",
     },
     {
-      img: '',
+      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
       text1: "Hot Focus",
       text2:
         "Shush, the delightful kids' cosmetics collection with us, whispers fun and imagination into playtime. Featuring safe and colorful formulations, Shush lets little ones express their creativity with a hush of excitement, making every moment enchanting.",
@@ -52,7 +52,7 @@ const Cosmetics = () => {
     ];
     const Data2 = [
         {
-          img: '',
+          img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
           text1: "Shush!",
           text2:
             "Specially crafted for little stars, these kits offer a playful blend of safe, vibrant cosmetics, allowing kids to embrace their inner sparkle in the most delightful way.",
