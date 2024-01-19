@@ -93,11 +93,31 @@ const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const Data = [
+    {
+      label: "Your Name",
+      value: name,
+      onChange: handleName,
+    },
+    {
+      label: "Your Email Address",
+      value: email,
+      onChange: handleEmail,
+    },
+    {
+      label: "Phone ",
+      value: phone,
+      onChange: handlePhone,
+    },
+    {
+      label: "Street Address",
+      value: phone,
+      onChange: handlePhone,
+    },
+  ];
   return (
     <div>
-  
-   
-      <Box sx={{ position: "relative", textAlign: "center" , }}>
+      <Box sx={{ position: "relative", textAlign: "center" }}>
         <img
           src="https://babystreet.althemist.com/wp-content/uploads/2019/02/babystreet-title-background.jpg" // Replace with your image path
           alt="Your Image Alt Text"
@@ -131,102 +151,203 @@ const Contact = () => {
           <br />
           <br />
           <TypographyText
-            Typography={<>Or just wanna say Hi. We’d love to get to know you. Tell us a little about yourself and how we can help. Get answers to all your questions about our sales and service here 
-            <br />  Monday to Friday from 9:30 to 17:30 (EET / GM+2)</>}
-            
-                        
-                    />
+            Typography={
+              <>
+                Or just wanna say Hi. We’d love to get to know you. Tell us a
+                little about yourself and how we can help. Get answers to all
+                your questions about our sales and service here
+                <br /> Monday to Friday from 9:30 to 17:30 (EET / GM+2)
+              </>
+            }
+          />
         </Box>
       </Box>
       {/****************************************** */}
 
       <Grid
         container
-        spacing={2}
+        spacing={5}
         sx={{
           p: "8%",
-         
         }}
       >
-
-          
         {/**********************section1************************************ */}
         <Grid item xs={12} md={12} lg={6} sm={12}>
           <Grid container spacing={2}>
-            <Grid item xs={12} lg={6} md={6}>
-              <p className="contacttext">Name</p>
-              <TextField
-                variant="outlined"
-                size="small"
-                className="contactbox"
-                fullWidth
-                type="text"
-                placeholder="Entre Your Name"
-                value={name}
-                onChange={handleName}
-                sx={{    border: 'solid white .5px !important'}}
-                InputProps={{ style: { Color: 'yellow !impotant', } }}
-              />
-            </Grid>
-            <Grid item xs={12} lg={6} md={6}>
-              <p className="contacttext">Email</p>
-              <TextField
-                fullWidth
-                variant="outlined"
-                size="small"
-                type="text"
-                placeholder="Entre Your Email"
-                className="contactbox"
-                value={email}
-                onChange={handleEmail}
-              />
-            </Grid>
             <Grid item xs={12} lg={12} md={12}>
-              <p className="contacttext">Phone</p>
-              <TextField
-                fullWidth
-                variant="outlined"
-                size="small"
-                type="text"
-                value={phone}
-                placeholder="Entre Your Phone"
-                onChange={handlePhone}
-                className="contactbox"
-              />
-            </Grid>
-            <Grid item xs={12} lg={12} md={12}>
-              <p className="contacttext">Message</p>
-              <TextField
-                fullWidth
-                type="text"
-                id="outlined-multiline-flexible"
-                size="small"
-                multiline
-                rows={4} // Specify the number of visible rows
-                placeholder="Entre Your Message"
-                value={message}
-                onChange={handleMessage}
-                className="contactbox"
-              />
-            </Grid>
-            <Grid item xs={12} lg={12} md={12}>
-              <Buttons
-                Buttonname={"Contact Us"}
-         
-        
-                color="#fff"
-                bgcolor="black"
-                bgcolor1="red"
-                color1="#AFA065"
+              <TypographyText
+                Typography={<>Send Us a Message</>}
+                fontWeight="400"
+                fontSize="1.2rem"
                 textAlign="left"
-                type="submit"
-                // onClick={handleApi}
               />
+            </Grid>
+            <Grid item xs={12} lg={12} md={12}>
+              <hr className="new2" />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={12}
+              md={12}
+              sx={{ border: "dashed 2px lightgray", margin: "10px" }}
+            >
+              <Grid container spacing={2}>
+                {Data.map((data, index) => (
+                  <Grid
+                    item
+                    xs={12}
+                    lg={12}
+                    md={12}
+                    sx={{ pr: "16px" }}
+                    key={index}
+                  >
+                    <p className="contacttext">{data.label}</p>
+                    <TextField
+                      fullWidth
+                      size="small"
+                      variant="outlined"
+                      InputProps={{
+                        style: {
+                          height: "35px",
+
+                          border: "none",
+                          backgroundColor: "#F7F7F7",
+                        },
+                      }}
+                      value={data.value}
+                      onChange={data.onChange}
+                    />
+                  </Grid>
+                ))}
+
+                <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
+                  <p className="contacttext">Message</p>
+                  <TextField
+                    fullWidth
+                    size="small"
+                    multiline
+                    rows={3} // Specify the number of visible rows
+                    value={message}
+                    onChange={handleMessage}
+                    InputProps={{
+                      style: {
+                        border: "none",
+                        backgroundColor: "#F7F7F7",
+                      },
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
+                  <Buttons
+                    Buttonname={"Contact Us"}
+                    color="#fff"
+                    bgcolor="black"
+                    bgcolor1="red"
+                    color1="#AFA065"
+                    textAlign="left"
+                    type="submit"
+                    // onClick={handleApi}
+                  />
+                  <br />
+                  <br />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+        {/************************************ */}
+
+        <Grid item xs={12} md={12} lg={6} sm={12}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} lg={12} md={12}>
+              <TypographyText
+                Typography={<>Contact Us</>}
+                fontWeight="400"
+                fontSize="1.2rem"
+                textAlign="left"
+              />
+            </Grid>
+            <Grid item xs={12} lg={12} md={12}>
+              <hr className="new2" />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={12}
+              md={12}
+              sx={{ border: "dashed 2px lightgray", margin: "10px" }}
+            >
+              <Box sx={{ p: '10px' }}>
+              <TypographyText
+                Typography={<>  Corporate Office</>}
+                fontWeight="400"
+                fontSize="1.2rem"
+                  textAlign="left"
+                  
+              />
+            
+              <TypographyText
+                Typography={<> PO Box No : 87665, Suite No : 521, Block B,
+                  <br />
+                  Business Village, Opp Clock Tower, Deira,
+                  <br />
+                    Dubai, United Arab Emirates.
+                    <br /> <br />
+                  </>}
+                fontWeight="400"
+                color='gray'
+                  textAlign="left"
+                
+                />
+          
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={12}
+              md={12}
+              sx={{ border: "dashed 2px lightgray", margin: "10px" ,bgcolor:'#FAFAFA'}}
+            >
+              <Box sx={{ p: '10px' }}>
+                              <TypographyText
+                Typography={<>Retail Dealer Inquiries</>}
+                fontWeight="400"
+                fontSize="1.2rem"
+                  textAlign="left"
+                  
+                />
+                
+                <p style={{ color: 'gray', fontWeight: '400', textAlign: 'left' }}>If you’re interested in wholesale orders or dealership opportunities and offers, 
+                <span style={{textDecoration:'underline black'}}> contact us here </span></p>
+        
+          
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={12}
+              md={12}
+              sx={{ border: "dashed 2px lightgray", margin: "10px" ,bgcolor:'#F3C82B'}}
+            >
+              <Box sx={{ p: '10px' }}>
+                              <TypographyText
+                Typography={<>Brand Ambassador Program</>}
+                fontWeight="400"
+                fontSize="1.2rem"
+                  textAlign="left"
+                  
+                />
+                <p style={{ color: 'gray', fontWeight: '400', textAlign: 'left' }}>Are you a “Mommy Blogger or social influencer?” Do you love stylish kids clothes as we do? We are looking for bloggers or trendy moms that would love to share their style with our matching models. Please,
+                <span style={{textDecoration:'underline black'}}> Contact us here </span>for more information.</p>
+
+              </Box>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
-  
     </div>
   );
 };
