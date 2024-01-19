@@ -26,6 +26,7 @@ import co4 from "../Assets/prcl/Cosmetics/Townley.png";
 const Try = () => {
   const [isContentVisible, setIsContentVisible] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
+ 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -52,7 +53,12 @@ const Try = () => {
     };
   }, []);
 
-  const fontSize = `calc(20px + (90px / 16) * ((100vw - 320px) / (1920 - 320)))`;
+  const scrollToElement = () => {
+    const element = document.getElementById('scrollTarget');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <>
       <Homesection1 />
@@ -61,7 +67,7 @@ const Try = () => {
           <div key={indexs}>
             <Parallax
               bgImage={!isSmallScreen ? data.imges : data.imge1}
-              strength={600}
+              strength={300}
               style={{
                 backgroundSize: "cover",
                 objectFit: "cover",
@@ -106,7 +112,7 @@ const Try = () => {
                     textAlign: "justify",
                   }}
                 >
-                  <Grid item lg={6} md={6} sm={12} xs={12}>
+                  <Grid item lg={6} md={6} sm={12} xs={12} sx={{ margin: !isSmallScreen ? "auto" : "0" }}>
                     <div data-aos="fade-right">
                       <TypographyText
                         Typography={data.Typography}
@@ -206,6 +212,41 @@ const Try = () => {
             }}
           />
         ))}
+           <Fab
+          color={activeSection === 0 ? "primary" : "default"}
+          size="small"
+          onClick={() =>
+             scrollToSection(7)
+            //  document.getElementById('par').scrollIntoView()
+          }
+          sx={{
+            margin: "10px",
+            cursor: "pointer",
+            display: "flex",
+            width: "12px",
+            height: "12px",
+            minHeight: "12px",
+            border: "solid white .5px",
+            backgroundColor: activeSection === 7 ? "white" : "transparent",
+            boxShadow: "none",
+          }}
+        />
+           <Fab
+          color={activeSection === 0 ? "primary" : "default"}
+          size="small"
+          onClick={() =>     scrollToSection(8)}
+          sx={{
+            margin: "10px",
+            cursor: "pointer",
+            display: "flex",
+            width: "12px",
+            height: "12px",
+            minHeight: "12px",
+            border: "solid white .5px",
+            backgroundColor: activeSection === 8 ? "white" : "transparent",
+            boxShadow: "none",
+          }}
+        />
       </Box>
     </>
   );
@@ -216,9 +257,9 @@ export default Try;
 const Data = [
   {
     imge1:
-      "https://static.wixstatic.com/media/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg/v1/fill/w_1024,h_524,fp_0.62_0.97,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg",
+      "https://static.wixstatic.com/media/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg/v1/fill/w_2560,h_1440,fp_0.62_0.97,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg",
     imges:
-      "https://static.wixstatic.com/media/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg/v1/fill/w_768,h_1048,fp_0.62_0.97,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg",
+      "https://static.wixstatic.com/media/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg/v1/fill/w_2560,h_1440,fp_0.62_0.97,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg",
     Typography: "Pre-School",
     Typography1:
       "Ignite young minds with our captivating preschool toys collection! Specially designed for early learners, these toys blend fun and education seamlessly. Explore the joy of learning with our thoughtfully curated selection for the littlest adventurers.",

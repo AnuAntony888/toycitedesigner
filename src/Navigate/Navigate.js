@@ -40,7 +40,7 @@ const Navigate = () => {
         <Route path="/NewsandEvents" element={<NewsandEvents />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path="/RetailPartners" element={<Ourretail />}></Route>
-        <Route path="/Contactus" element={<Contactus />}></Route>
+        {/* <Route path="/Contactus" element={<Contactus />}></Route> */}
       </Routes>
 
       <div>

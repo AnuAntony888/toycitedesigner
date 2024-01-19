@@ -97,9 +97,9 @@ const Contact = () => {
     <div>
   
    
-      <Box sx={{ position: "relative", textAlign: "center" , pt: !matches ? "80px" : "120px",}}>
+      <Box sx={{ position: "relative", textAlign: "center" , }}>
         <img
-          src="https://toycity.me/assets/img/background/BG_4.jpg" // Replace with your image path
+          src="https://babystreet.althemist.com/wp-content/uploads/2019/02/babystreet-title-background.jpg" // Replace with your image path
           alt="Your Image Alt Text"
           style={{
             width: "100%",
@@ -123,7 +123,19 @@ const Contact = () => {
             variant={!isSmallScreen ? "h2" : "h4"}
           />
           <br />
-
+          <TypographyText
+            Typography={<>Have a Question?</>}
+            fontWeight="400"
+            variant={!isSmallScreen ? "h3" : "h5"}
+          />
+          <br />
+          <br />
+          <TypographyText
+            Typography={<>Or just wanna say Hi. We’d love to get to know you. Tell us a little about yourself and how we can help. Get answers to all your questions about our sales and service here 
+            <br />  Monday to Friday from 9:30 to 17:30 (EET / GM+2)</>}
+            
+                        
+                    />
         </Box>
       </Box>
       {/****************************************** */}
@@ -136,96 +148,8 @@ const Contact = () => {
          
         }}
       >
-        {/**********************section1************************************ */}
-        <Grid item xs={12} md={12} lg={6} sm={12}>
-          <Grid container spacing={2} sx={{ paddingTop: "10%" }}>
-            <Grid item xs={12} lg={12} md={12} sm={12}>
-              <Box className="contactbox">
-                <List>
-                  <ListItem sx={{ paddingLeft: "10px" }}>
-                    <TypographyText
-                      Typography={"Address"}
-                      variant={"1rem"}
-                          fontWeight="600"
-                          color="#231F1E"
-                    />
-                  </ListItem>
-                  {Address.map((data, index) => (
-                    <ListItem className="listitems" key={index}>
-                      <ListItemIcon className="footlistliwidth">
-                        {data.SocialIcon}
-                      </ListItemIcon>
-                      <ListItemText className="list_text">
-                        <TypographyText
-                          Typography={data.text1}
-                          fontSize=".9rem"
-                          color="#231F1E"
-                          fontWeight="600"
-                        />
-                      </ListItemText>
-                    </ListItem>
-                  ))}
-                </List>
-              </Box>
-            </Grid>
-            <Grid item xs={12} lg={12} md={12} sm={12}>
-              <Box className="contactbox">
-                <List>
-                  <ListItem sx={{ paddingLeft: "10px" }}>
-                    <TypographyText
-                      Typography={"Email"}
-                      variant={"1rem"}
-                          fontWeight="700"
-                          color="#231F1E" fontWeight="600"
-                    />
-                  </ListItem>
-                  {Address1.map((data, index) => (
-                    <ListItem className="listitems" key={index}>
-                      <ListItemIcon className="footlistliwidth">
-                        {data.SocialIcon}
-                      </ListItemIcon>
-                      <ListItemText className="list_text">
-                        <TypographyText
-                          Typography={data.text1}
-                          fontSize=".9rem"
-                          color="#231F1E" fontWeight="600"
-                        />
-                      </ListItemText>
-                    </ListItem>
-                  ))}
-                </List>
-              </Box>
-            </Grid>
-            <Grid item xs={12} lg={12} md={12} sm={12}>
-              <Box className="contactbox">
-                <List>
-                  <ListItem sx={{ paddingLeft: "10px" }}>
-                    <TypographyText
-                      Typography={"Phone"}
-                      variant={"1rem"}
-                          fontWeight="700"
-                          color="#231F1E" 
-                    />
-                  </ListItem>
-                  {Address2.map((data, index) => (
-                    <ListItem className="listitems" key={index}>
-                      <ListItemIcon className="footlistliwidth">
-                        {data.SocialIcon}
-                      </ListItemIcon>
-                      <ListItemText className="list_text">
-                        <TypographyText
-                          Typography={data.text1}
-                          fontSize=".9rem"
-                          color="#231F1E" fontWeight="600"
-                        />
-                      </ListItemText>
-                    </ListItem>
-                  ))}
-                </List>
-              </Box>
-            </Grid>
-          </Grid>
-        </Grid>
+
+          
         {/**********************section1************************************ */}
         <Grid item xs={12} md={12} lg={6} sm={12}>
           <Grid container spacing={2}>

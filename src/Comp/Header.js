@@ -39,7 +39,7 @@ export default function Header() {
           sx={{
             width: "100%",
             minHeight: !matches ? "80px" : "120px",
-            backgroundColor: "rgba(0, 0, 0, 0.239)",
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
             justifyContent: "space-between",
             position: "sticky !impoertant",
             top: "0px",
@@ -73,12 +73,12 @@ export default function Header() {
                         <div class="verticalline"></div>
                       </Button>
                     ))}
-                    {/* <Button
+                    <Button
                       className="buttton_eader"
                       onClick={() => setopenpopup(true)}
                     >
                       Contact
-                    </Button> */}
+                    </Button>
                   </div>
                 </Box>
               </>
@@ -103,9 +103,10 @@ export default function Header() {
 
 export const navItems = [
   <Link to="/">Home</Link>,
-  <Link to={"/aboutus"}>Aboutus</Link>,
+  <Link to={"/aboutus"}>About Us</Link>,
   <Link to={"/RetailPartners"}>Retail Partner</Link>,
   <Link to={"/NewsandEvents"}>News and Events</Link>,
   <Link to={"/Contact"}>Contact</Link>,
+
   // <a href="#" onClick={openPopup}>Contact</a>,
 ];

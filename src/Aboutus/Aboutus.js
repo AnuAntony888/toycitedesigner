@@ -7,6 +7,7 @@ import { TypographyText } from "../Reusable/Reusable";
 const Aboutus = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const islargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
   useEffect(() => {
     // Scroll to the top of the page on component mount (page load)
     window.scrollTo({
@@ -105,6 +106,7 @@ const Aboutus = () => {
                 src="https://static.wixstatic.com/media/329129_603e03c6216947f88ccb02b8c6cafca6~mv2.jpg/v1/fill/w_682,h_2160,al_c,q_85,enc_auto/Header%201.jpg"
                 alt="First Image"
                 className="base-image"
+                style={{height:islargeScreen ? '100%':'680px'}}
               />
 
               <img

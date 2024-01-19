@@ -28,13 +28,13 @@ function Popups() {
                   overflowY: "unset",
                   borderRadius: "15px",
 
-                  // maxHeight: props.maxHeight,
+                
                 }
               : { overflowY: "unset", borderRadius: "12px" },
           },
         }}
       >
-        <DialogContent
+        {/* <DialogContent
           // sx={{
           //   "&.MuiDialogContent-root": laptop
           //     ? {
@@ -42,7 +42,7 @@ function Popups() {
           //       }
           //     : "",
           // }}
-        >
+        > */}
           <CancelIcon
             className="cancelicon"
             onClick={
@@ -61,7 +61,7 @@ function Popups() {
           ></CancelIcon>
 
           <Contactus setopenpopup={setopenpopup} />
-        </DialogContent>
+        {/* </DialogContent> */}
       </Dialog>
     </div>
   );

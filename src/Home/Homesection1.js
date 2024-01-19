@@ -38,7 +38,8 @@ const Homesection1 = () => {
               />
               <br />
               <TypographyText
-                Typography={<>Together Let's Inspire a Child</>}
+                Typography={<>Together,
+                  <br/>Let's Inspire a Child</>}
                 color="#fff"
                 fontWeight="400"
                 variant={!isSmallScreen ? "h2" : "h4"}

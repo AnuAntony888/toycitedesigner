@@ -155,7 +155,9 @@ const Partnerreview = () => {
         container
         spacing={0}
         className="large-header"
-        sx={{ height: !isSmallScreen ? "100vh" : "auto" }}
+        id='par'
+        index={7}
+        sx={{ height: !isSmallScreen ? "100vh" : "auto"  }}
       >
         <Grid
           item

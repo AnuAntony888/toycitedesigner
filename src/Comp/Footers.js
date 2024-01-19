@@ -9,7 +9,7 @@ const Footers = () => {
     <Grid container spacing={4} sx={{ marginTop:'5px'}}>
       <Grid item lg={12} md={12} sm={12} xs={12}>
         <TypographyText
-          Typography={<>© 2023 Toycity. All rights reserved. All audio, visual and textual content on this site (including all names, characters, images, trademarks and logos) are protected by trademarks, copyrights and other Intellectual Property rights owned by Toycity or its subsidiaries, licensors, licensees, suppliers and accounts.</>}
+          Typography={<>© 2024 Toycity. All rights reserved. All audio, visual and textual content on this site (including all names, characters, images, trademarks and logos) are protected by trademarks, copyrights and other Intellectual Property rights owned by Toycity or its subsidiaries, licensors, licensees, suppliers and accounts.</>}
       
         fontSize='0.8rem'
           textAlign="centre"
@@ -18,7 +18,7 @@ const Footers = () => {
         <br/>
         <br/>
                <TypographyText
-          Typography={<>© 2023 by Toycity. Created on Editor X by Pinto Prasenan.</>}
+          Typography={<>© 2024 by Toycity. Created on Editor X by Pinto Prasenan.</>}
       
           fontSize='0.8rem'
           textAlign="centre"

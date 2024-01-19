@@ -46,7 +46,7 @@ const Ourretail = () => {
         sx={{
           position: "relative",
           textAlign: "center",
-          pt: !matches ? "80px" : "120px",
+          // pt: !matches ? "80px" : "120px",
         }}
       >
         <img
@@ -120,17 +120,20 @@ const Ourretail = () => {
             container
             spacing={2}
             sx={{
-              pl: !isSmallScreen ? "20%" : "14%",
-              pr: !isSmallScreen ? "20%" : "14%",
+              pl: !isSmallScreen ? "10%" : "14%",
+              pr: !isSmallScreen ? "10%" : "14%",
               pt: "6%",
               pb: "5%",
+            justifyContent:'center'
             }}
           >
             {curelem.Data1 &&
               curelem.Data1.map((curelem) => (
                 <>
                   <Grid item xs={3} lg={2} md={2} sm={4} key={index}>
-                    <img src={curelem.img} alt="" width={"100%"} />
+                    <Card  sx={{margin:'auto',padding:'5%',bgcolor:'white'}}>
+                      <img src={curelem.img} alt="" width={"100%"} />
+                      </Card>
                   </Grid>
                 </>
               ))}

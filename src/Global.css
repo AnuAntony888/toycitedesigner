@@ -17,9 +17,12 @@
 }
 .contacttext {
   text-align: left !important;
-  padding-bottom: 15px !important;
-  color: #231F1E !important;
-  font-weight: bolder !important;
+  padding-bottom: 1px !important;
+  color: black !important;
+  font-size: .8rem;
+
+  margin-block-end: 0 !important;
+  margin-block-start: 0px !important;
 }
 .css-1n4twyu-MuiInputBase-input-MuiOutlinedInput-input,
 .css-12tl3rr-MuiInputBase-input-MuiOutlinedInput-input,
@@ -88,7 +91,7 @@ main > section {
 
 .base-image {
   width: 300px;
-  height: 100%;
+  /* height: 100%; */
 
   z-index: -1;
 }
@@ -169,3 +172,8 @@ text-transform: capitalize !important;
 min-width: 150px;
   
     }
+
+
+ 
+   
+  
