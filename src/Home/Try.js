@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Fab } from "@mui/material";
+import { Box, Grid, Typography, Fab, Skeleton } from "@mui/material";
 import React, { useEffect, useState, useRef } from "react";
 import { TypographyText } from "../Reusable/Reusable";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -6,27 +6,61 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import "aos/dist/aos.css";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import { Background, Parallax } from "react-parallax";
+import {  Parallax } from "react-parallax";
 import Homesection1 from "./Homesection1";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { Link } from "react-router-dom";
-import pp1 from "../Assets/prcl/PreSchool/CB.png";
-import pp2 from "../Assets/prcl/PreSchool/GDH.png";
-import pp9 from "../Assets/prcl/PreSchool/IMC.png";
-import pp4 from "../Assets/prcl/PreSchool/PG.png";
-import pp5 from "../Assets/prcl/PreSchool/PR.png";
-import pp6 from "../Assets/prcl/PreSchool/WF.png";
-import pp7 from "../Assets/prcl/PreSchool/funskool.png";
-import pp8 from "../Assets/prcl/PreSchool/gIGGLES.png";
-import co1 from "../Assets/prcl/Cosmetics/Hotfocus.png";
-import co2 from "../Assets/prcl/Cosmetics/Shushi.png";
-import co3 from "../Assets/prcl/Cosmetics/TT.png";
-import co4 from "../Assets/prcl/Cosmetics/Townley.png";
+
+import banner1 from "../Assets/homepage/banner1 .jpg";
+import banner2 from "../Assets/homepage/banner2.jpg";
+import banner3 from "../Assets/homepage/banner3.png";
+import banner31 from "../Assets/homepage/banner31.webp";
+import banner4 from "../Assets/homepage/banner4.jpg";
+import banner41 from "../Assets/homepage/banner41.webp";
+import banner5 from "../Assets/homepage/banner5.webp";
+import banner51 from "../Assets/homepage/banner51.webp";
+import banner61 from "../Assets/homepage/banner61.jpg";
+import banner6 from "../Assets/homepage/banner6.jpg";
+
+import pp1 from '../Assets/homelogo/14.png'
+import pp2 from '../Assets/homelogo/26.png'
+import pp3 from '../Assets/homelogo/23.png'
+import pp4 from '../Assets/homelogo/22.png'
+import pp5 from '../Assets/homelogo/25.png'
+import pp6 from '../Assets/homelogo/17.png'
+
+import cc1 from '../Assets/homelogo/4.png'
+import cc2 from '../Assets/homelogo/2.png'
+import cc3 from '../Assets/homelogo/3.png'
+
+import rc1 from '../Assets/homelogo/29.png'
+import rc2 from '../Assets/homelogo/28.png'
+import rc3 from '../Assets/homelogo/30.png'
+
+import cs1 from '../Assets/homelogo/9.png'
+import cs2 from '../Assets/homelogo/8.png'
+import cs3 from '../Assets/homelogo/10.png'
+import cs4 from '../Assets/homelogo/7.png'
+
+import la1 from '../Assets/homelogo/5.png'
+import la2 from '../Assets/homelogo/18.png'
+import la3 from '../Assets/homelogo/15.png'
+import la4 from '../Assets/homelogo/Etch a sketch.png'
+import la5 from '../Assets/homelogo/Coolmaker.png'
+
+import o1 from '../Assets/homelogo/o1.webp'
+import o2 from '../Assets/homelogo/o2.webp'
+import o3 from '../Assets/homelogo/o3.webp'
 
 const Try = () => {
+  const [loading, setLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
   const [isContentVisible, setIsContentVisible] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
- 
+
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -54,11 +88,12 @@ const Try = () => {
   }, []);
 
   const scrollToElement = () => {
-    const element = document.getElementById('scrollTarget');
+    const element = document.getElementById("scrollTarget");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
     <>
       <Homesection1 />
@@ -67,6 +102,7 @@ const Try = () => {
           <div key={indexs}>
             <Parallax
               bgImage={!isSmallScreen ? data.imges : data.imge1}
+              // bgImage={data.imges}
               strength={300}
               style={{
                 backgroundSize: "cover",
@@ -112,7 +148,14 @@ const Try = () => {
                     textAlign: "justify",
                   }}
                 >
-                  <Grid item lg={6} md={6} sm={12} xs={12} sx={{ margin: !isSmallScreen ? "auto" : "0" }}>
+                  <Grid
+                    item
+                    lg={6}
+                    md={6}
+                    sm={12}
+                    xs={12}
+                    sx={{ margin: !isSmallScreen ? "auto" : "0" }}
+                  >
                     <div data-aos="fade-right">
                       <TypographyText
                         Typography={data.Typography}
@@ -120,7 +163,7 @@ const Try = () => {
                         fontWeight="400"
                         textAlign={!isSmallScreen ? "left" : "centre"}
                         // fontSize={fontSize}
-                         variant={!isSmallScreen ? "h2" : "h5"}
+                        variant={!isSmallScreen ? "h2" : "h5"}
                       />
                       <br />
                       <TypographyText
@@ -153,12 +196,30 @@ const Try = () => {
                       Spacing={2}
                       sx={{ justifyContent: "center" }}
                     >
-                      {data.imagelogo &&
+                      {/* {data.imagelogo &&
                         data.imagelogo.map((logo) => (
                           <Grid item lg={3} md={3} sm={3} xs={4}>
                             <img src={logo.img} alt="" width={"100%"} />
                           </Grid>
-                        ))}
+                        ))} */}
+                      {data.imagelogo.map((logo) => (
+                        <Grid key={logo.id} item lg={3} md={3} sm={3} xs={4}>
+                          {loading && (
+                            <Skeleton
+                              variant="rectangular"
+                              width={80}
+                              height={80}
+                            />
+                          )}
+                          <img
+                            src={logo.img}
+                            alt=""
+                            width="100%"
+                            onLoad={handleImageLoad}
+                            style={{ display: loading ? "none" : "block" }}
+                          />
+                        </Grid>
+                      ))}
                     </Grid>
                   </Grid>
                 </Grid>
@@ -212,11 +273,11 @@ const Try = () => {
             }}
           />
         ))}
-           <Fab
+        <Fab
           color={activeSection === 0 ? "primary" : "default"}
           size="small"
-          onClick={() =>
-             scrollToSection(7)
+          onClick={
+            () => scrollToSection(7)
             //  document.getElementById('par').scrollIntoView()
           }
           sx={{
@@ -231,10 +292,10 @@ const Try = () => {
             boxShadow: "none",
           }}
         />
-           <Fab
+        <Fab
           color={activeSection === 0 ? "primary" : "default"}
           size="small"
-          onClick={() =>     scrollToSection(8)}
+          onClick={() => scrollToSection(8)}
           sx={{
             margin: "10px",
             cursor: "pointer",
@@ -256,132 +317,118 @@ export default Try;
 
 const Data = [
   {
-    imge1:
-      "https://static.wixstatic.com/media/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg/v1/fill/w_2560,h_1440,fp_0.62_0.97,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg",
-    imges:
-      "https://static.wixstatic.com/media/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg/v1/fill/w_2560,h_1440,fp_0.62_0.97,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg",
+    imge1: banner1,
+    imges: banner1,
     Typography: "Pre-School",
     Typography1:
       "Ignite young minds with our captivating preschool toys collection! Specially designed for early learners, these toys blend fun and education seamlessly. Explore the joy of learning with our thoughtfully curated selection for the littlest adventurers.",
     links: `/Pre-School`,
     imagelogo: [
+      { img: pp1 },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_73a5f56ac63343208cb8360f07740ace~mv2.png/v1/fill/w_296,h_168,q_90/3fff3e_73a5f56ac63343208cb8360f07740ace~mv2.webp",
+        img: pp2,
       },
-      {
-        img: "https://static.wixstatic.com/media/3fff3e_f04bf754f4034c3985ab969cdaf21187~mv2.png/v1/fill/w_254,h_144,q_90/3fff3e_f04bf754f4034c3985ab969cdaf21187~mv2.webp",
-      },
-      {
-        img: "https://static.wixstatic.com/media/3fff3e_8b7608bf17144110a0cd5453bafbdaa6~mv2.png/v1/fill/w_254,h_144,q_90/3fff3e_8b7608bf17144110a0cd5453bafbdaa6~mv2.webp",
-      },
-      {
-        img: "https://static.wixstatic.com/media/3fff3e_0c4400a66a0942468a4065d983681535~mv2.png/v1/fill/w_254,h_144,q_90/3fff3e_0c4400a66a0942468a4065d983681535~mv2.webp",
-      },
-      {
-        img: "https://static.wixstatic.com/media/3fff3e_630517c506824605a7f1c658f0f5d39f~mv2.png/v1/fill/w_254,h_144,q_90/3fff3e_630517c506824605a7f1c658f0f5d39f~mv2.webp",
-      },
-      {
-        img: "https://static.wixstatic.com/media/3fff3e_96c8224664824e45a2dbf643180a7c1d~mv2.png/v1/fill/w_254,h_144,q_90/3fff3e_96c8224664824e45a2dbf643180a7c1d~mv2.webp",
-      },
+      { img: pp3 },
+      { img: pp4 },
+      { img: pp5 },
+      { img: pp6 },
     ],
   },
   {
     links: "/Collectibles",
-    imges:
-      "https://static.wixstatic.com/media/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg/v1/fill/w_2096,h_1166,fp_0.61_0.50,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg",
-    imge1:
-      "https://static.wixstatic.com/media/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg/v1/fill/w_768,h_1048,fp_0.61_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_357ae3cd4b14456f9b5368198c090440~mv2.jpg",
+    imges: banner2,
+    imge1: banner2,
     Typography: "Collectibles",
     Typography1:
       "Dive into a world of enchantment with our exclusive Collectible Toys. Unearth rare gems and cherished editions that elevate your collection to new heights. From iconic franchises to limited releases, our carefully curated selection promises to delight enthusiasts and collectors alike.",
 
     imagelogo: [
       {
-        img: "https://static.wixstatic.com/media/3fff3e_8fcd4fc737ec45b8a966ec0cbdc0543d~mv2.png/v1/fill/w_130,h_72,q_90/3fff3e_8fcd4fc737ec45b8a966ec0cbdc0543d~mv2.webp",
+        img: cc1,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_d01cfebab7f14ae78041a12fcc9efae3~mv2.png/v1/fill/w_130,h_72,q_90/3fff3e_d01cfebab7f14ae78041a12fcc9efae3~mv2.webp",
+        img: cc2,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_ba73e416f5cd40a8a8f49f6e703a0089~mv2.png/v1/fill/w_130,h_72,q_90/3fff3e_ba73e416f5cd40a8a8f49f6e703a0089~mv2.webp",
+        img: cc3,
       },
     ],
   },
-  { links: "/RCToys",
-    imges:
-      "https://static.wixstatic.com/media/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png/v1/fill/w_1442,h_616,fp_0.61_0.33,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png",
-    imge1:
-      "https://static.wixstatic.com/media/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png/v1/fill/w_768,h_699,fp_0.61_0.33,q_90,usm_0.66_1.00_0.01,enc_auto/3fff3e_b9af84a0008d49ea8e8e85bd9f330ab7~mv2.png",
+  {
+    links: "/RCToys",
+    imges: banner3,
+    imge1: banner31,
     Typography: "RC Toys",
     Typography1:
       "Explore the thrill of remote-controlled excitement with our RC (Remote Control) section at Toycity. Unleash the power of imaginative play as you navigate a world of high-speed racing, precision maneuvers, and airborne adventures.",
 
     imagelogo: [
       {
-        img: "https://static.wixstatic.com/media/3fff3e_8fcd4fc737ec45b8a966ec0cbdc0543d~mv2.png/v1/fill/w_130,h_72,q_90/3fff3e_8fcd4fc737ec45b8a966ec0cbdc0543d~mv2.webp",
+        img: rc1,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_5431260a0afe44619fc0a9c9e6dc8576~mv2.png/v1/fill/w_130,h_72,q_90/3fff3e_5431260a0afe44619fc0a9c9e6dc8576~mv2.webp",
+        img: rc2,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_88994de14b6447f1a9300ea4796393f1~mv2.png/v1/fill/w_130,h_72,q_90/3fff3e_88994de14b6447f1a9300ea4796393f1~mv2.webp",
-      },
-    ],
-  },
-
-  {    links: "/Cosmetics",
-    imges:
-      "https://static.wixstatic.com/media/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg/v1/fill/w_1442,h_616,fp_0.35_0.45,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg",
-    imge1:
-      "https://static.wixstatic.com/media/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg/v1/fill/w_751,h_524,fp_0.35_0.45,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_f98ece67763c4fd3b3faa9caeb6970d8~mv2.jpg",
-    Typography: "Cosmetics",
-    Typography1:
-      "Transform playtime into a magical makeover with our Kids Cosmetics collection. Specially crafted for little ones, our vibrant and safe products let imaginations soar. From glittery lip gloss to washable nail polish, we offer a delightful range of kid-friendly cosmetics that add a touch of sparkle to their world. Explore the joy of creative expression with our quality and non-toxic formulations, making beauty play both enchanting and worry-free.",
-
-    imagelogo: [
-      { img: 'https://static.wixstatic.com/media/3fff3e_246a234cca6a433b9faa85f153fcfb2f~mv2.png/v1/fill/w_1224,h_684,q_90/3fff3e_246a234cca6a433b9faa85f153fcfb2f~mv2.webp' },
-      { img: 'https://static.wixstatic.com/media/3fff3e_62c94da314c5405284d9026cc47fd58f~mv2.png/v1/fill/w_1224,h_684,q_90/3fff3e_62c94da314c5405284d9026cc47fd58f~mv2.webp' },
-      { img: 'https://static.wixstatic.com/media/3fff3e_6dffc3ce06124e1a8b07b713751e8e86~mv2.png/v1/fill/w_1224,h_684,q_90/3fff3e_6dffc3ce06124e1a8b07b713751e8e86~mv2.webp'},
-      {
-        img: 'https://static.wixstatic.com/media/3fff3e_6d442401bd6547ceb8da7ae978712ab2~mv2.png/v1/fill/w_1215,h_684,q_90/3fff3e_6d442401bd6547ceb8da7ae978712ab2~mv2.webp',
+        img: rc3,
       },
     ],
   },
 
   {
-    imges:
-      "https://static.wixstatic.com/media/3fff3e_427843dfb30c43c29a1dbddc3625e639~mv2.jpg/v1/fill/w_1442,h_721,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_427843dfb30c43c29a1dbddc3625e639~mv2.jpg",
+    links: "/Cosmetics",
+    imges: banner4,
+    imge1: banner41,
+    Typography: "Cosmetics",
+    Typography1:
+      "Transform playtime into a magical makeover with our Kids Cosmetics collection. Specially crafted for little ones, our vibrant and safe products let imaginations soar. From glittery lip gloss to washable nail polish, we offer a delightful range of kid-friendly cosmetics that add a touch of sparkle to their world. Explore the joy of creative expression with our quality and non-toxic formulations, making beauty play both enchanting and worry-free.",
+
+    imagelogo: [
+      {
+        img: cs1,
+      },
+      {
+        img: cs2,
+      },
+      {
+        img: cs3,
+      },
+      {
+        img: cs4,
+      },
+    ],
+  },
+
+  {
+    imges: banner5,
     links: "/LearningArtandCrafts",
-    imge1:
-      "https://static.wixstatic.com/media/3fff3e_427843dfb30c43c29a1dbddc3625e639~mv2.jpg/v1/fill/w_751,h_528,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_427843dfb30c43c29a1dbddc3625e639~mv2.jpg",
+    imge1: banner51,
     Typography: "Learning, Art and Crafts",
     Typography1:
       "Discover a wide array of learning toys designed to make education enjoyable. At our toy distribution company, we believe that play is a powerful teacher, and our learning, art, and crafts toys are carefully chosen to inspire creativity and curiosity. Explore our collection today and witness the joy of learning and self-expression through the magic of play.",
 
     imagelogo: [
       {
-        img: "https://static.wixstatic.com/media/3fff3e_bc0d0ec82471469fbfb8e55b47fdd585~mv2.png/v1/fill/w_266,h_150,q_90/3fff3e_bc0d0ec82471469fbfb8e55b47fdd585~mv2.webp",
+        img: la1,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_dc762e2e3bdb4166804f4e66da6ddc4e~mv2.png/v1/fill/w_264,h_150,q_90/3fff3e_dc762e2e3bdb4166804f4e66da6ddc4e~mv2.webp",
+        img: la2,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_16eadbc393fb4d47be28383e110b3d0b~mv2.png/v1/fill/w_266,h_150,q_90/3fff3e_16eadbc393fb4d47be28383e110b3d0b~mv2.webp",
+        img: la3,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_d896c929614e41f990818a65dbfc6bed~mv2.png/v1/fill/w_264,h_150,q_90/3fff3e_d896c929614e41f990818a65dbfc6bed~mv2.webp",
+        img: la4,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_7c80c5e8beea41d79ee0c2169a586b7e~mv2.png/v1/fill/w_266,h_150,q_90/3fff3e_7c80c5e8beea41d79ee0c2169a586b7e~mv2.webp",
+        img: la5,
       },
     ],
   },
 
   {
-    imges:
-      "https://static.wixstatic.com/media/9aa0592cbdc1457089abf42b4929e03a.jpg/v1/fill/w_1442,h_616,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9aa0592cbdc1457089abf42b4929e03a.jpg",
-    imge1:
-      "https://static.wixstatic.com/media/9aa0592cbdc1457089abf42b4929e03a.jpg/v1/fill/w_751,h_524,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/9aa0592cbdc1457089abf42b4929e03a.jpg",
+    imges: banner6,
+    imge1: banner61,
     Typography: "Other",
     links: "/Other",
     Typography1:
@@ -389,13 +436,13 @@ const Data = [
 
     imagelogo: [
       {
-        img: "https://static.wixstatic.com/media/3fff3e_8af6aa80552c4376ad11b8591fedb6c2~mv2.png/v1/fill/w_266,h_150,q_90/3fff3e_8af6aa80552c4376ad11b8591fedb6c2~mv2.webp",
+        img: o1,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_556b709db3344b23b0ef899c603b0e73~mv2.png/v1/fill/w_264,h_150,q_90/3fff3e_556b709db3344b23b0ef899c603b0e73~mv2.webp",
+        img: o2,
       },
       {
-        img: "https://static.wixstatic.com/media/3fff3e_dad921b3f65a405fbdb3150e79266023~mv2.png/v1/fill/w_266,h_150,q_90/3fff3e_dad921b3f65a405fbdb3150e79266023~mv2.webp",
+        img: o3,
       },
     ],
   },

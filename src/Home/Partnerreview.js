@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Grid } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState, useRef } from "react";
 import { TypographyText } from "../Reusable/Reusable";
 import "slick-carousel/slick/slick.css";
@@ -14,7 +14,10 @@ import { Background, Parallax } from "react-parallax";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import { width } from "@mui/system";
+
+import banner7 from "../Assets/homepage/banner7.jpg";
+import banner71 from "../Assets/homepage/banner71.webp";
+
 function SamplePrevArrow(props) {
   const { style, onClick } = props;
   return (
@@ -50,6 +53,7 @@ const settings = {
   autoplay: true,
   speed: 2000,
   autoplaySpeed: 2000,
+
   responsive: [
     {
       breakpoint: 1024,
@@ -75,89 +79,16 @@ const settings = {
 const Partnerreview = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+  const islarge = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <>
-      {/* <Parallax
-        bgImage={
-          "https://static.wixstatic.com/media/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg/v1/fill/w_768,h_1048,fp_0.62_0.97,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_5cd79328eb33416983df16896216d1fb~mv2.jpg"
-        }
-        strength={300}
-        style={{
-          backgroundSize: "cover",
-          objectFit: "cover",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "bottom",
-        }}
-      >
-        <Grid
-          container
-          spacing={2}
-          className="large-header"
-          sx={{
-            height: !isSmallScreen ? "100vh" : "auto",
-            minHeight: !isSmallScreen ? "110vh" : "auto",
-          }}
-        >
-          <Box
-            sx={{
-              position: "absolute",
-              top: 0,
-              right: 0,
-              bottom: 0,
-              left: 0,
-              opacity: ".4",
-              backgroundColor: "#000000", // Adjust color and opacity as needed
-            }}
-          ></Box>
-
-          <Grid
-            container
-            Spacing={3}
-            sx={{ zIndex: 1, p: "12%", textAlign: "justify", zIndex: 100 }}
-          >
-            <Grid item xs={12}>
-              <Slider {...settings} className="slickheight">
-                {Data.map((post, index) => (
-                  <div>
-                    <Card sx={{ boxShadow: "none" }}>
-                      <CardContent>
-                        <TypographyText
-                          Typography={post.text}
-                          textAlign={"centre"}
-                          fontSize={"1.2rem"}
-                          color="#231F1E"
-                          fontWeight="700"
-                        />
-                      </CardContent>
-                    </Card>
-                    <TypographyText
-                      Typography={post.text2}
-                      textAlign={"right"}
-                      fontSize=".8rem"
-                      color="#231F1E"
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Parallax> */}
-
-      {/****************************************88 */}
-
       <Grid
         container
         spacing={0}
         className="large-header"
-        id='par'
+        id="par"
         index={7}
-        sx={{ height: !isSmallScreen ? "100vh" : "auto"  }}
+        sx={{ height: !isSmallScreen ? "100vh" : "auto" }}
       >
         <Grid
           item
@@ -167,8 +98,8 @@ const Partnerreview = () => {
           xs={12}
           sx={{
             backgroundImage: !isSmallScreen
-              ? `url(https://static.wixstatic.com/media/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg/v1/fill/w_1442,h_852,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg)`
-              : `url( https://static.wixstatic.com/media/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg/v1/fill/w_751,h_975,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3fff3e_613e85c3c543462088bd5c4152307ffe~mv2.jpg)`,
+              ? `url(${banner7})`
+              : `url( ${banner71})`,
             backgroundSize: "cover",
             objectFit: "cover",
             height: "100vh",
@@ -215,8 +146,8 @@ const Partnerreview = () => {
                       sx={{
                         bgcolor: "white",
                         margin: "10px",
-                        minHeight: "350px",
-                        p: "3%",
+                        minHeight: "370px",
+                        p: "5%",
                       }}
                     >
                       <Card
@@ -242,24 +173,28 @@ const Partnerreview = () => {
                         <CardContent sx={{ zIndex: 50 }}>
                           <TypographyText
                             Typography={post.text}
-                            textAlign={"centre"}
+                            textAlign={"left"}
                             color="#231F1E"
+                            fontSize=".8rem"
+                            // fontWeight="400"
+                          />
+                          <br />
+                          <br />
+                          <TypographyText
+                            Typography={post.text1}
+                            textAlign={"right"}
                             fontWeight="400"
+                            fontSize=".9rem"
+                            color="gray"
+                          />
+                          <TypographyText
+                            Typography={post.text2}
+                            textAlign={"right"}
+                            color="black"
+                            fontSize=".75rem"
                           />
                         </CardContent>
-                        <TypographyText
-                          Typography={post.text1}
-                          textAlign={"right"}
-                          variant={"h6"}
-                          color="#231F1E"
-                        />
                       </Card>
-                      <TypographyText
-                        Typography={post.text2}
-                        textAlign={"right"}
-                        fontSize="1.2rem"
-                        color="black"
-                      />
                     </Box>
                   </div>
                 ))}
@@ -271,7 +206,7 @@ const Partnerreview = () => {
       {/********************last**************************** */}
       <Grid
         container
-        Spacing={3}
+        // Spacing={3}
         sx={{ bgcolor: "#C8C8C8", margin: "auto", justifyContent: "center" }}
       >
         <Grid
@@ -308,7 +243,10 @@ const Partnerreview = () => {
             }
             alt=""
             width={"100%"}
-            height={!isSmallScreen ? "500px" : "100%"}
+            height={
+              // !isSmallScreen ? "600px" :
+              "100%"
+            }
           />
         </Grid>
       </Grid>
@@ -319,6 +257,21 @@ const Partnerreview = () => {
 export default Partnerreview;
 
 const Data = [
+  {
+    text: (
+      <>
+        Wishing Toycity on their 7th Anniversary, they are true partners in
+        business, with immense knowledge in Toys for KSA market, catering from
+        infants to adolescence. Having leading brands from educational toys for
+        the development of children to the latest recreational toys. Dedicated,
+        passionate and committed team with worlds leading brands is their recipe
+        for success.Wishing continued success!
+      </>
+    ),
+    text1: "Skysales",
+
+    text2: "Saudia catering",
+  },
   {
     text: (
       <>

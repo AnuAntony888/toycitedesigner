@@ -3,7 +3,8 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, CardMedia, Grid } from "@mui/material";
 import { TypographyText } from "../Reusable/Reusable";
-
+import abou2 from '../Assets/abou/abou2.jpg'
+import abou3 from '../Assets/abou/Header 1.webp'
 const Aboutus = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -12,46 +13,59 @@ const Aboutus = () => {
     // Scroll to the top of the page on component mount (page load)
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, []);
   return (
     <>
-      <Grid container spacing={0}>
-        <Grid item xs={12} lg={6} md={6} sm={12}>
-          <Box sx={{ pt: "20%", pl: "10%", pr: "10%" }}>
-            <TypographyText
-              Typography={<>About Us</>}
-              textAlign="left"
-              color="black"
-              fontWeight="400"
-              variant={!isSmallScreen ? "h2" : "h5"}
-            />
-            <br />
-            <TypographyText
-              Typography={
-                <>
-                  As a specialized distributor in Saudi Arabia, we transcend
-                  conventional'selling' by addressing the unique needs of
-                  specialty stores, standalone outlets, and travel retail
-                  venues. Our unwavering focus on the Saudimarket drives our
-                  success, forging strong partnerships with retailersand
-                  securing widespread brand visibility nationwide, resulting in
-                  primein-store positioning.
-                </>
-              }
-              textAlign="left"
-              color="black"
-              fontWeight="400"
-            />
-          </Box>
-          <br />         <br />
+      <Box sx={{ position: "relative", textAlign: "center" }}>
+        <img
+          src="https://babystreet.althemist.com/wp-content/uploads/2019/02/babystreet-title-background.jpg" // Replace with your image path
+          alt="Your Image Alt Text"
+          style={{
+            width: "100%",
+            height: "100vh",
+
+            opacity: ".8",
+          }}
+        />
+        <Box
+          style={{
+            position: "absolute",
+
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <TypographyText
+            Typography={<>About Us</>}
+            fontWeight="400"
+            variant={!isSmallScreen ? "h2" : "h4"}
+          />
+
           <br />
-        </Grid>
-        <Grid item xs={6}></Grid>
+          <TypographyText
+            Typography={
+              <>
+                As a specialized distributor in Saudi Arabia, we transcend
+                conventional'selling' by addressing the unique needs of
+                specialty stores, standalone outlets, and travel retail venues.
+                Our unwavering focus on the Saudimarket drives our success,
+                forging strong partnerships with retailersand securing
+                widespread brand visibility nationwide, resulting in
+                primein-store positioning.
+              </>
+            }
+          />
+        </Box>
+      </Box>
+      {/********************************************************** */}
+      <Grid container spacing={0}>
+    
         <Grid item xs={12}>
           <img
-            src="https://static.wixstatic.com/media/3fff3e_1dea05d193b84810a7ad8efca488e864~mv2.jpg/v1/fill/w_1318,h_789,al_c,q_85,enc_auto/shanghai-aerial-sunset.jpg"
+            src={abou2}
             alt=""
             width={"100%"}
             height={"100%"}
@@ -103,10 +117,10 @@ const Aboutus = () => {
           {!isSmallScreen ? (
             <div className="image-container">
               <img
-                src="https://static.wixstatic.com/media/329129_603e03c6216947f88ccb02b8c6cafca6~mv2.jpg/v1/fill/w_682,h_2160,al_c,q_85,enc_auto/Header%201.jpg"
+                src={abou3}
                 alt="First Image"
                 className="base-image"
-                style={{height:islargeScreen ? '100%':'680px'}}
+                style={{ height: islargeScreen ? "100%" : "640px" }}
               />
 
               <img

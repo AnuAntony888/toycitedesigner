@@ -73,12 +73,12 @@ export default function Header() {
                         <div class="verticalline"></div>
                       </Button>
                     ))}
-                    <Button
+                    {/* <Button
                       className="buttton_eader"
                       onClick={() => setopenpopup(true)}
                     >
                       Contact
-                    </Button>
+                    </Button> */}
                   </div>
                 </Box>
               </>

@@ -2,6 +2,7 @@ import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { TypographyText } from '../Reusable/Reusable'
+import { Link } from 'react-router-dom'
 
 const Footers = () => {
   return (
@@ -18,7 +19,8 @@ const Footers = () => {
         <br/>
         <br/>
                <TypographyText
-          Typography={<>© 2024 by Toycity. Created on Editor X by Pinto Prasenan.</>}
+            Typography={<>© 2024 by Toycity. Created  by
+          <Link to='https://vedaham.xyz/'> VBS</Link>    </>}
       
           fontSize='0.8rem'
           textAlign="centre"
