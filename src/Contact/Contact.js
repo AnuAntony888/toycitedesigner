@@ -344,7 +344,7 @@ const Contact = () => {
             >
               <Box sx={{ p: "10px" }}>
                 <TypographyText
-                  Typography={<> Corporate Office</>}
+                  Typography={<> Saudi Distribution Office</>}
                   fontWeight="400"
                   fontSize="1.2rem"
                   textAlign="left"
@@ -354,13 +354,9 @@ const Contact = () => {
                   Typography={
                     <>
                       {" "}
-                      Family Active Sports Equipment Trading LLC
+                      Al Khomra, Faisal St, PO Box No : 14335
                       <br />
-                      B62 Building, Office No 215,
-                      <br />
-                      Riggat Al Buteen, Deira,
-                      <br />
-                      Dubai, United Arab Emirates.
+                      Jeddah, Kingdom of Saudi Arabia.
                     </>
                   }
                   fontWeight="400"
@@ -378,7 +374,7 @@ const Contact = () => {
             >
               <Box sx={{ p: "10px" }}>
                 <TypographyText
-                  Typography={<> Saudi Distribution Office</>}
+                  Typography={<> Corporate Office</>}
                   fontWeight="400"
                   fontSize="1.2rem"
                   textAlign="left"
@@ -388,9 +384,13 @@ const Contact = () => {
                   Typography={
                     <>
                       {" "}
-                      Al Khomra, Faisal St, PO Box No : 14335
+                      Toycity International  Trading LLC
                       <br />
-                      Jeddah, Saudi Arabia.
+                      B62 Building, Office No 215,
+                      <br />
+                      Riggat Al Buteen, Deira,
+                      <br />
+                      Dubai, United Arab Emirates.
                     </>
                   }
                   fontWeight="400"
@@ -399,6 +399,7 @@ const Contact = () => {
                 />
               </Box>
             </Grid>
+          
             <Grid
               item
               xs={12}

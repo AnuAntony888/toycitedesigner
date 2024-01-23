@@ -1,6 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Toycity",
+  "name": "Toycity",
+  "display": "standalone",
+    "start_url": "https://www.toycity.me/",
+    "prefer_related_applications": true,
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +21,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
+
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }

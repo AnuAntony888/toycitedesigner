@@ -31,15 +31,15 @@ const Navigate = () => {
       <Routes>
       <Route path="/" element={<Home/>}></Route> 
       <Route path="/aboutus" element={<Aboutus/>}></Route> 
-        <Route path="/Pre-School" element={<Primaryscool />}></Route>  
-        <Route path="/Collectibles" element={<Collectibles/>}></Route>  
-        <Route path="/RCToys" element={<RCToys />}></Route> 
-        <Route path="/Cosmetics" element={<Cosmetics />}></Route> 
-        <Route path="/LearningArtandCrafts" element={<Learning />}></Route> 
-        <Route path="/Other" element={<Other />}></Route>
-        <Route path="/NewsandEvents" element={<NewsandEvents />}></Route>
-        <Route path="/Contact" element={<Contact />}></Route>
-        <Route path="/RetailPartners" element={<Ourretail />}></Route>
+        <Route path="/pre-school" element={<Primaryscool />}></Route>  
+        <Route path="/collectibles" element={<Collectibles/>}></Route>  
+        <Route path="/rctoys" element={<RCToys />}></Route> 
+        <Route path="/cosmetics" element={<Cosmetics />}></Route> 
+        <Route path="/learningartandcrafts" element={<Learning />}></Route> 
+        <Route path="/other" element={<Other />}></Route>
+        <Route path="/newsandevents" element={<NewsandEvents />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/retailpartners" element={<Ourretail />}></Route>
         {/* <Route path="/Contactus" element={<Contactus />}></Route> */}
       </Routes>
 

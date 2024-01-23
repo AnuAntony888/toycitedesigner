@@ -261,12 +261,15 @@ const Data = [
   {
     text: (
       <>
-        Wishing Toycity on their 7th Anniversary, they are true partners in
+        "Wishing Toycity on their 7th Anniversary, they are true partners in
         business, with immense knowledge in Toys for KSA market, catering from
         infants to adolescence. Having leading brands from educational toys for
         the development of children to the latest recreational toys. Dedicated,
         passionate and committed team with worlds leading brands is their recipe
-        for success.Wishing continued success!
+        for success.Wishing continued success!"
+        <br />
+        Jude Kumar -Director - Category and Shopper Development
+
       </>
     ),
     text1: "Skysales",

@@ -102,7 +102,7 @@ const Primaryscool = () => {
           variant={!isSmallScreen ? "h2" : "h5"}
         />
         <Link
-          to="/Collectibles
+          to="/collectibles
 "
         >
           <EastIcon

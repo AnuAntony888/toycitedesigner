@@ -63,7 +63,7 @@ const Other = () => {
           backgroundColor: "#EEEEEE",
         }}
       ><br/><br/><br/><br/>
-        <Link to="/LearningArtandCrafts">
+        <Link to="/learningartandcrafts">
           <WestIcon
             sx={{
               width: isSmallScreen ? "1em" : "2em",
@@ -79,7 +79,7 @@ const Other = () => {
           variant={!isSmallScreen ? "h2" : "h5"}
         />
         <Link
-          to="/Pre-School
+          to="/pre-school
 "
         >
           <EastIcon

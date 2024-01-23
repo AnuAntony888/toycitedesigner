@@ -336,7 +336,7 @@ const Data = [
     ],
   },
   {
-    links: "/Collectibles",
+    links: "/collectibles",
     imges: banner2,
     imge1: banner2,
     Typography: "Collectibles",
@@ -356,7 +356,7 @@ const Data = [
     ],
   },
   {
-    links: "/RCToys",
+    links: "/rctoys",
     imges: banner3,
     imge1: banner31,
     Typography: "RC Toys",
@@ -377,7 +377,7 @@ const Data = [
   },
 
   {
-    links: "/Cosmetics",
+    links: "/cosmetics",
     imges: banner4,
     imge1: banner41,
     Typography: "Cosmetics",
@@ -402,7 +402,7 @@ const Data = [
 
   {
     imges: banner5,
-    links: "/LearningArtandCrafts",
+    links: "/learningartandcrafts",
     imge1: banner51,
     Typography: "Learning, Art and Crafts",
     Typography1:
@@ -431,7 +431,7 @@ const Data = [
     imges: banner6,
     imge1: banner61,
     Typography: "Other",
-    links: "/Other",
+    links: "/other",
     Typography1:
       "Discover a world of play in our Toy Kingdom! From timeless classics to cutting-edge wonders, our toy category is a gateway to endless joy. Elevate playtime with the best in fun and excitement.",
 

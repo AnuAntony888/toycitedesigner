@@ -104,9 +104,9 @@ export default function Header() {
 export const navItems = [
   <Link to="/">Home</Link>,
   <Link to={"/aboutus"}>About Us</Link>,
-  <Link to={"/RetailPartners"}>Retail Partner</Link>,
-  <Link to={"/NewsandEvents"}>News and Events</Link>,
-  <Link to={"/Contact"}>Contact</Link>,
+  <Link to={"/retailpartners"}>Retail Partner</Link>,
+  <Link to={"/newsandevents"}>News and Events</Link>,
+  <Link to={"/contact"}>Contact</Link>,
 
   // <a href="#" onClick={openPopup}>Contact</a>,
 ];

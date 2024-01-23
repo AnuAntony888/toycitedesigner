@@ -194,6 +194,7 @@ const NewsandEvents = () => {
                     boxShadow: "none",
                   }}
                 >
+               
                   <TypographyText
                     Typography={data.tex1}
                     fontWeight="400"
@@ -202,6 +203,7 @@ const NewsandEvents = () => {
                     color="#EEEEEE"
                   />{" "}
                   <br />
+                  
                   <TypographyText
                     Typography={data.tex3}
                     fontWeight="400"
@@ -209,23 +211,27 @@ const NewsandEvents = () => {
                     variant={"h6"}
                   />
                   <br />
-                  <TypographyText
-                    Typography={data.tex2}
-                    textAlign="left"
-                    fontSize=".9rem"
-                  />{" "}
-                  <br />
                   <CardMedia
                     sx={{ height: 200 }}
                     image={data.img}
                     title="green iguana"
                   />
+              
+              
+                
                   <br />
                   <TypographyText
                     Typography={data.tex4}
                     fontSize=".8rem"
                     textAlign="left"
                   />
+                     <br />
+                      <TypographyText
+                    Typography={data.tex2}
+                    textAlign="left"
+                    fontSize=".9rem"
+                  />{" "}
+               
                 </Card>
               </Grid>
             ))}
@@ -242,7 +248,7 @@ const Data = [
     backgroundColor: "#4F4D4D",
     tex1: "1 -",
     tex2: "PAW Patrol Mighty movie Launch event",
-    tex3: "we organized movie launch event wherein we invited influencers and general crowd via voucher promos that were given away at the stores. This launch event took place for 2 days at 2 different locations. We distributed goody bags, and had a photo booth installed",
+    tex3: "We organized movie launch event wherein we invited influencers and general crowd via voucher promos that were given away at the stores. This launch event took place for 2 days at 2 different locations. We distributed goody bags, and had a photo booth installed",
   },
   {
     backgroundColor: "#DEC5C5",

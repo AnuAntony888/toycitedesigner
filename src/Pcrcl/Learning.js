@@ -92,7 +92,7 @@ const Learning = () => {
         }}
       >
         <br /> <br /> <br /> <br />
-        <Link to="/Cosmetics">
+        <Link to="/cosmetics">
           <WestIcon
             sx={{
               width: isSmallScreen ? "1em" : "2em",
@@ -107,7 +107,7 @@ const Learning = () => {
           fontWeight="400"
           variant={!isSmallScreen ? "h2" : "h5"}
         />
-        <Link to="/Other">
+        <Link to="/other">
           <EastIcon
             sx={{
               width: isSmallScreen ? "1em" : "2em",

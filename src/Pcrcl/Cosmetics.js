@@ -67,7 +67,7 @@ const Cosmetics = () => {
       >
         <br /> <br />
         <br /> <br />
-        <Link to="/RCToys">
+        <Link to="/rctoys">
           <WestIcon
             sx={{
               width: isSmallScreen ? "1em" : "2em",
@@ -83,7 +83,7 @@ const Cosmetics = () => {
           variant={!isSmallScreen ? "h2" : "h5"}
         />
         <Link
-          to="/LearningArtandCrafts
+          to="/learningartandcrafts
 "
         >
           <EastIcon
