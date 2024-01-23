@@ -39,7 +39,7 @@ export default function Header() {
           sx={{
             width: "100%",
             minHeight: !matches ? "80px" : "120px",
-            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
             justifyContent: "space-between",
             position: "sticky !impoertant",
             top: "0px",

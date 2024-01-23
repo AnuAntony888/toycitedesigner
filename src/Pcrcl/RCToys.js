@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 
 import img1 from "../Assets/Pre School/Giggles-01-04.jpg";
 import img2 from "../Assets/Pre School/Funnybox-01.jpg";
-
+import airgo from '../Assets/Pre School/airog.mp4'
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const RCToys = () => {
@@ -26,7 +26,7 @@ const RCToys = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: 'https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4',
+      video: airgo,
       text1: "Airhog",
       text2:
         "Experience the thrill of high-speed racing and precision control with these innovative remote-controlled vehicles. From sleek designs to powerful performance, Airhogs RC toy cars bring excitement to every twist and turn.",
@@ -61,6 +61,8 @@ const RCToys = () => {
           backgroundColor: "#EEEEEE",
         }}
       >
+           <br/>     <br/>
+         <br/>     <br/>
         <Link to="/Collectibles">
           <WestIcon
             sx={{

@@ -3,8 +3,12 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, CardMedia, Grid } from "@mui/material";
 import { TypographyText } from "../Reusable/Reusable";
-import abou2 from '../Assets/abou/abou2.jpg'
-import abou3 from '../Assets/abou/Header 1.webp'
+import abou2 from "../Assets/abou/abou2.jpg";
+import abou3 from "../Assets/abou/Header 1.webp";
+import desktop from "../Assets/abou/Desktop.webp";
+import team from "../Assets/abou/Team Meeting.webp";
+import eader11 from "../Assets/abou/Header11.webp";
+import banner from "../Assets/About Us.webp";
 const Aboutus = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -18,60 +22,108 @@ const Aboutus = () => {
   }, []);
   return (
     <>
-      <Box sx={{ position: "relative", textAlign: "center" }}>
-        <img
-          src="https://babystreet.althemist.com/wp-content/uploads/2019/02/babystreet-title-background.jpg" // Replace with your image path
-          alt="Your Image Alt Text"
-          style={{
-            width: "100%",
-            height: "100vh",
+      {!isSmallScreen ? (
+        <Box sx={{ position: "relative", textAlign: "center" }}>
+          <img
+            src={banner} // Replace with your image path
+            alt="Your Image Alt Text"
+            style={{
+              width: "100%",
+              height: "100vh",
 
-            opacity: ".8",
-          }}
-        />
-        <Box
-          style={{
-            position: "absolute",
+              // opacity: ".8",
+            }}
+          />
+          <Box
+            style={{
+              position: "absolute",
 
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
+              top: "50%",
+              left: "71%",
+              transform: "translate(-29%, -50%)",
+            }}
+          >
+            <TypographyText
+              Typography={<>About Us</>}
+              fontWeight="400"
+              variant={!isSmallScreen ? "h2" : "h4"}
+              color="White"
+            />
+
+            <br />
+            <TypographyText
+              Typography={
+                <>
+                  As a specialized distributor in Saudi Arabia, we transcend
+                  conventional'selling' by addressing the unique needs of
+                  specialty stores, standalone outlets, and travel retail
+                  venues. Our unwavering focus on the Saudimarket drives our
+                  success, forging strong partnerships with retailersand
+                  securing widespread brand visibility nationwide, resulting in
+                  primein-store positioning.
+                </>
+              }
+              textAlign="left"
+              color="White"
+            />
+          </Box>
+        </Box>
+      ) : (
+        <>
+          {" "}
+          <Box sx={{ position: "relative", textAlign: "center" }}>
+            <img
+              src={banner} // Replace with your image path
+              alt="Your Image Alt Text"
+              style={{
+                width: "100%",
+                height: "100vh",
+
+                opacity: ".8",
+              }}
+            />
+          </Box>
           <TypographyText
             Typography={<>About Us</>}
             fontWeight="400"
             variant={!isSmallScreen ? "h2" : "h4"}
           />
-
-          <br />
-          <TypographyText
-            Typography={
-              <>
-                As a specialized distributor in Saudi Arabia, we transcend
-                conventional'selling' by addressing the unique needs of
-                specialty stores, standalone outlets, and travel retail venues.
-                Our unwavering focus on the Saudimarket drives our success,
-                forging strong partnerships with retailersand securing
-                widespread brand visibility nationwide, resulting in
-                primein-store positioning.
-              </>
-            }
-          />
-        </Box>
-      </Box>
+        </>
+      )}
       {/********************************************************** */}
-      <Grid container spacing={0}>
-    
+      <Grid container spacing={5}>
         <Grid item xs={12}>
-          <img
-            src={abou2}
-            alt=""
-            width={"100%"}
-            height={"100%"}
-          />
+          <Box sx={{ p: "5%" }}>
+            <TypographyText
+              Typography={<>7 Years, 6.5 million happy faces and counting</>}
+              textAlign="centre"
+              color="black"
+              fontWeight="400"
+              variant={!isSmallScreen ? "h4" : "h5"}
+            />
+            <br />
+            <TypographyText
+              Typography={
+                <>
+                  We have been creating engaging experiences for kids of all
+                  ages over the last 7 years, bringing fun and curiosity to over
+                  6.5 million young minds. This achievement stems from the
+                  invaluable support of our esteemed partners and customers. It
+                  marks a milestone toward a brighter and more inspired future
+                  as we continue our journey to enrich the lives of children.
+                  Our brand portfolio is diverse and spans all key toy
+                  categories with favorable strategic placements in all relevant
+                  channels, including specialty stores, hypermarkets, book
+                  stores, travel retail stores and much more.
+                </>
+              }
+              textAlign="centre"
+              color="black"
+              fontWeight="400"
+              // variant={!isSmallScreen ? "h4" : "h5"}
+            />
+          </Box>
         </Grid>
-
         {/************************************ */}
         <Grid item xs={12} lg={7} md={7} sm={12}>
           <Box sx={{ p: "10%" }}>
@@ -120,40 +172,33 @@ const Aboutus = () => {
                 src={abou3}
                 alt="First Image"
                 className="base-image"
-                style={{ height: islargeScreen ? "100%" : "640px" }}
+                style={{
+                  height: islargeScreen ? "100%" : "640px",
+                }}
               />
 
               <img
-                src="https://static.wixstatic.com/media/329129_e166826dc9614125863d062fc77989f1~mv2.png/v1/fill/w_876,h_518,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Desktop.png" // Replace with your third image URL
+                src={desktop} // Replace with your third image URL
                 alt="Third Image"
                 className="bottom-image"
               />
-              <img
-                src="https://static.wixstatic.com/media/11062b_1520e6a9eda64a5483778167ada87f73~mv2.jpg/v1/fill/w_960,h_614,fp_0.63_0.35,q_85,usm_0.66_1.00_0.01,enc_auto/Team%20Meeting.jpg"
-                alt="Second Image"
-                className="overlay-image"
-              />
+              <img src={team} alt="Second Image" className="overlay-image" />
             </div>
           ) : (
             <div className="image-container1">
-              <img
-                src="https://static.wixstatic.com/media/329129_603e03c6216947f88ccb02b8c6cafca6~mv2.jpg/v1/fill/w_640,h_660,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Header%201.jpg"
-                alt="First Image1"
-                className="base-image1"
-              />
+              <img src={eader11} alt="First Image1" className="base-image1" />
 
               <img
-                src="https://static.wixstatic.com/media/329129_e166826dc9614125863d062fc77989f1~mv2.png/v1/fill/w_876,h_518,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Desktop.png" // Replace with your third image URL
+                src={desktop} // Replace with your third image URL
                 alt="Third Image1"
                 className="bottom-image1"
               />
-              <img
-                src="https://static.wixstatic.com/media/11062b_1520e6a9eda64a5483778167ada87f73~mv2.jpg/v1/fill/w_960,h_614,fp_0.63_0.35,q_85,usm_0.66_1.00_0.01,enc_auto/Team%20Meeting.jpg"
-                alt="Second Image1"
-                className="overlay-image1"
-              />
+              <img src={team} alt="Second Image1" className="overlay-image1" />
             </div>
           )}
+        </Grid>
+        <Grid item xs={12}>
+          <img src={abou2} alt="" width={"100%"} height={"100%"} />
         </Grid>
       </Grid>
     </>

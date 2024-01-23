@@ -18,8 +18,10 @@ import PhoneIcon from "@mui/icons-material/Phone";
 
 import { useTheme } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
-
+import bannr from "../Assets/Contact Us.webp";
+import bannr1 from "../Assets/4.webp";
 import { Buttons, TypographyText } from "../Reusable/Reusable";
+import { Link } from "react-router-dom";
 const Contact = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -117,38 +119,74 @@ const Contact = () => {
   ];
   return (
     <div>
-      <Box sx={{ position: "relative", textAlign: "center" }}>
-        <img
-          src="https://babystreet.althemist.com/wp-content/uploads/2019/02/babystreet-title-background.jpg" // Replace with your image path
-          alt="Your Image Alt Text"
-          style={{
-            width: "100%",
-            height: "100vh",
-
-            opacity: ".8",
-          }}
-        />
-        <Box
-          style={{
-            position: "absolute",
-
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <TypographyText
-            Typography={<>Contact Us</>}
-            fontWeight="400"
-            variant={!isSmallScreen ? "h2" : "h4"}
+      {!isSmallScreen ? (
+        <Box sx={{ position: "relative", textAlign: "center" }}>
+          <img
+            src={bannr} // Replace with your image path
+            alt="Your Image Alt Text"
+            style={{
+              width: "100%",
+              height: "100vh",
+            }}
           />
+          <Box
+            style={{
+              position: "absolute",
+
+              top: "35%",
+              left: "45%",
+              transform: "translate(50%, -50%)",
+            }}
+          >
+            <TypographyText
+              Typography={<>Contact Us</>}
+              fontWeight="400"
+              variant={!isSmallScreen ? "h2" : "h4"}
+              color="White"
+            />
+
+            <br />
+          </Box>
+        </Box>
+      ) : (
+        <>
+          {" "}
+          <Box sx={{ position: "relative", textAlign: "center" }}>
+            <img
+              src={bannr1} // Replace with your image path
+              alt="Your Image Alt Text"
+              style={{
+                width: "100%",
+                height: "100vh",
+
+                // opacity: ".8",
+              }}
+            />
+            h
+          </Box>
           <br />
+        </>
+      )}
+
+      {/****************************************** */}
+
+      <Grid
+        container
+        spacing={5}
+        sx={{
+          pl: "8%",
+          pr: "8%",
+          pt: "2%",
+          pb: "2%",
+        }}
+      >
+        <Grid item xs={12} md={12} lg={12} sm={12}>
           <TypographyText
             Typography={<>Have a Question?</>}
             fontWeight="400"
-            variant={!isSmallScreen ? "h3" : "h5"}
+            variant={!isSmallScreen ? "h4" : "h5"}
           />
-          <br />
+
           <br />
           <TypographyText
             Typography={
@@ -160,17 +198,7 @@ const Contact = () => {
               </>
             }
           />
-        </Box>
-      </Box>
-      {/****************************************** */}
-
-      <Grid
-        container
-        spacing={5}
-        sx={{
-          p: "8%",
-        }}
-      >
+        </Grid>
         {/**********************section1************************************ */}
         <Grid item xs={12} md={12} lg={6} sm={12}>
           <Grid container spacing={2}>
@@ -254,6 +282,39 @@ const Contact = () => {
                 </Grid>
               </Grid>
             </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={12}
+              md={12}
+              sx={{
+                border: "dashed 2px lightgray",
+                margin: "10px",
+                bgcolor: "#F3C82B",
+              }}
+            >
+              <Box sx={{ p: "10px" }}>
+                <TypographyText
+                  Typography={
+                    <>
+                      Are you a “Mommy Blogger or social influencer?” Do you
+                      love stylish kids toys as we do? We are looking for
+                      bloggers or trendy moms that would love to share their
+                      style with our matching models. Please,
+                      <Link
+                        to={`mailto:rajiv@toycity.me`}
+                        style={{ textDecoration: "underline black" }}
+                      >
+                        {" "}
+                        Contact us here{" "}
+                      </Link>{" "}
+                      for more information.
+                    </>
+                  }
+                  textAlign="left"
+                />
+              </Box>
+            </Grid>
           </Grid>
         </Grid>
         {/************************************ */}
@@ -278,71 +339,99 @@ const Contact = () => {
               md={12}
               sx={{ border: "dashed 2px lightgray", margin: "10px" }}
             >
-              <Box sx={{ p: '10px' }}>
-              <TypographyText
-                Typography={<>  Corporate Office</>}
-                fontWeight="400"
-                fontSize="1.2rem"
+              <Box sx={{ p: "10px" }}>
+                <TypographyText
+                  Typography={<> Corporate Office</>}
+                  fontWeight="400"
+                  fontSize="1.2rem"
                   textAlign="left"
-                  
-              />
-            
-              <TypographyText
-                Typography={<> PO Box No : 87665, Suite No : 521, Block B,
-                  <br />
-                  Business Village, Opp Clock Tower, Deira,
-                  <br />
-                    Dubai, United Arab Emirates.
-                    <br /> <br />
-                  </>}
-                fontWeight="400"
-                color='gray'
-                  textAlign="left"
-                
                 />
-          
-              </Box>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              lg={12}
-              md={12}
-              sx={{ border: "dashed 2px lightgray", margin: "10px" ,bgcolor:'#FAFAFA'}}
-            >
-              <Box sx={{ p: '10px' }}>
-                              <TypographyText
-                Typography={<>Retail Dealer Inquiries</>}
-                fontWeight="400"
-                fontSize="1.2rem"
-                  textAlign="left"
-                  
-                />
-                
-                <p style={{ color: 'gray', fontWeight: '400', textAlign: 'left' }}>If you’re interested in wholesale orders or dealership opportunities and offers, 
-                <span style={{textDecoration:'underline black'}}> contact us here </span></p>
-        
-          
-              </Box>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              lg={12}
-              md={12}
-              sx={{ border: "dashed 2px lightgray", margin: "10px" ,bgcolor:'#F3C82B'}}
-            >
-              <Box sx={{ p: '10px' }}>
-                              <TypographyText
-                Typography={<>Brand Ambassador Program</>}
-                fontWeight="400"
-                fontSize="1.2rem"
-                  textAlign="left"
-                  
-                />
-                <p style={{ color: 'gray', fontWeight: '400', textAlign: 'left' }}>Are you a “Mommy Blogger or social influencer?” Do you love stylish kids clothes as we do? We are looking for bloggers or trendy moms that would love to share their style with our matching models. Please,
-                <span style={{textDecoration:'underline black'}}> Contact us here </span>for more information.</p>
 
+                <TypographyText
+                  Typography={
+                    <>
+                      {" "}
+                      Family Active Sports Equipment Trading LLC
+                      <br />
+                      B62 Building, Office No 215,
+                      <br />
+                      Riggat Al Buteen, Deira,
+                      <br />
+                      Dubai, United Arab Emirates.
+                    </>
+                  }
+                  fontWeight="400"
+                  color="gray"
+                  textAlign="left"
+                />
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={12}
+              md={12}
+              sx={{ border: "dashed 2px lightgray", margin: "10px" }}
+            >
+              <Box sx={{ p: "10px" }}>
+                <TypographyText
+                  Typography={<> Saudi Distribution Office</>}
+                  fontWeight="400"
+                  fontSize="1.2rem"
+                  textAlign="left"
+                />
+
+                <TypographyText
+                  Typography={
+                    <>
+                      {" "}
+                      Al Khomra, Faisal St, PO Box No : 14335
+                      <br />
+                      Jeddah, Saudi Arabia.
+                    </>
+                  }
+                  fontWeight="400"
+                  color="gray"
+                  textAlign="left"
+                />
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={12}
+              md={12}
+              sx={{
+                border: "dashed 2px lightgray",
+                margin: "10px",
+                bgcolor: "#FAFAFA",
+              }}
+            >
+              <Box sx={{ p: "10px" }}>
+                <TypographyText
+                  Typography={<>Retail Dealer Inquiries</>}
+                  fontWeight="400"
+                  fontSize="1.2rem"
+                  textAlign="left"
+                />
+
+                <TypographyText
+                  Typography={
+                    <>
+                      If you’re interested in wholesale orders or bulk purchase
+                      opportunities and offers,
+                      <Link
+                        to={`mailto:rajiv@toycity.me`}
+                        style={{ textDecoration: "underline black" }}
+                      >
+                        {" "}
+                        contact us here
+                      </Link>
+                    </>
+                  }
+                  color="gray"
+                  textAlign="left"
+                />
               </Box>
             </Grid>
           </Grid>

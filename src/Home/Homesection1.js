@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-
+import video from '../Assets/homepage/video1.mp4'
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { TypographyText } from "../Reusable/Reusable";
@@ -60,7 +60,7 @@ const Homesection1 = () => {
             }}
           >
             <source
-              src="https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4"
+              src={video}
               type="video/mp4"
             />
             Your browser does not support the video tag.

@@ -1,14 +1,4 @@
-// import React from 'react'
 
-// const Collectibles = () => {
-//   return (
-//     <div>
-//       sssssss
-//     </div>
-//   )
-// }
-
-// export default Collectibles
 
 import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -16,13 +6,8 @@ import { useTheme } from "@mui/material/styles";
 import { Box, Grid } from "@mui/material";
 import { TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
-import pp1 from "../Assets/Pre School/pp1.mp4";
-import pp2 from "../Assets/Pre School/GDP.mp4";
-import pp3 from "../Assets/Pre School/Clubpetz.mp4";
-import img1 from "../Assets/Pre School/PPMM.jpg";
-import img2 from "../Assets/Pre School/Giggles.jpg";
-import img3 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
-import img4 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
+import monster from '../Assets/Pre School/monster.mp4'
+import baku from '../Assets/Pre School/baku.mp4'
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const Collectibles = () => {
@@ -37,13 +22,13 @@ const Collectibles = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: 'https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4',
+      video: monster,
       text1: "Monster JAM",
       text2:
         "Monster Jam lets you create your own epic stunts, just like the live show! Take control with our RC vehicles, go all out with our playsets, and collect all of our authentic trucks. Real toys, real action, Monster Jam!",
     },
     {
-      video: 'https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4',
+      video: baku,
       text1: "Bakugan",
       text2:
         "Inspired by the hit animated series, Bakugan toys offer thrilling strategic gameplay and fierce competition. Collect, roll, and transform these magnetic creatures to conquer the Bakugan battlefield. Dive into the action-packed world of Bakugan with our extensive collection of Bakugan toys.",
@@ -53,9 +38,9 @@ const Collectibles = () => {
 
   const Data1 = [
     {
-      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
+      img: '',
   
-      text1: "Hatchimals Alive",
+      text1: "Wizarding World",
       text2:
         "Unwrap the excitement as these adorable Hatchimals reveal their unique personalities and interactive features. Stay tuned for the latest additions to the Hatchimals family!",
     },
@@ -74,6 +59,8 @@ const Collectibles = () => {
           backgroundColor: "#EEEEEE",
         }}
       >
+          <br/>     <br/>
+         <br/>     <br/>
         <Link to="/Pre-School">
           <WestIcon
             sx={{

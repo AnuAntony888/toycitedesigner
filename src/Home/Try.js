@@ -31,7 +31,7 @@ import pp6 from '../Assets/homelogo/17.png'
 
 import cc1 from '../Assets/homelogo/4.png'
 import cc2 from '../Assets/homelogo/2.png'
-import cc3 from '../Assets/homelogo/3.png'
+import cc3 from '../Assets/homelogo/WWO_HP_Wand_Logo.webp'
 
 import rc1 from '../Assets/homelogo/29.png'
 import rc2 from '../Assets/homelogo/28.png'

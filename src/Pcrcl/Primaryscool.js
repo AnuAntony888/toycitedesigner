@@ -10,7 +10,7 @@ import pp3 from "../Assets/Pre School/Clubpetz.mp4";
 import img1 from "../Assets/Pre School/PPMM.jpg";
 import img2 from "../Assets/Pre School/Giggles.jpg";
 import img3 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
-import img4 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
+import img4 from "../Assets/Pre School/win.jpg";
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const Primaryscool = () => {
@@ -64,7 +64,7 @@ const Primaryscool = () => {
         "Toy Collection! Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film.",
     },
     {
-      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
+      img: img4,
       text1: "Winfun",
       text2:
         "WinFun Toys captivate young minds with innovative designs, educational value, and endless fun. From interactive learning gadgets to whimsical playsets, WinFun Toys redefine playtime, sparking imagination and joy in every child.",
@@ -80,8 +80,11 @@ const Primaryscool = () => {
           margin: "auto",
           pt: !isSmallScreen ? "120px" : "80px",
           backgroundColor: "#EEEEEE",
+          
         }}
       >
+         <br/>     <br/>
+         <br/>     <br/>
         <Link to="/">
           <WestIcon
             sx={{
@@ -108,6 +111,7 @@ const Primaryscool = () => {
             }}
           />
         </Link>
+  
       </Box>
       <Grid
         container

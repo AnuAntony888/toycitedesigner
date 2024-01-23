@@ -4,6 +4,8 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Card, CardContent, CardMedia, Grid } from "@mui/material";
 import { Box } from "@mui/system";
+import banner from '../Assets/News & Events.webp'
+import banner1 from '../Assets/2.webp'
 const NewsandEvents = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -11,50 +13,101 @@ const NewsandEvents = () => {
     // Scroll to the top of the page on component mount (page load)
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, []);
   return (
     <>
-      <Box sx={{ position: "relative", textAlign: "center" }}>
-        <img
-          src="https://static.wixstatic.com/media/2dbb4011b6df44a5a08e88470cd37b08.jpg/v1/fill/w_1152,h_1389,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/2dbb4011b6df44a5a08e88470cd37b08.jpg" // Replace with your image path
-          alt="Your Image Alt Text"
-          style={{
-            width: "100%",
-            height: "100vh",
-
-            opacity: ".5",
-          }}
-        />
-        <Box
-          style={{
-            position: "absolute",
-
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        >
-          <TypographyText
-            Typography={<>News and Events</>}
-            fontWeight="400"
-            variant={!isSmallScreen ? "h2" : "h4"}
+      {!isSmallScreen ? (
+        <Box sx={{ position: "relative", textAlign: "center" }}>
+          <img
+            src={banner} // Replace with your image path
+            alt="Your Image Alt Text"
+            style={{
+              width: "100%",
+              height: "100vh",
+            }}
           />
-          <br />
+          <Box
+            style={{
+              position: "absolute",
+
+              top: "50%",
+              left: "50%",
+              transform: "translate(-10%, -50%)",
+            }}
+          >
+            <TypographyText
+              Typography={<>News and Events</>}
+              fontWeight="400"
+              variant={!isSmallScreen ? "h2" : "h4"}
+              color="#fff"
+            />
+
+            <br />
+            <TypographyText
+              textAlign="justify"
+              color="#fff"
+              Typography={
+                <>
+               This is your Services section introductory title. Add a short
+                text to introduce the types of services offered, and consider
+                highlighting any special benefits or features.
+                </>
+              }
+            />
+          </Box>
+        </Box>
+      ) : (
+        <>
+          {" "}
+          <Box sx={{ position: "relative", textAlign: "center" }}>
+            <img
+              src={banner1} // Replace with your image path
+              alt="Your Image Alt Text"
+              style={{
+                width: "100%",
+                height: "100vh",
+              }}
+            />
+
+            <Box
+              style={{
+                position: "absolute",
+
+                top: "25%",
+                left: "50%",
+                transform: "translate(-60%, -50%)",
+              }}
+            >
+              <TypographyText
+                Typography={<>News and Events</>}
+                fontWeight="400"
+                variant={!isSmallScreen ? "h2" : "h4"}
+                color="White"
+              />
+
+              <br />
+            </Box>
+          </Box>
+            <br />
+            <Box sx={{pl:'8%',pr:'8%',pt:'2%',pb:'2%'}}>
           <TypographyText
-            textAlign="justify"
-            Typography={
+            
+           Typography={
               <>
-                This is your Services section introductory title. Add a short
+             This is your Services section introductory title. Add a short
                 text to introduce the types of services offered, and consider
                 highlighting any special benefits or features.
               </>
             }
-          />
-        </Box>
-      </Box>
-      <Grid container spacing={0} sx={{pt:'5%',pb:'5%'}}>
+              />
+              </Box>
+        </>
+      )}
+     
+      <Grid container spacing={0} sx={{ pt: "5%", pb: "5%" }}>
+  
         {Data.map((data, index) => (
           <Grid
             item
@@ -65,7 +118,12 @@ const NewsandEvents = () => {
             style={{ backgroundColor: data.backgroundColor }}
           >
             <Card
-              sx={{ Width: "100%", backgroundColor: "transparent", p: "5%" }}
+              sx={{
+                Width: "100%",
+                backgroundColor: "transparent",
+                p: "5%",
+                boxShadow: "none",
+              }}
             >
               <CardContent>
                 <TypographyText
@@ -95,7 +153,14 @@ const NewsandEvents = () => {
           </Grid>
         ))}
 
-        <Grid item lg={4} md={4} sm={12} xs={12} sx={{pt:isSmallScreen?"5%":'20%'}} >
+        <Grid
+          item
+          lg={4}
+          md={4}
+          sm={12}
+          xs={12}
+          sx={{ pt: isSmallScreen ? "5%" : "20%" }}
+        >
           <TypographyText
             Typography={"Toycity – Latest News"}
             fontWeight="400"
@@ -106,12 +171,13 @@ const NewsandEvents = () => {
         <Grid item lg={8} md={8} sm={12} xs={12}>
           <Grid container spacing={0}>
             {Data1.map((data, index) => (
-              <Grid item lg={6} md={6} sm={6} xs={6}>
+              <Grid item lg={6} md={6} sm={6} xs={6} sx={{boxShadow:'0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)'}}>
                 <Card
                   sx={{
                     Width: "100%",
                     backgroundColor: "transparent",
                     p: "5%",
+                     boxShadow: "none",
                   }}
                 >
                   <TypographyText
@@ -123,16 +189,17 @@ const NewsandEvents = () => {
                   />{" "}
                   <br />
                   <TypographyText
-                    Typography={data.tex2}
-                    textAlign="left"
-                  />{" "}
-                  <br />
-                  <TypographyText
                     Typography={data.tex3}
                     fontWeight="400"
                     textAlign="left"
                     variant={"h6"}
                   />
+                  <br />
+                  <TypographyText
+                    Typography={data.tex2}
+                    textAlign="left"
+                    fontSize=".9rem"
+                  />{" "}
                   <br />
                   <CardMedia
                     sx={{ height: 200 }}
@@ -160,57 +227,65 @@ const Data = [
   {
     backgroundColor: "#4F4D4D",
     tex1: "1 -",
-    tex2: "Event Name",
-    tex3: "This is your Service description. Use this space to describe what the service entails, benefits for users and any other important information.",
+    tex2: "PAW Patrol Mighty movie Launch event",
+    tex3: "we organized movie launch event wherein we invited influencers and general crowd via voucher promos that were given away at the stores. This launch event took place for 2 days at 2 different locations. We distributed goody bags, and had a photo booth installed",
   },
   {
     backgroundColor: "#DEC5C5",
     tex1: "2 -",
-    tex2: "Event Name",
-    tex3: "This is your Service description. Use this space to describe what the service entails, benefits for users and any other important information.",
+    tex2: "PAW Patrol Meet and Greet ",
+    tex3: "To promote the might movie we also organized meet and greet in Riyadh and Jeddah. We identified few malls  with that had good footfall and organized meet and greets where children and parents can have a direct connect with the movie characters.",
   },
   {
     backgroundColor: "#000000",
     tex1: "3 -",
-    tex2: "Event Name",
-    tex3: "This is your Service description. Use this space to describe what the service entails, benefits for users and any other important information.",
+    tex2: "Gabby Meet and greet ",
+    tex3: "A meet and greet was organized for Gabby in the major malls of Jeddah and Riyadh",
   },
 ];
 
 const Data1 = [
   {
-    tex1: "12",
-    tex2: "September 12 ⏤ 2023",
-    tex3: "Top Tech Agencies",
+    tex1: "1",
+    tex2: (
+      <>
+        {" "}
+        26th September at Nakheel Mall, Muvi Cinema, Riyadh <br />
+        27th September, Mall of Arabia, Muvi cinema, Jeddah
+      </>
+    ),
+
+    tex3: "PAW Patrol Mighty movie Launch event",
     img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
-    tex4: "This is your News article. It’s a great place to highlight press coverage, newsworthy stories, industry updates or useful resources for visitors.",
-    },
-    {
-        tex1: "12",
-        tex2: "September 12 ⏤ 2023",
-        tex3: "Top Tech Agencies",
-        img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
-        tex4: "This is your News article. It’s a great place to highlight press coverage, newsworthy stories, industry updates or useful resources for visitors.",
-    },
-    {
-        tex1: "12",
-        tex2: "September 12 ⏤ 2023",
-        tex3: "Top Tech Agencies",
-        img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
-        tex4: "This is your News article. It’s a great place to highlight press coverage, newsworthy stories, industry updates or useful resources for visitors.",
-    },
-    {
-        tex1: "12",
-        tex2: "September 12 ⏤ 2023",
-        tex3: "Top Tech Agencies",
-        img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
-        tex4: "This is your News article. It’s a great place to highlight press coverage, newsworthy stories, industry updates or useful resources for visitors.",
-    },
-    {
-        tex1: "12",
-        tex2: "September 12 ⏤ 2023",
-        tex3: "Top Tech Agencies",
-        img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
-        tex4: "This is your News article. It’s a great place to highlight press coverage, newsworthy stories, industry updates or useful resources for visitors.",
-      },
+    tex4: "we organized movie launch event wherein we invited influencers and general crowd via voucher promos that were given away at the stores. This launch event took place for 2 days at 2 different locations. We distributed goody bags, and had a photo booth installed.",
+  },
+  {
+    tex1: "2",
+    tex2: <>	14th September, ELC, Nakheel Mall, Riyadh<br />
+  	15th September, Babyshop, Panorama Mall, Riyadh<br />
+    	16th September, Hi-kids, Al Makan Mall, Riyadh<br />
+    	21th September, ELC, Mall of Arabic, Jeddah<br />
+    	22th September, Danube, Red sea mall, Jeddah<br />
+    	23th September, Toy N Surprise, Gold Mor, Jeddah<br />
+    </>,
+    tex3: "PAW Patrol Meet and Greet ",
+    img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
+    tex4: "to promote the might movie we also organized meet and greet in Riyadh and Jeddah. We identified few malls  with that had good footfall and organized meet and greets where children and parents can have a direct connect with the movie characters.",
+  },
+  {
+    tex1: "3",
+    tex2: <>
+    	14th September, Babyshop, Jeddah Park, Jeddah<br />
+	15th September, Toy n Surprise Gold Mor, Jeddah<br />
+	16th September, Babyshop, Dome Center, Jeddah<br />
+	12th October, Babyshop, Exit 9, Riyadh<br />
+	19th October, Baby story, Riyadh<br />
+	27th October, Danube, Hayat Mall, Riyadh<br />
+
+</>,
+    tex3: "Gabby Meet and greet ",
+    img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
+    tex4: "A meet and greet was organized for Gabby in the major malls of Jeddah and Riyadh",
+  },
+  
 ];

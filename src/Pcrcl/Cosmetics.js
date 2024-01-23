@@ -1,17 +1,14 @@
-
 import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, Grid } from "@mui/material";
 import { TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
-import pp1 from "../Assets/Pre School/pp1.mp4";
-import pp2 from "../Assets/Pre School/GDP.mp4";
-import pp3 from "../Assets/Pre School/Clubpetz.mp4";
-import img1 from "../Assets/Pre School/PPMM.jpg";
-import img2 from "../Assets/Pre School/Giggles.jpg";
-import img3 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
-import img4 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
+
+import img1 from "../Assets/Pre School/Cosmetics Twinkle.webp";
+import img2 from "../Assets/Pre School/Cosmetics.webp";
+import img3 from "../Assets/Pre School/cosemetic.mp4";
+import img4 from "../Assets/Pre School/Cosmetics Shush.webp";
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const Cosmetics = () => {
@@ -19,44 +16,42 @@ const Cosmetics = () => {
     // Scroll to the top of the page on component mount (page load)
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, []);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: 'https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4',
+      video: img3,
       text1: "Townley",
       text2:
         "Explore a world of beauty and fun with Townley Girl, the captivating kids' cosmetics brand at Toycity. Offering a kaleidoscope of colors and safe formulations, Townley Girl lets young imaginations shine, transforming playtime into a vibrant and magical experience.",
     },
-    
-    ];
-    
+  ];
 
   const Data1 = [
     {
-      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
+      img: img1,
       text1: "Twinkle Twinkle",
       text2:
         "Twinkle Twinkle, the enchanting kids' cosmetics line at Toycity, adds a touch of magic to playtime. With vibrant colors and gentle formulas, these cosmetics are specially designed for little ones to explore their creativity and sparkle with joy.",
     },
     {
-      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
+      img: img2,
       text1: "Hot Focus",
       text2:
         "Shush, the delightful kids' cosmetics collection with us, whispers fun and imagination into playtime. Featuring safe and colorful formulations, Shush lets little ones express their creativity with a hush of excitement, making every moment enchanting.",
     },
-    
-    ];
-    const Data2 = [
-        {
-          img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
-          text1: "Shush!",
-          text2:
-            "Specially crafted for little stars, these kits offer a playful blend of safe, vibrant cosmetics, allowing kids to embrace their inner sparkle in the most delightful way.",
-        },]
+  ];
+  const Data2 = [
+    {
+      img: img4,
+      text1: "Shush!",
+      text2:
+        "Specially crafted for little stars, these kits offer a playful blend of safe, vibrant cosmetics, allowing kids to embrace their inner sparkle in the most delightful way.",
+    },
+  ];
   return (
     <>
       <Box
@@ -69,6 +64,8 @@ const Cosmetics = () => {
           backgroundColor: "#EEEEEE",
         }}
       >
+        <br /> <br />
+        <br /> <br />
         <Link to="/RCToys">
           <WestIcon
             sx={{
@@ -103,11 +100,11 @@ const Cosmetics = () => {
           pl: !isSmallScreen ? "20%" : "14%",
           pr: !isSmallScreen ? "20%" : "14%",
           pt: "6%",
-            pb: "5%",
-            justifyContent:"center", alignItems:"center"
+          pb: "5%",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-       
         {Data1.map((curelem, index) => (
           <>
             <Grid item xs={12} lg={6} md={6} sm={12} key={index}>
@@ -129,7 +126,7 @@ const Cosmetics = () => {
             </Grid>
           </>
         ))}
-               {Data.map((curelem, index) => (
+        {Data.map((curelem, index) => (
           <div style={{ padding: "5%" }}>
             <Grid item xs={12} lg={12} md={12} sm={12} key={index}>
               <video
@@ -162,7 +159,7 @@ const Cosmetics = () => {
             </Grid>
           </div>
         ))}
- {Data2.map((curelem, index) => (
+        {Data2.map((curelem, index) => (
           <>
             <Grid item xs={12} lg={6} md={6} sm={12} key={index}>
               <img src={curelem.img} alt="" width={"100%"} height={"auto"} />
@@ -189,4 +186,3 @@ const Cosmetics = () => {
 };
 
 export default Cosmetics;
-

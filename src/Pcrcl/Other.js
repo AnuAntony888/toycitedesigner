@@ -7,13 +7,10 @@ import { useTheme } from "@mui/material/styles";
 import { Box, Card, CardContent, Grid } from "@mui/material";
 import { TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
-import pp1 from "../Assets/Pre School/pp1.mp4";
-import pp2 from "../Assets/Pre School/GDP.mp4";
-import pp3 from "../Assets/Pre School/Clubpetz.mp4";
-import img1 from "../Assets/Pre School/PPMM.jpg";
-import img2 from "../Assets/Pre School/Giggles.jpg";
-import img3 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
-import img4 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
+import pp1 from "../Assets/Pre School/bita.mp4";
+
+import img3 from "../Assets/Pre School/WWF.webp";
+import img4 from "../Assets/Pre School/Bonikka.webp";
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const Other = () => {
@@ -28,7 +25,7 @@ const Other = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: 'https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4',
+      video: pp1,
       text1: "Bitzee",
       text2:
         "What’s in the box? Introducing Bitzee: the digital pet you can really touch™! Bitzee reacts to your swipes, tilts, shakes and touch. With your love and care, help your pets grow from baby, to adult, to Super Bitzee!!",
@@ -39,13 +36,13 @@ const Other = () => {
 
   const Data1 = [
     {
-      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
+      img: img3,
       text1: "WWF",
       text2:
         "WWF Collection! You don’t have to be a little person to love our WWF luxury super cuddly soft toys – enjoy your very own wild animal at home and support them in the wild.",
     },
     {
-      img: 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg',
+      img: img4,
       text1: "Bonikka Collection",
       text2:
         "Our beautifully handcrafted soft dolls and rag dolls are created using soft and comforting fabrics, perfect for lots of cuddles and to take away on childhood adventures. They make perfect presents and will encourage imaginative child play which is valuable for learning and development skills.",
@@ -64,7 +61,7 @@ const Other = () => {
           pt: !isSmallScreen ? "120px" : "80px",
           backgroundColor: "#EEEEEE",
         }}
-      >
+      ><br/><br/><br/><br/>
         <Link to="/LearningArtandCrafts">
           <WestIcon
             sx={{
@@ -81,7 +78,7 @@ const Other = () => {
           variant={!isSmallScreen ? "h2" : "h5"}
         />
         <Link
-          to="/Collectibles
+          to="/Pre-School
 "
         >
           <EastIcon
