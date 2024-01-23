@@ -17,6 +17,7 @@ import Slider from "react-slick";
 
 import banner7 from "../Assets/homepage/banner7.jpg";
 import banner71 from "../Assets/homepage/banner71.webp";
+import brand from '../Assets/homepage/Brand Launch.webp'
 
 function SamplePrevArrow(props) {
   const { style, onClick } = props;
@@ -238,8 +239,8 @@ const Partnerreview = () => {
           <img
             src={
               !isSmallScreen
-                ? "https://static.wixstatic.com/media/3fff3e_bb190292b9e643a5b0cb4e31e06636b3~mv2.jpg/v1/fill/w_900,h_1020,fp_0.51_0.40,q_85,usm_0.66_1.00_0.01,enc_auto/Excited%20Girl.jpg"
-                : "https://static.wixstatic.com/media/3fff3e_bb190292b9e643a5b0cb4e31e06636b3~mv2.jpg/v1/fill/w_399,h_323,fp_0.51_0.40,q_80,usm_0.66_1.00_0.01,enc_auto/Excited%20Girl.jpg"
+                ? brand
+                : brand
             }
             alt=""
             width={"100%"}
@@ -293,7 +294,7 @@ const Data = [
       </>
     ),
     text1: "Nowshar Hussain",
-    img: "https://www.perfumedirect.com/cdn/shop/articles/Top_7_Luxury_Perfume_Brands_For_Women_and_Their_Best_Scents_BLOG_1024x1024.png?v=1682432203",
+   
     text2: "International Sales Manager",
   },
   {
@@ -305,7 +306,7 @@ const Data = [
       </>
     ),
     text1: "Lorenz Pirlot",
-    img: "https://www.perfumedirect.com/cdn/shop/articles/Top_7_Luxury_Perfume_Brands_For_Women_and_Their_Best_Scents_BLOG_1024x1024.png?v=1682432203",
+   
     text2: " Sales and Marketing Manager – International",
   },
   {
@@ -318,7 +319,7 @@ const Data = [
       </>
     ),
     text1: "Fawaz Abidin",
-    img: "https://www.perfumedirect.com/cdn/shop/articles/Top_7_Luxury_Perfume_Brands_For_Women_and_Their_Best_Scents_BLOG_1024x1024.png?v=1682432203",
+   
     text2: "Managing Director",
   },
   {
@@ -331,7 +332,7 @@ const Data = [
       </>
     ),
     text1: "Payal Mirchandani",
-    img: "https://www.perfumedirect.com/cdn/shop/articles/Top_7_Luxury_Perfume_Brands_For_Women_and_Their_Best_Scents_BLOG_1024x1024.png?v=1682432203",
+   
     text2: "Managing Director",
   },
   {
@@ -343,7 +344,7 @@ const Data = [
       </>
     ),
     text1: "Ken Danielsen",
-    img: "https://www.perfumedirect.com/cdn/shop/articles/Top_7_Luxury_Perfume_Brands_For_Women_and_Their_Best_Scents_BLOG_1024x1024.png?v=1682432203",
+   
     text2: " International Sales Director",
   },
 ];

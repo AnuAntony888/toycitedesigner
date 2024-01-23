@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, CardMedia, Grid } from "@mui/material";
-import { TypographyText } from "../Reusable/Reusable";
+import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import abou2 from "../Assets/abou/abou2.jpg";
 import abou3 from "../Assets/abou/Header 1.webp";
 import desktop from "../Assets/abou/Desktop.webp";
@@ -22,6 +22,7 @@ const Aboutus = () => {
   }, []);
   return (
     <>
+       < MetaComponent dynamicTitle="Toycity - About Us "  />
       {!isSmallScreen ? (
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <img

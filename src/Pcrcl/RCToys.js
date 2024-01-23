@@ -13,7 +13,7 @@ import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, Grid } from "@mui/material";
-import { TypographyText } from "../Reusable/Reusable";
+import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
 
 import img1 from "../Assets/Pre School/Giggles-01-04.jpg";
@@ -51,6 +51,7 @@ const RCToys = () => {
   ];
   return (
     <>
+        < MetaComponent dynamicTitle="Toycity - RC Toys "  />
       <Box
         sx={{
           display: "flex",

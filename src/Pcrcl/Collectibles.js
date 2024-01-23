@@ -1,13 +1,11 @@
-
-
 import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, Grid } from "@mui/material";
-import { TypographyText } from "../Reusable/Reusable";
+import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
-import monster from '../Assets/Pre School/monster.mp4'
-import baku from '../Assets/Pre School/baku.mp4'
+import monster from "../Assets/Pre School/monster.mp4";
+import baku from "../Assets/Pre School/baku.mp4";
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const Collectibles = () => {
@@ -15,7 +13,7 @@ const Collectibles = () => {
     // Scroll to the top of the page on component mount (page load)
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, []);
   const theme = useTheme();
@@ -33,22 +31,20 @@ const Collectibles = () => {
       text2:
         "Inspired by the hit animated series, Bakugan toys offer thrilling strategic gameplay and fierce competition. Collect, roll, and transform these magnetic creatures to conquer the Bakugan battlefield. Dive into the action-packed world of Bakugan with our extensive collection of Bakugan toys.",
     },
-
   ];
 
   const Data1 = [
     {
-      img: '',
-  
+      img: "",
+
       text1: "Wizarding World",
       text2:
         "Unwrap the excitement as these adorable Hatchimals reveal their unique personalities and interactive features. Stay tuned for the latest additions to the Hatchimals family!",
     },
-
-
   ];
   return (
     <>
+        < MetaComponent dynamicTitle="Toycity - Collectibles "  />
       <Box
         sx={{
           display: "flex",
@@ -59,8 +55,8 @@ const Collectibles = () => {
           backgroundColor: "#EEEEEE",
         }}
       >
-          <br/>     <br/>
-         <br/>     <br/>
+        <br /> <br />
+        <br /> <br />
         <Link to="/Pre-School">
           <WestIcon
             sx={{
@@ -76,9 +72,7 @@ const Collectibles = () => {
           fontWeight="400"
           variant={!isSmallScreen ? "h2" : "h5"}
         />
-        <Link
-          to="/RCToys"
-        >
+        <Link to="/RCToys">
           <EastIcon
             sx={{
               width: isSmallScreen ? "1em" : "2em",
@@ -94,8 +88,9 @@ const Collectibles = () => {
           pl: !isSmallScreen ? "20%" : "14%",
           pr: !isSmallScreen ? "20%" : "14%",
           pt: "6%",
-            pb: "5%",
-            justifyContent:"center", alignItems:"center"
+          pb: "5%",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         {Data.map((curelem, index) => (
@@ -132,7 +127,7 @@ const Collectibles = () => {
           </div>
         ))}
 
-        {Data1.map((curelem, index) => (
+        {/* {Data1.map((curelem, index) => (
           <>
             <Grid item xs={12} lg={6} md={6} sm={12} key={index} >
               <img src={curelem.img} alt="" width={"100%"} height={"auto"} />
@@ -152,11 +147,10 @@ const Collectibles = () => {
               />
             </Grid>
           </>
-        ))}
+        ))} */}
       </Grid>
     </>
   );
 };
 
 export default Collectibles;
-

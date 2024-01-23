@@ -4,9 +4,10 @@ import Card from "@mui/material/Card";
 
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
-import StarIcon from '@mui/icons-material/Star';
+import StarIcon from "@mui/icons-material/Star";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { CardActions, CardMedia, Grid, Typography } from "@mui/material";
+import { Helmet } from "react-helmet";
 
 export function TypographyText(props) {
   return (
@@ -29,8 +30,6 @@ export function TypographyText(props) {
         margin: props.margin,
         fontFamily: "'Poppins', sans-serif",
 
-
-
         marginTop: props.marginTop,
         "&:hover": {
           color: props.hovercolor,
@@ -39,7 +38,7 @@ export function TypographyText(props) {
       variant={props.variant}
       component={props.component}
       className={props.className}
-         fontFamily= "'Poppins', sans-serif"
+      fontFamily="'Poppins', sans-serif"
       dangerouslySetInnerHTML={props.dangerouslySetInnerHTML}
     >
       {props.Typography}
@@ -78,77 +77,14 @@ export function Buttons(props) {
   );
 }
 
-export function HomeCard(props) {
+export const MetaComponent = ({ dynamicTitle }) => {
   return (
-    <Card
-      sx={{
-        // backgroundColor: 'transparent',
-        background: " rgba(251, 227, 132, 0.7)",
-      }}
-    >
-      <CardMedia
-        component="img"
-        alt="green iguana"
-        height="200"
-        image={props.image}
-      />
-      <CardContent>
-        {/* <div data-aos="zoom-in"> */}
-          <TypographyText
-            variant="1rem"
-            component="div"
-            color={"#231F1E"}
-   
-            fontWeight={700}
-            Typography={props.Typography}
-          />
-        {/* </div> */}
-        {/* <div data-aos="fade-right" data-aos-easing="ease-in-sine"> */}
-          <TypographyText
-            fontSize=".9rem"
-            component="div"
-            color={"#231F1E"}
-            textAlign="left"
-            Typography={props.Typographybody}
-          />
-        {/* </div> */}
-      </CardContent>
-    </Card>
+    <>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{dynamicTitle}</title>
+        <meta name="title" content={dynamicTitle} />
+      </Helmet>
+    </>
   );
-}
-
-
-export function QualityCard(props) {
-  return (
-    <Card
-      sx={{
-        // backgroundColor: 'transparent',
-        background: "rgba(251, 227, 132, 0.7)",
-
-      }}
-    >
-  
-      <CardContent>
-<StarIcon sx={{color:'#231F1E', fontSize:'2.5rem'}}/>
-      <TypographyText
-            variant="h5"
-            component="div"
-            color={"#231F1E"}
-            color1="#ffff"
-            fontWeight={"bolder"}
-            Typography={props.Typography}
-            fontFamily= "'Raleway', sans-serif"
-          />
-        {/* <div data-aos="fade-right" data-aos-easing="ease-in-sine"> */}
-          <TypographyText
-            fontSize="1rem"
-            component="div"
-            color={"#231F1E"}
-            textAlign="left"
-            Typography={props.Typographybody}
-          />
-        {/* </div> */}
-      </CardContent>
-    </Card>
-  );
-}
+};

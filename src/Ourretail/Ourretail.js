@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { TypographyText } from "../Reusable/Reusable";
+import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Card, CardContent, CardMedia, Grid, Skeleton } from "@mui/material";
@@ -29,7 +29,7 @@ import on4 from "../Assets/logo/online/land mark.jpg";
 import on2 from "../Assets/logo/online/dabdoob.jpg";
 import on3 from "../Assets/logo/online/firstcry.jpg";
 import on5 from "../Assets/logo/online/mumzworld.jpg";
-import banner from "../Assets/Retail Partners.webp";
+import banner from "../Assets/Retail-Partners-min.png";
 import banner1 from "../Assets/3.webp";
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -55,17 +55,21 @@ const Ourretail = () => {
   const handleImageLoad = () => {
     setLoading(false);
   };
+  // console.log(loading,"loading")
   return (
     <div>
+       < MetaComponent dynamicTitle="Toycity - Our Retail Partners"  />
       {!isSmallScreen ? (
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <img
             src={banner} // Replace with your image path
             alt="Your Image Alt Text"
+            loading="lazy"
             style={{
               width: "100%",
               height: "100vh",
             }}
+         
           />
           <Box
             style={{
@@ -116,7 +120,8 @@ const Ourretail = () => {
               style={{
                 width: "100%",
                 height: "100vh",
-              }}
+                }}
+                loading='lazy'
             />
 
             <Box
@@ -215,7 +220,9 @@ const Ourretail = () => {
                         src={curelem.img}
                         alt=""
                         width={"100%"}
-                        onLoad={handleImageLoad}
+                        onLoad={handleImageLoad} 
+                        loading="lazy"
+                        style={{visibility:loading? "hidden" : "visible"}}
                       />
                     </Card>
                   </Grid>

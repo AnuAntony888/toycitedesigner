@@ -60,7 +60,7 @@ const Homesection1 = () => {
             }}
           >
             <source
-              src={video}
+              src='https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4'
               type="video/mp4"
             />
             Your browser does not support the video tag.

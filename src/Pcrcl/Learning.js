@@ -24,7 +24,7 @@ import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, Grid } from "@mui/material";
-import { TypographyText } from "../Reusable/Reusable";
+import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
 
 import img1 from "../Assets/Pre School/rubic.mp4";
@@ -80,6 +80,7 @@ const Learning = () => {
 
   return (
     <>
+      < MetaComponent dynamicTitle="Toycity - Learning, Art & Crafts "  />
       <Box
         sx={{
           display: "flex",

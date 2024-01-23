@@ -214,9 +214,10 @@ const Try = () => {
                           <img
                             src={logo.img}
                             alt=""
+                            loading="lazy"
                             width="100%"
                             onLoad={handleImageLoad}
-                            style={{ display: loading ? "none" : "block" }}
+                            style={{ visibility: loading ? "hidden" : "visible" }}
                           />
                         </Grid>
                       ))}

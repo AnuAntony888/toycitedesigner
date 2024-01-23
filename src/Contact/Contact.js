@@ -20,7 +20,7 @@ import { useTheme } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
 import bannr from "../Assets/Contact Us.webp";
 import bannr1 from "../Assets/4.webp";
-import { Buttons, TypographyText } from "../Reusable/Reusable";
+import { Buttons, MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
 const Contact = () => {
   const theme = useTheme();
@@ -119,11 +119,13 @@ const Contact = () => {
   ];
   return (
     <div>
+       < MetaComponent dynamicTitle="Toycity - Contact Us "  />
       {!isSmallScreen ? (
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <img
             src={bannr} // Replace with your image path
             alt="Your Image Alt Text"
+            loading="lazy"
             style={{
               width: "100%",
               height: "100vh",
@@ -160,9 +162,10 @@ const Contact = () => {
                 height: "100vh",
 
                 // opacity: ".8",
-              }}
+                }}
+                loading="lazy"
             />
-            h
+            
           </Box>
           <br />
         </>

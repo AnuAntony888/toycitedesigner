@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { TypographyText } from "../Reusable/Reusable";
+import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Card, CardContent, CardMedia, Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import banner from '../Assets/News & Events.webp'
-import banner1 from '../Assets/2.webp'
+import banner from "../Assets/News & Events.webp";
+import banner1 from "../Assets/2.webp";
+import news1 from "../Assets/news/News 1.webp";
+import news2 from "../Assets/news/News 2.webp";
+import news3 from "../Assets/news/News 3.webp";
 const NewsandEvents = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -18,6 +21,7 @@ const NewsandEvents = () => {
   }, []);
   return (
     <>
+      < MetaComponent dynamicTitle="Toycity - News and events"  />
       {!isSmallScreen ? (
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <img
@@ -27,6 +31,7 @@ const NewsandEvents = () => {
               width: "100%",
               height: "100vh",
             }}
+            loading="lazy"
           />
           <Box
             style={{
@@ -50,9 +55,9 @@ const NewsandEvents = () => {
               color="#fff"
               Typography={
                 <>
-               This is your Services section introductory title. Add a short
-                text to introduce the types of services offered, and consider
-                highlighting any special benefits or features.
+                  This is your Services section introductory title. Add a short
+                  text to introduce the types of services offered, and consider
+                  highlighting any special benefits or features.
                 </>
               }
             />
@@ -69,6 +74,7 @@ const NewsandEvents = () => {
                 width: "100%",
                 height: "100vh",
               }}
+              loading="lazy"
             />
 
             <Box
@@ -90,24 +96,22 @@ const NewsandEvents = () => {
               <br />
             </Box>
           </Box>
-            <br />
-            <Box sx={{pl:'8%',pr:'8%',pt:'2%',pb:'2%'}}>
-          <TypographyText
-            
-           Typography={
-              <>
-             This is your Services section introductory title. Add a short
-                text to introduce the types of services offered, and consider
-                highlighting any special benefits or features.
-              </>
-            }
-              />
-              </Box>
+          <br />
+          <Box sx={{ pl: "8%", pr: "8%", pt: "2%", pb: "2%" }}>
+            <TypographyText
+              Typography={
+                <>
+                  This is your Services section introductory title. Add a short
+                  text to introduce the types of services offered, and consider
+                  highlighting any special benefits or features.
+                </>
+              }
+            />
+          </Box>
         </>
       )}
-     
+
       <Grid container spacing={0} sx={{ pt: "5%", pb: "5%" }}>
-  
         {Data.map((data, index) => (
           <Grid
             item
@@ -171,13 +175,23 @@ const NewsandEvents = () => {
         <Grid item lg={8} md={8} sm={12} xs={12}>
           <Grid container spacing={0}>
             {Data1.map((data, index) => (
-              <Grid item lg={6} md={6} sm={6} xs={6} sx={{boxShadow:'0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)'}}>
+              <Grid
+                item
+                lg={6}
+                md={6}
+                sm={6}
+                xs={6}
+                sx={{
+                  boxShadow:
+                    "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
+                }}
+              >
                 <Card
                   sx={{
                     Width: "100%",
                     backgroundColor: "transparent",
                     p: "5%",
-                     boxShadow: "none",
+                    boxShadow: "none",
                   }}
                 >
                   <TypographyText
@@ -256,36 +270,52 @@ const Data1 = [
     ),
 
     tex3: "PAW Patrol Mighty movie Launch event",
-    img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
+    img: news1,
     tex4: "we organized movie launch event wherein we invited influencers and general crowd via voucher promos that were given away at the stores. This launch event took place for 2 days at 2 different locations. We distributed goody bags, and had a photo booth installed.",
   },
   {
     tex1: "2",
-    tex2: <>	14th September, ELC, Nakheel Mall, Riyadh<br />
-  	15th September, Babyshop, Panorama Mall, Riyadh<br />
-    	16th September, Hi-kids, Al Makan Mall, Riyadh<br />
-    	21th September, ELC, Mall of Arabic, Jeddah<br />
-    	22th September, Danube, Red sea mall, Jeddah<br />
-    	23th September, Toy N Surprise, Gold Mor, Jeddah<br />
-    </>,
+    tex2: (
+      <>
+        {" "}
+        14th September, ELC, Nakheel Mall, Riyadh
+        <br />
+        15th September, Babyshop, Panorama Mall, Riyadh
+        <br />
+        16th September, Hi-kids, Al Makan Mall, Riyadh
+        <br />
+        21th September, ELC, Mall of Arabic, Jeddah
+        <br />
+        22th September, Danube, Red sea mall, Jeddah
+        <br />
+        23th September, Toy N Surprise, Gold Mor, Jeddah
+        <br />
+      </>
+    ),
     tex3: "PAW Patrol Meet and Greet ",
-    img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
+    img: news2,
     tex4: "to promote the might movie we also organized meet and greet in Riyadh and Jeddah. We identified few malls  with that had good footfall and organized meet and greets where children and parents can have a direct connect with the movie characters.",
   },
   {
     tex1: "3",
-    tex2: <>
-    	14th September, Babyshop, Jeddah Park, Jeddah<br />
-	15th September, Toy n Surprise Gold Mor, Jeddah<br />
-	16th September, Babyshop, Dome Center, Jeddah<br />
-	12th October, Babyshop, Exit 9, Riyadh<br />
-	19th October, Baby story, Riyadh<br />
-	27th October, Danube, Hayat Mall, Riyadh<br />
-
-</>,
+    tex2: (
+      <>
+        14th September, Babyshop, Jeddah Park, Jeddah
+        <br />
+        15th September, Toy n Surprise Gold Mor, Jeddah
+        <br />
+        16th September, Babyshop, Dome Center, Jeddah
+        <br />
+        12th October, Babyshop, Exit 9, Riyadh
+        <br />
+        19th October, Baby story, Riyadh
+        <br />
+        27th October, Danube, Hayat Mall, Riyadh
+        <br />
+      </>
+    ),
     tex3: "Gabby Meet and greet ",
-    img: "https://static.wixstatic.com/media/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg/v1/fill/w_354,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/nsplsh_8161352fa7354c74a4b6ad01fd624681~mv2.jpg",
+    img: news3,
     tex4: "A meet and greet was organized for Gabby in the major malls of Jeddah and Riyadh",
   },
-  
 ];

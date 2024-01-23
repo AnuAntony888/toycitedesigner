@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, Grid } from "@mui/material";
-import { TypographyText } from "../Reusable/Reusable";
+import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
 import pp1 from "../Assets/Pre School/pp1.mp4";
 import pp2 from "../Assets/Pre School/GDP.mp4";
@@ -72,6 +72,7 @@ const Primaryscool = () => {
   ];
   return (
     <>
+    < MetaComponent dynamicTitle="Toycity - Pre-School "  />
       <Box
         sx={{
           display: "flex",
@@ -160,7 +161,7 @@ const Primaryscool = () => {
         {Data1.map((curelem, index) => (
           <>
             <Grid item xs={12} lg={6} md={6} sm={12} key={index}>
-              <img src={curelem.img} alt="" width={"100%"} height={"auto"} />
+              <img src={curelem.img} alt="" width={"100%"} height={"auto"} loading="lazy"/>
               <br />
               <br />
               <TypographyText

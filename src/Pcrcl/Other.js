@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Box, Card, CardContent, Grid } from "@mui/material";
-import { TypographyText } from "../Reusable/Reusable";
+import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
 import pp1 from "../Assets/Pre School/bita.mp4";
 
@@ -52,6 +52,7 @@ const Other = () => {
 
   return (
     <>
+        < MetaComponent dynamicTitle="Toycity - Other "  />
       <Box
         sx={{
           display: "flex",
@@ -105,7 +106,7 @@ const Other = () => {
           <>
             <Grid item xs={12} lg={6} md={6} sm={12} key={index}>
             <Card sx={{width:'100%' ,boxShadow:'none',}}>
-              <img src={curelem.img} alt="" width={"100%"} height={"auto"} />
+              <img src={curelem.img} alt="" width={"100%"} height={"auto"} loading="lazy"/>
           <CardContent sx={{height:!isSmallScreen?'250px':'auto'}}>
               <TypographyText
                 Typography={curelem.text1}
