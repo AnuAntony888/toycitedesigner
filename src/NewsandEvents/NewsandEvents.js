@@ -23,13 +23,13 @@ const NewsandEvents = () => {
     <>
       < MetaComponent dynamicTitle="Toycity - News and events"  />
       {!isSmallScreen ? (
-        <Box sx={{ position: "relative", textAlign: "center" }}>
+        <Box sx={{ position: "relative", textAlign: "center",height:'100vh ' }}>
           <img
             src={banner} // Replace with your image path
             alt="Your Image Alt Text"
             style={{
               width: "100%",
-              height: "100vh",
+              height: "100%",
             }}
             loading="lazy"
           />
@@ -65,8 +65,8 @@ const NewsandEvents = () => {
         </Box>
       ) : (
         <>
-          {" "}
-          <Box sx={{ position: "relative", textAlign: "center" }}>
+        
+          <Box   sx={{ position: "relative", textAlign: "center" ,}}>
             <img
               src={banner1} // Replace with your image path
               alt="Your Image Alt Text"
@@ -82,21 +82,21 @@ const NewsandEvents = () => {
                 position: "absolute",
 
                 top: "25%",
-                left: "50%",
-                transform: "translate(-60%, -50%)",
+                left: "30%",
+                transform: "translate(-15%, -50%)",
               }}
             >
               <TypographyText
-                Typography={<>News and Events</>}
+                Typography={<>News & Events</>}
                 fontWeight="400"
                 variant={!isSmallScreen ? "h2" : "h4"}
                 color="White"
               />
 
-              <br />
+              {/* <br /> */}
             </Box>
           </Box>
-          <br />
+        
           <Box sx={{ pl: "8%", pr: "8%", pt: "2%", pb: "2%" }}>
             <TypographyText
               Typography={
@@ -111,7 +111,7 @@ const NewsandEvents = () => {
         </>
       )}
 
-      <Grid container spacing={0} sx={{ pt: "5%", pb: "5%" }}>
+      <Grid container spacing={0} sx={{  pb: "5%" }}>
         {Data.map((data, index) => (
           <Grid
             item
@@ -179,8 +179,8 @@ const NewsandEvents = () => {
                 item
                 lg={6}
                 md={6}
-                sm={6}
-                xs={6}
+                sm={12}
+                xs={12}
                 sx={{
                   boxShadow:
                     "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
@@ -222,14 +222,14 @@ const NewsandEvents = () => {
                   <br />
                   <TypographyText
                     Typography={data.tex4}
-                    fontSize=".8rem"
+                    fontSize=".9rem"
                     textAlign="left"
                   />
                      <br />
                       <TypographyText
                     Typography={data.tex2}
                     textAlign="left"
-                    fontSize=".9rem"
+                    fontSize=".8rem"
                   />{" "}
                
                 </Card>
@@ -247,19 +247,19 @@ const Data = [
   {
     backgroundColor: "#4F4D4D",
     tex1: "1 -",
-    tex2: "PAW Patrol Mighty movie Launch event",
+    tex2: "PAW Patrol Mighty Movie Launch Event",
     tex3: "We organized movie launch event wherein we invited influencers and general crowd via voucher promos that were given away at the stores. This launch event took place for 2 days at 2 different locations. We distributed goody bags, and had a photo booth installed",
   },
   {
     backgroundColor: "#DEC5C5",
     tex1: "2 -",
-    tex2: "PAW Patrol Meet and Greet ",
+    tex2: "PAW Patrol Meet And Greet ",
     tex3: "To promote the might movie we also organized meet and greet in Riyadh and Jeddah. We identified few malls  with that had good footfall and organized meet and greets where children and parents can have a direct connect with the movie characters.",
   },
   {
     backgroundColor: "#000000",
     tex1: "3 -",
-    tex2: "Gabby Meet and greet ",
+    tex2: "Gabby Meet And Greet ",
     tex3: "A meet and greet was organized for Gabby in the major malls of Jeddah and Riyadh",
   },
 ];
@@ -275,9 +275,9 @@ const Data1 = [
       </>
     ),
 
-    tex3: "PAW Patrol Mighty movie Launch event",
+    tex3: "PAW Patrol Mighty Movie Launch Event",
     img: news1,
-    tex4: "we organized movie launch event wherein we invited influencers and general crowd via voucher promos that were given away at the stores. This launch event took place for 2 days at 2 different locations. We distributed goody bags, and had a photo booth installed.",
+    tex4: "We organized movie launch event wherein we invited influencers and general crowd via voucher promos that were given away at the stores. This launch event took place for 2 days at 2 different locations. We distributed goody bags, and had a photo booth installed.",
   },
   {
     tex1: "2",
@@ -298,9 +298,9 @@ const Data1 = [
         <br />
       </>
     ),
-    tex3: "PAW Patrol Meet and Greet ",
+    tex3: "PAW Patrol Meet And Greet ",
     img: news2,
-    tex4: "to promote the might movie we also organized meet and greet in Riyadh and Jeddah. We identified few malls  with that had good footfall and organized meet and greets where children and parents can have a direct connect with the movie characters.",
+    tex4: "To promote the might movie we also organized meet and greet in Riyadh and Jeddah. We identified few malls  with that had good footfall and organized meet and greets where children and parents can have a direct connect with the movie characters.",
   },
   {
     tex1: "3",
@@ -320,7 +320,7 @@ const Data1 = [
         <br />
       </>
     ),
-    tex3: "Gabby Meet and greet ",
+    tex3: "Gabby Meet And Greet ",
     img: news3,
     tex4: "A meet and greet was organized for Gabby in the major malls of Jeddah and Riyadh",
   },

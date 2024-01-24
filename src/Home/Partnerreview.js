@@ -17,7 +17,7 @@ import Slider from "react-slick";
 
 import banner7 from "../Assets/homepage/banner7.jpg";
 import banner71 from "../Assets/homepage/banner71.webp";
-import brand from '../Assets/homepage/Brand Launch.webp'
+import brand from "../Assets/homepage/Brand Launch.webp";
 
 function SamplePrevArrow(props) {
   const { style, onClick } = props;
@@ -147,7 +147,7 @@ const Partnerreview = () => {
                       sx={{
                         bgcolor: "white",
                         margin: "10px",
-                        minHeight: "370px",
+                        minHeight:isSmallScreen?"300px": "380px",
                         p: "5%",
                       }}
                     >
@@ -179,7 +179,7 @@ const Partnerreview = () => {
                             fontSize=".8rem"
                             // fontWeight="400"
                           />
-                          <br />
+                  
                           <br />
                           <TypographyText
                             Typography={post.text1}
@@ -237,11 +237,7 @@ const Partnerreview = () => {
         </Grid>
         <Grid item xs={12} lg={6} md={6} sm={12}>
           <img
-            src={
-              !isSmallScreen
-                ? brand
-                : brand
-            }
+            src={!isSmallScreen ? brand : brand}
             alt=""
             width={"100%"}
             height={
@@ -267,12 +263,16 @@ const Data = [
         the development of children to the latest recreational toys. Dedicated,
         passionate and committed team with worlds leading brands is their recipe
         for success.Wishing continued success!"
-        <br />
-        Jude Kumar -Director - Category and Shopper Development
-
       </>
     ),
-    text1: "Skysales",
+    text1: (
+      <>
+        Jude Kumar -Director <br />
+        Category & Shopper Development
+        <br />
+        Skysales
+      </>
+    ),
 
     text2: "Saudia catering",
   },
@@ -297,7 +297,7 @@ const Data = [
       </>
     ),
     text1: "Nowshar Hussain",
-   
+
     text2: "International Sales Manager",
   },
   {
@@ -309,7 +309,7 @@ const Data = [
       </>
     ),
     text1: "Lorenz Pirlot",
-   
+
     text2: " Sales and Marketing Manager – International",
   },
   {
@@ -322,7 +322,7 @@ const Data = [
       </>
     ),
     text1: "Fawaz Abidin",
-   
+
     text2: "Managing Director",
   },
   {
@@ -335,7 +335,7 @@ const Data = [
       </>
     ),
     text1: "Payal Mirchandani",
-   
+
     text2: "Managing Director",
   },
   {
@@ -347,7 +347,7 @@ const Data = [
       </>
     ),
     text1: "Ken Danielsen",
-   
+
     text2: " International Sales Director",
   },
 ];

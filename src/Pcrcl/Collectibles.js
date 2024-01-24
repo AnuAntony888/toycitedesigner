@@ -44,7 +44,7 @@ const Collectibles = () => {
   ];
   return (
     <>
-        < MetaComponent dynamicTitle="Toycity - Collectibles "  />
+      <MetaComponent dynamicTitle="Toycity - Collectibles " />
       <Box
         sx={{
           display: "flex",
@@ -106,6 +106,7 @@ const Collectibles = () => {
                 <source src={curelem.video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+
               <br />
               <br />
             </Grid>

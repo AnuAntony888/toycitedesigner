@@ -175,7 +175,9 @@ background-color: transparent !important;
   
     }
 
-
+    .buttton_eader:active {
+      background-color: transparent !important;
+    }
 
 hr.new2 {
   border-top: 2px dashed lightgray;

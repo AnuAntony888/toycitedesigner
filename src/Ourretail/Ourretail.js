@@ -29,7 +29,7 @@ import on4 from "../Assets/logo/online/land mark.jpg";
 import on2 from "../Assets/logo/online/dabdoob.jpg";
 import on3 from "../Assets/logo/online/firstcry.jpg";
 import on5 from "../Assets/logo/online/mumzworld.jpg";
-import banner from "../Assets/Retail-Partners-min.png";
+import banner from "../Assets/Retail Partners (1).webp";
 import banner1 from "../Assets/3.webp";
 import "aos/dist/aos.css";
 import AOS from "aos";
@@ -47,7 +47,7 @@ const Ourretail = () => {
   React.useEffect(() => {
     AOS.init({
       // Global settings here
-      duration: 500,
+      duration: 100,
     });
   }, []);
   const [loading, setLoading] = useState(true);
@@ -134,7 +134,7 @@ const Ourretail = () => {
               }}
             >
               <TypographyText
-                Typography={<>Our Retail Partners</>}
+                Typography={<> Retail Partners</>}
                 fontWeight="400"
                 variant={!isSmallScreen ? "h2" : "h4"}
                 color="White"
@@ -256,7 +256,7 @@ const Datas = [
     ],
   },
   {
-    content: "Travel Retail/ Inflight & on-board sales",
+    content: "Travel Retail/ In-flight & On-board Sales",
     Data1: [
       { img: re1 },
       { img: re2 },
@@ -268,7 +268,7 @@ const Datas = [
     ],
   },
   {
-    content: "Travel Retail/ Inflight & on-board sales",
+    content: "Online Stores",
     Data1: [
       { img: on1 },
       { img: on2 },

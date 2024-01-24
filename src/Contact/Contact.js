@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Paper from "@mui/material/Paper";
 import {
   Box,
+  Button,
   Grid,
   List,
   ListItem,
@@ -17,109 +18,48 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 import { useTheme } from "@mui/material/styles";
-import { styled } from "@mui/material/styles";
-import bannr from "../Assets/Contact Us.webp";
-import bannr1 from "../Assets/4.webp";
+
+import bannr from "../Assets/Contact Us[1].webp";
+import bannr1 from "../Assets/Contact Us Mobile Banners.webp";
 import { Buttons, MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 const Contact = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const matches = useMediaQuery(theme.breakpoints.up("lg"));
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [phone, setPhone] = useState("");
-  const [errors, seterrors] = useState({});
 
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor:
-      theme.palette.mode === "dark" ? "#1A2027" : "rgba(0, 0, 0,.7 )",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: "black",
-    boxShadow: "none", // Remove box shadow
-    border: "1px solid #000", // Add a 1px solid border (you can change the color)
-  }));
-  const handleEmail = (e) => {
-    const errors = {};
 
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!e.target.value) {
-      seterrors((prev) => ({ ...prev, email: "Email is required!" }));
-    } else if (!regex.test(e.target.value)) {
-      seterrors((prev) => ({
-        ...prev,
-        email: "This is not a valid email format!",
-      }));
-    } else if (regex.test(e.target.value)) {
-      seterrors((prev) => ({ ...prev, email: "" }));
-    }
 
-    setEmail(e.target.value);
-  };
-
-  const handleMessage = (e) => {
-    const errors = {};
-    if (!e.target.value) {
-      seterrors((prev) => ({ ...prev, message: "Name is required " }));
-    } else {
-      seterrors((prev) => ({ ...prev, message: " " }));
-    }
-
-    setMessage(e.target.value);
-  };
-
-  const handlePhone = (e) => {
-    const errors = {};
-    if (!e.target.value) {
-      seterrors((prev) => ({ ...prev, phone: "Phone is required " }));
-    } else {
-      seterrors((prev) => ({ ...prev, phone: " " }));
-    }
-
-    setPhone(e.target.value);
-  };
-
-  const handleName = (e) => {
-    const errors = {};
-    if (!e.target.value) {
-      seterrors((prev) => ({ ...prev, name: "Name is required " }));
-    } else {
-      seterrors((prev) => ({ ...prev, name: " " }));
-    }
-
-    setName(e.target.value);
-  };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const Data = [
-    {
-      label: "Your Name",
-      value: name,
-      onChange: handleName,
-    },
-    {
-      label: "Your Email Address",
-      value: email,
-      onChange: handleEmail,
-    },
-    {
-      label: "Phone ",
-      value: phone,
-      onChange: handlePhone,
-    },
-    {
-      label: "Street Address",
-      value: phone,
-      onChange: handlePhone,
-    },
-  ];
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_t9b2rql",
+        "template_yxth623",
+        form.current,
+        "YlwLxEklthBKYFt1-"
+      )
+      .then(
+        (result) => {
+          console.log(result.text, "console.text");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
   return (
     <div>
-       < MetaComponent dynamicTitle="Toycity - Contact Us "  />
+      <MetaComponent dynamicTitle="Toycity - Contact Us " />
       {!isSmallScreen ? (
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <img
@@ -135,7 +75,7 @@ const Contact = () => {
             style={{
               position: "absolute",
 
-              top: "35%",
+              top: "40%",
               left: "45%",
               transform: "translate(50%, -50%)",
             }}
@@ -162,10 +102,27 @@ const Contact = () => {
                 height: "100vh",
 
                 // opacity: ".8",
-                }}
-                loading="lazy"
-            />
-            
+              }}
+              loading="lazy"
+              />
+                     <Box
+              style={{
+                position: "absolute",
+
+                top: "25%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <TypographyText
+                Typography={<> Contact Us</>}
+                fontWeight="400"
+                variant={!isSmallScreen ? "h2" : "h4"}
+                color="White"
+              />
+
+              <br />
+            </Box>
           </Box>
           <br />
         </>
@@ -197,7 +154,7 @@ const Contact = () => {
                 Or just wanna say Hi. We’d love to get to know you. Tell us a
                 little about yourself and how we can help. Get answers to all
                 your questions about our sales and service here
-                <br /> Monday to Friday from 9:30 to 17:30 (EET / GM+2)
+                <br /> Saturday to Thursday  from 9:00 to 6:00 (AST / GMT+3)
               </>
             }
           />
@@ -223,100 +180,102 @@ const Contact = () => {
               md={12}
               sx={{ border: "dashed 2px lightgray", margin: "10px" }}
             >
-              <Grid container spacing={2}>
-                {Data.map((data, index) => (
-                  <Grid
-                    item
-                    xs={12}
-                    lg={12}
-                    md={12}
-                    sx={{ pr: "16px" }}
-                    key={index}
-                  >
-                    <p className="contacttext">{data.label}</p>
-                    <TextField
+              {" "}
+              <form action="" ref={form} onSubmit={sendEmail}>
+                <Grid container spacing={2}>
+                  <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
+                    <p className="contacttext">Your Name</p>
+                    <input
                       fullWidth
-                      size="small"
-                      variant="outlined"
-                      InputProps={{
-                        style: {
-                          height: "35px",
-
-                          border: "none",
-                          backgroundColor: "#F7F7F7",
-                        },
-                      }}
-                      value={data.value}
-                      onChange={data.onChange}
-                    />
-                  </Grid>
-                ))}
-
-                <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
-                  <p className="contacttext">Message</p>
-                  <TextField
-                    fullWidth
-                    size="small"
-                    multiline
-                    rows={3} // Specify the number of visible rows
-                    value={message}
-                    onChange={handleMessage}
-                    InputProps={{
-                      style: {
+                      type="text"
+                      name="name"
+                      required
+                      style={{
+                        height: "35px",
+                        width: "100%",
                         border: "none",
                         backgroundColor: "#F7F7F7",
-                      },
-                    }}
-                  />
+                      }}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
+                    <p className="contacttext">Your Email Address</p>
+                    <input
+                      fullWidth
+                      type="email"
+                      name="email"
+                      required
+                      style={{
+                        height: "35px",
+                        width: "100%",
+                        border: "none",
+                        backgroundColor: "#F7F7F7",
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
+                    <p className="contacttext">Phone</p>
+                    <input
+                      fullWidth
+                      type="text"
+                      name="phone"
+                      required
+                      style={{
+                        height: "35px",
+                        width: "100%",
+                        border: "none",
+                        backgroundColor: "#F7F7F7",
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
+                    <p className="contacttext">Street Address</p>
+                    <input
+                      fullWidth
+                      type="text"
+                      name="street"
+                      required
+                      style={{
+                        height: "35px",
+                        width: "100%",
+                        border: "none",
+                        backgroundColor: "#F7F7F7",
+                      }}
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
+                    <p className="contacttext">Message</p>
+
+                    <textarea
+                      name="message"
+                      rows="10"
+                      required
+                      style={{
+                        border: "none",
+                        width: "100%",
+                        backgroundColor: "#F7F7F7",
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
+                    <Button
+                      variant="contained"
+                      type="submit"
+                      sx={{
+                        bgcolor: "black",
+                        color: "#fff",
+                        textAlign: "left",
+                      }}
+                    >
+                      Send Message
+                    </Button>
+                    <br />
+                    <br />
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
-                  <Buttons
-                    Buttonname={"Contact Us"}
-                    color="#fff"
-                    bgcolor="black"
-                    bgcolor1="red"
-                    color1="#AFA065"
-                    textAlign="left"
-                    type="submit"
-                    // onClick={handleApi}
-                  />
-                  <br />
-                  <br />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              lg={12}
-              md={12}
-              sx={{
-                border: "dashed 2px lightgray",
-                margin: "10px",
-                bgcolor: "#F3C82B",
-              }}
-            >
-              <Box sx={{ p: "10px" }}>
-                <TypographyText
-                  Typography={
-                    <>
-                      Are you a “Mommy Blogger or social influencer?” Do you
-                      love stylish kids toys as we do? We are looking for
-                      bloggers or trendy moms that would love to share their
-                      style with our matching models. Please,
-                      <Link
-                        to={`mailto:rajiv@toycity.me`}
-                        style={{ textDecoration: "underline black" }}
-                      >
-                        {" "}
-                        Contact us here{" "}
-                      </Link>{" "}
-                      for more information.
-                    </>
-                  }
-                  textAlign="left"
-                />
-              </Box>
+              </form>
             </Grid>
           </Grid>
         </Grid>
@@ -344,7 +303,7 @@ const Contact = () => {
             >
               <Box sx={{ p: "10px" }}>
                 <TypographyText
-                  Typography={<> Saudi Distribution Office</>}
+                  Typography={<> KSA Office</>}
                   fontWeight="400"
                   fontSize="1.2rem"
                   textAlign="left"
@@ -354,7 +313,11 @@ const Contact = () => {
                   Typography={
                     <>
                       {" "}
-                      Al Khomra, Faisal St, PO Box No : 14335
+                      Cortoba Commercial Centre,
+                      <br />
+                      Building No:3113,
+                      <br />
+                      Arafat Street Al Hamra District,
                       <br />
                       Jeddah, Kingdom of Saudi Arabia.
                     </>
@@ -374,7 +337,7 @@ const Contact = () => {
             >
               <Box sx={{ p: "10px" }}>
                 <TypographyText
-                  Typography={<> Corporate Office</>}
+                  Typography={<> Dubai Office</>}
                   fontWeight="400"
                   fontSize="1.2rem"
                   textAlign="left"
@@ -384,7 +347,7 @@ const Contact = () => {
                   Typography={
                     <>
                       {" "}
-                      Toycity International  Trading LLC
+                      Toycity International Trading LLC
                       <br />
                       B62 Building, Office No 215,
                       <br />
@@ -399,7 +362,7 @@ const Contact = () => {
                 />
               </Box>
             </Grid>
-          
+
             <Grid
               item
               xs={12}
@@ -438,9 +401,89 @@ const Contact = () => {
                 />
               </Box>
             </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={12}
+              md={12}
+              sx={{
+                border: "dashed 2px lightgray",
+                margin: "10px",
+                bgcolor: "#F3C82B",
+              }}
+            >
+              <Box sx={{ p: "10px" }}>
+                <TypographyText
+                  Typography={
+                    <>
+                      Are you a “Mommy Blogger or social influencer?” Do you
+                      love stylish kids toys as we do? We are looking for
+                      bloggers or trendy moms that would love to share their
+                      style with our matching models. Please,
+                      <Link
+                        to={`mailto:rajiv@toycity.me`}
+                        style={{ textDecoration: "underline black" }}
+                      >
+                        {" "}
+                        Contact us here{" "}
+                      </Link>{" "}
+                      for more information.
+                    </>
+                  }
+                  textAlign="left"
+                />
+              </Box>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
+
+      {/* <form action="" ref={form} onSubmit={sendEmail}>
+                    <Grid item xs={12} sx={{ pb: "2%" }}>
+                      <input
+                        fullWidth
+                        id="fullWidth"
+                        type="text"
+                        placeholder="Your Full Name"
+                        name="name"
+                        required
+                        
+                      />
+                    </Grid>
+                    <Grid item xs={12} sx={{ pb: "2%" }}>
+                      <input
+                        fullWidth
+                        type="email"
+                        placeholder="Your Email"
+                        name="email"
+                        required
+                   
+                      />
+                    </Grid>
+                    <Grid item xs={12} sx={{ pb: "2%" }}>
+                      <textarea
+                        placeholder="Your message"
+                        name="message"
+                        rows="7"
+                       
+                        required
+                      />
+                    </Grid>
+                    <Grid item xs={12} sx={{ pb: "2%" }}>
+                      <Button
+                        variant="contained"
+                        type="submit"
+                        sx={{
+                          bgcolor: "#f4af1b",
+                          color: "black",
+                          fontWeight: "bolder",
+                          border: "1px solid #f4af1b",
+                        }}
+                      >
+                        Send Message
+                      </Button>
+                    </Grid>
+                  </form> */}
     </div>
   );
 };

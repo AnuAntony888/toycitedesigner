@@ -68,7 +68,7 @@ export default function Header() {
                 <Box sx={{ pr: "5%" }}>
                   <div data-aos="fade-right">
                     {navItems.map((item, index) => (
-                      <Button key={item} className="buttton_eader">
+                      <Button key={item} className="buttton_eader" disableRipple>
                         {item}
                         <div class="verticalline"></div>
                       </Button>
@@ -106,7 +106,7 @@ export const navItems = [
   <Link to={"/aboutus"}>About Us</Link>,
   <Link to={"/retailpartners"}>Retail Partner</Link>,
   <Link to={"/newsandevents"}>News and Events</Link>,
-  <Link to={"/contact"}>Contact</Link>,
+  <Link to={"/contact"}>Contact Us</Link>,
 
   // <a href="#" onClick={openPopup}>Contact</a>,
 ];

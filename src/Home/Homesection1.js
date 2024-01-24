@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import video from '../Assets/homepage/video1.mp4'
+import video from "../Assets/homepage/video1.mp4";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { TypographyText } from "../Reusable/Reusable";
@@ -38,8 +38,13 @@ const Homesection1 = () => {
               />
               <br />
               <TypographyText
-                Typography={<>Together,
-                  <br/>Let's Inspire a Child</>}
+                Typography={
+                  <>
+                    Together,
+                    <br />
+                    Let's Inspire a Child
+                  </>
+                }
                 color="#fff"
                 fontWeight="400"
                 variant={!isSmallScreen ? "h2" : "h4"}
@@ -52,7 +57,7 @@ const Homesection1 = () => {
             muted
             playsInline
             style={{
-              // position: 'absolute',
+           
               width: "100%",
               height: "100%",
               objectFit: "cover",
@@ -60,11 +65,14 @@ const Homesection1 = () => {
             }}
           >
             <source
+              // src={video}
               src='https://video.wixstatic.com/video/3fff3e_5150d80e5ef74c5d916592eac9853e03/1080p/mp4/file.mp4'
               type="video/mp4"
             />
             Your browser does not support the video tag.
           </video>
+         
+    
         </Grid>
       </Grid>
     </>
