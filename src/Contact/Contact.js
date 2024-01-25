@@ -24,6 +24,8 @@ import bannr1 from "../Assets/Contact Us Mobile Banners.webp";
 import { Buttons, MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Contact = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -49,9 +51,22 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text, "console.text");
+          toast.success('Thank you for contact us', {
+            position: 'top-right',
+            autoClose: 3000, // Duration in milliseconds
+          });
         },
         (error) => {
+          toast.error('hai', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: theme,
+          });
           console.log(error.text);
         }
       );
@@ -63,7 +78,7 @@ const Contact = () => {
       {!isSmallScreen ? (
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <img
-            src={bannr} // Replace with your image path
+            src='https://ik.imagekit.io/jlco9jzsq/toycity/Contact%20Us_1_.webp?updatedAt=1706184472911'// Replace with your image path
             alt="Your Image Alt Text"
             loading="lazy"
             style={{
@@ -95,7 +110,7 @@ const Contact = () => {
           {" "}
           <Box sx={{ position: "relative", textAlign: "center" }}>
             <img
-              src={bannr1} // Replace with your image path
+              src='https://ik.imagekit.io/jlco9jzsq/toycity/Contact%20Us%20Mobile%20Banners.webp?updatedAt=1706184571426' // Replace with your image path
               alt="Your Image Alt Text"
               style={{
                 width: "100%",

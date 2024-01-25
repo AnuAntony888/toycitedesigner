@@ -129,8 +129,8 @@ const Ourretail = () => {
                 position: "absolute",
 
                 top: "25%",
-                left: "40%",
-                transform: "translate(-60%, -50%)",
+                left: "15%",
+                transform: "translate(-10%, -50%)",
               }}
             >
               <TypographyText

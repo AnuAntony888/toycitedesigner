@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 import img1 from "../Assets/Pre School/Cosmetics Twinkle.webp";
 import img2 from "../Assets/Pre School/Cosmetics.webp";
-import img3 from "../Assets/Pre School/cosemetic.mp4";
+
 import img4 from "../Assets/Pre School/Cosmetics Shush.webp";
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
@@ -23,7 +23,7 @@ const Cosmetics = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: img3,
+      video: 'JqWHzbardE0',
       text1: "Townley",
       text2:
         "Explore a world of beauty and fun with Townley Girl, the captivating kids' cosmetics brand at Toycity. Offering a kaleidoscope of colors and safe formulations, Townley Girl lets young imaginations shine, transforming playtime into a vibrant and magical experience.",
@@ -128,9 +128,9 @@ const Cosmetics = () => {
           </>
         ))}
         {Data.map((curelem, index) => (
-          <div style={{ padding: "5%" }}>
+          <>
             <Grid item xs={12} lg={12} md={12} sm={12} key={index}>
-              <video
+              {/* <video
                 autoPlay
                 loop
                 muted
@@ -139,7 +139,15 @@ const Cosmetics = () => {
               >
                 <source src={curelem.video} type="video/mp4" />
                 Your browser does not support the video tag.
-              </video>
+              </video> */}
+              <div class="responsive-container">
+                <iframe
+                  class="responsive-iframe"
+                  src={`https://www.youtube.com/embed/${curelem.video}?autoplay=1&controls=0&mute=1&loop=1&playlist=${curelem.video}`}
+                  frameborder="0"
+                  style={{ pointerEvents: "none" }}
+                ></iframe>
+              </div>
               <br />
               <br />
             </Grid>
@@ -158,7 +166,7 @@ const Cosmetics = () => {
               />
               <br /> <br />
             </Grid>
-          </div>
+          </>
         ))}
         {Data2.map((curelem, index) => (
           <>

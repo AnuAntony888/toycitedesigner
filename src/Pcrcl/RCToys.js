@@ -1,14 +1,4 @@
-// import React from 'react'
 
-// const RCToys = () => {
-//   return (
-//     <div>
-      
-//     </div>
-//   )
-// }
-
-// export default 
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
@@ -18,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import img1 from "../Assets/Pre School/Giggles-01-04.jpg";
 import img2 from "../Assets/Pre School/Funnybox-01.jpg";
-import airgo from '../Assets/Pre School/airog.mp4'
+
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const RCToys = () => {
@@ -26,7 +16,7 @@ const RCToys = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: airgo,
+      video: 'BK1Pg1auvDc',
       text1: "Airhog",
       text2:
         "Experience the thrill of high-speed racing and precision control with these innovative remote-controlled vehicles. From sleek designs to powerful performance, Airhogs RC toy cars bring excitement to every twist and turn.",
@@ -98,21 +88,22 @@ const RCToys = () => {
           pr: !isSmallScreen ? "20%" : "14%",
           pt: "6%",
           pb: "5%",
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         {Data.map((curelem, index) => (
-          <div style={{ padding: "5%" }}>
+          <>
             <Grid item xs={12} lg={12} md={12} sm={12} key={index}>
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                style={{ width: "100%", height: "100%" }}
-              >
-                <source src={curelem.video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+             
+              <div class="responsive-container">
+                <iframe
+                  class="responsive-iframe"
+                  src={`https://www.youtube.com/embed/${curelem.video}?autoplay=1&controls=0&mute=1&loop=1&playlist=${curelem.video}`}
+                  frameborder="0"
+                  style={{ pointerEvents: "none" }}
+                ></iframe>
+              </div>
               <br />
               <br />
             </Grid>
@@ -131,7 +122,7 @@ const RCToys = () => {
               />
               <br /> <br />
             </Grid>
-          </div>
+          </>
         ))}
 
         {Data1.map((curelem, index) => (

@@ -6,7 +6,7 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import "aos/dist/aos.css";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import {  Parallax } from "react-parallax";
+import { Parallax } from "react-parallax";
 import Homesection1 from "./Homesection1";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { Link } from "react-router-dom";
@@ -22,35 +22,35 @@ import banner51 from "../Assets/homepage/banner51.webp";
 import banner61 from "../Assets/homepage/banner61.jpg";
 import banner6 from "../Assets/homepage/banner6.jpg";
 
-import pp1 from '../Assets/homelogo/14.png'
-import pp2 from '../Assets/homelogo/26.png'
-import pp3 from '../Assets/homelogo/23.png'
-import pp4 from '../Assets/homelogo/22.png'
-import pp5 from '../Assets/homelogo/25.png'
-import pp6 from '../Assets/homelogo/17.png'
+import pp1 from "../Assets/homelogo/14.png";
+import pp2 from "../Assets/homelogo/26.png";
+import pp3 from "../Assets/homelogo/23.png";
+import pp4 from "../Assets/homelogo/22.png";
+import pp5 from "../Assets/homelogo/25.png";
+import pp6 from "../Assets/homelogo/17.png";
 
-import cc1 from '../Assets/homelogo/4.png'
-import cc2 from '../Assets/homelogo/2.png'
-import cc3 from '../Assets/homelogo/WWO_HP_Wand_Logo.webp'
+import cc1 from "../Assets/homelogo/4.png";
+import cc2 from "../Assets/homelogo/2.png";
+import cc3 from "../Assets/homelogo/WWO_HP_Wand_Logo.webp";
 
-import rc1 from '../Assets/homelogo/29.png'
-import rc2 from '../Assets/homelogo/28.png'
-import rc3 from '../Assets/homelogo/30.png'
+import rc1 from "../Assets/homelogo/29.png";
+import rc2 from "../Assets/homelogo/28.png";
+import rc3 from "../Assets/homelogo/30.png";
 
-import cs1 from '../Assets/homelogo/9.png'
-import cs2 from '../Assets/homelogo/8.png'
-import cs3 from '../Assets/homelogo/10.png'
-import cs4 from '../Assets/homelogo/7.png'
+import cs1 from "../Assets/homelogo/9.png";
+import cs2 from "../Assets/homelogo/8.png";
+import cs3 from "../Assets/homelogo/10.png";
+import cs4 from "../Assets/homelogo/7.png";
 
-import la1 from '../Assets/homelogo/5.png'
-import la2 from '../Assets/homelogo/18.png'
-import la3 from '../Assets/homelogo/15.png'
-import la4 from '../Assets/homelogo/Etch a sketch.png'
-import la5 from '../Assets/homelogo/Coolmaker.png'
+import la1 from "../Assets/homelogo/5.png";
+import la2 from "../Assets/homelogo/18.png";
+import la3 from "../Assets/homelogo/15.png";
+import la4 from "../Assets/homelogo/Etch a sketch.png";
+import la5 from "../Assets/homelogo/Coolmaker.png";
 
-import o1 from '../Assets/homelogo/o1.webp'
-import o2 from '../Assets/homelogo/o2.webp'
-import o3 from '../Assets/homelogo/o3.webp'
+import o1 from "../Assets/homelogo/o1.webp";
+import o2 from "../Assets/homelogo/o2.webp";
+import o3 from "../Assets/homelogo/o3.webp";
 
 const Try = () => {
   const [loading, setLoading] = useState(true);
@@ -217,7 +217,9 @@ const Try = () => {
                             loading="lazy"
                             width="100%"
                             onLoad={handleImageLoad}
-                            style={{ visibility: loading ? "hidden" : "visible" }}
+                            style={{
+                              visibility: loading ? "hidden" : "visible",
+                            }}
                           />
                         </Grid>
                       ))}

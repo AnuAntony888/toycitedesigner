@@ -5,43 +5,43 @@ import { Box, Grid } from "@mui/material";
 import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
 import pp1 from "../Assets/Pre School/pp1.mp4";
-import pp2 from "../Assets/Pre School/GDP.mp4";
-import pp3 from "../Assets/Pre School/Clubpetz.mp4";
+import pp2 from "../Assets/Pre School/Clubpetz.mp4";
 import img1 from "../Assets/Pre School/PPMM.jpg";
 import img2 from "../Assets/Pre School/Giggles.jpg";
 import img3 from "../Assets/Pre School/PLAYGO pOSTER-01.jpg";
 import img4 from "../Assets/Pre School/win.jpg";
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
+
 const Primaryscool = () => {
   useEffect(() => {
     // Scroll to the top of the page on component mount (page load)
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, []);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
+    // {
+    //   video: pp1,
+    //   text1: "PAW Patrol",
+    //   text2:
+    //     "Dive into action-packed adventures with Paw Patrol toys at Toycity! Our collection features beloved characters and thrilling playsets inspired by the hit animated series. From daring rescues to imaginative missions, Paw Patrol toys bring the excitement of Adventure Bay to life.",
+    // },
     {
-      video: pp1,
-      text1: "PAW Patrol",
-      text2:
-        "Dive into action-packed adventures with Paw Patrol toys at Toycity! Our collection features beloved characters and thrilling playsets inspired by the hit animated series. From daring rescues to imaginative missions, Paw Patrol toys bring the excitement of Adventure Bay to life.",
-    },
-    {
-      video: pp2,
+      video: "VrBveg5b-t4",
       text1: "Gabby’s Purrfect Dollhouse!",
       text2:
         "Time to get tiny! With its cat-inspired shape and colorful details, Gabby’s Purrfect Dollhouse looks just like the one from the show! This fantastical kids’ dollhouse includes a Dollhouse Delivery tower, working Cat-A-Vator, sounds and songs, and so much more!",
     },
-    {
-      video: pp3,
-      text1: "IMC Toys: Club Petz",
-      text2:
-        "Experience the whimsical charm of Club Petz toys by IMC Toys! These delightful companions bring joy to playtime with their interactive features and lovable personalities.",
-    },
+    // {
+    //   video: "pp3",
+    //   text1: "IMC Toys: Club Petz",
+    //   text2:
+    //     "Experience the whimsical charm of Club Petz toys by IMC Toys! These delightful companions bring joy to playtime with their interactive features and lovable personalities.",
+    // },
   ];
 
   const Data1 = [
@@ -72,7 +72,7 @@ const Primaryscool = () => {
   ];
   return (
     <>
-    < MetaComponent dynamicTitle="Toycity - Pre-School "  />
+      <MetaComponent dynamicTitle="Toycity - Pre-School " />
       <Box
         sx={{
           display: "flex",
@@ -81,11 +81,10 @@ const Primaryscool = () => {
           margin: "auto",
           pt: !isSmallScreen ? "120px" : "80px",
           backgroundColor: "#EEEEEE",
-          
         }}
       >
-         <br/>     <br/>
-         <br/>     <br/>
+        <br /> <br />
+        <br /> <br />
         <Link to="/">
           <WestIcon
             sx={{
@@ -112,7 +111,6 @@ const Primaryscool = () => {
             }}
           />
         </Link>
-  
       </Box>
       <Grid
         container
@@ -124,10 +122,40 @@ const Primaryscool = () => {
           pb: "5%",
         }}
       >
+        <Grid item xs={12} lg={12} md={12} sm={12}>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ width: "100%", height: "100%" }}
+          >
+            <source src={pp1} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <br />
+          <br />
+        </Grid>
+
+        <Grid item xs={12} lg={12} md={12} sm={12}>
+          <TypographyText
+            Typography="PAW Patrol"
+            fontWeight="400"
+            variant={!isSmallScreen ? "h5" : "h5"}
+          />
+          <br />
+          <TypographyText
+            Typography="Toy Collection! Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film"
+            textAlign="center"
+            fontWeight="400"
+          />
+          <br /> <br />
+        </Grid>
         {Data.map((curelem, index) => (
-          <div style={{ padding: "5%" }}>
+          <>
             <Grid item xs={12} lg={12} md={12} sm={12} key={index}>
-              <video
+              {/* <video
                 autoPlay
                 loop
                 muted
@@ -136,7 +164,15 @@ const Primaryscool = () => {
               >
                 <source src={curelem.video} type="video/mp4" />
                 Your browser does not support the video tag.
-              </video>
+              </video>  */}
+              <div class="responsive-container">
+                <iframe
+                  class="responsive-iframe"
+                  src={`https://www.youtube.com/embed/${curelem.video}?autoplay=1&controls=0&mute=1&loop=1&playlist=${curelem.video}`}
+                  frameborder="0"
+                  style={{ pointerEvents: "none" }}
+                ></iframe>
+              </div>
               <br />
               <br />
             </Grid>
@@ -155,13 +191,48 @@ const Primaryscool = () => {
               />
               <br /> <br />
             </Grid>
-          </div>
+          </>
         ))}
+ <Grid item xs={12} lg={12} md={12} sm={12}>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ width: "100%", height: "100%" }}
+          >
+            <source src={pp2} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
+          <br />
+          <br />
+        </Grid>
+
+        <Grid item xs={12} lg={12} md={12} sm={12}>
+          <TypographyText
+            Typography="IMC Toys: Club Petz"
+            fontWeight="400"
+            variant={!isSmallScreen ? "h5" : "h5"}
+          />
+          <br />
+          <TypographyText
+            Typography="Experience the whimsical charm of Club Petz toys by IMC Toys! These delightful companions bring joy to playtime with their interactive features and lovable personalities."
+            textAlign="center"
+            fontWeight="400"
+          />
+          <br /> <br />
+        </Grid>
         {Data1.map((curelem, index) => (
           <>
             <Grid item xs={12} lg={6} md={6} sm={12} key={index}>
-              <img src={curelem.img} alt="" width={"100%"} height={"auto"} loading="lazy"/>
+              <img
+                src={curelem.img}
+                alt=""
+                width={"100%"}
+                height={"auto"}
+                loading="lazy"
+              />
               <br />
               <br />
               <TypographyText

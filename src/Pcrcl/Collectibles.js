@@ -4,8 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import { Box, Grid } from "@mui/material";
 import { MetaComponent, TypographyText } from "../Reusable/Reusable";
 import { Link } from "react-router-dom";
-import monster from "../Assets/Pre School/monster.mp4";
-import baku from "../Assets/Pre School/baku.mp4";
+
 import EastIcon from "@mui/icons-material/East";
 import WestIcon from "@mui/icons-material/West";
 const Collectibles = () => {
@@ -20,13 +19,13 @@ const Collectibles = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: monster,
+      video: 'G0WSGiwToVE',
       text1: "Monster JAM",
       text2:
         "Monster Jam lets you create your own epic stunts, just like the live show! Take control with our RC vehicles, go all out with our playsets, and collect all of our authentic trucks. Real toys, real action, Monster Jam!",
     },
     {
-      video: baku,
+      video: 'fQJOR8ZkUh4',
       text1: "Bakugan",
       text2:
         "Inspired by the hit animated series, Bakugan toys offer thrilling strategic gameplay and fierce competition. Collect, roll, and transform these magnetic creatures to conquer the Bakugan battlefield. Dive into the action-packed world of Bakugan with our extensive collection of Bakugan toys.",
@@ -94,9 +93,9 @@ const Collectibles = () => {
         }}
       >
         {Data.map((curelem, index) => (
-          <div style={{ padding: "5%" }}>
+        <>
             <Grid item xs={12} lg={12} md={12} sm={12} key={index}>
-              <video
+              {/* <video
                 autoPlay
                 loop
                 muted
@@ -105,8 +104,15 @@ const Collectibles = () => {
               >
                 <source src={curelem.video} type="video/mp4" />
                 Your browser does not support the video tag.
-              </video>
-
+              </video> */}
+              <div class="responsive-container">
+                <iframe
+                  class="responsive-iframe"
+                  src={`https://www.youtube.com/embed/${curelem.video}?autoplay=1&controls=0&mute=1&loop=1&playlist=${curelem.video}`}
+                  frameborder="0"
+                  style={{ pointerEvents: "none" }}
+                ></iframe>
+              </div>
               <br />
               <br />
             </Grid>
@@ -125,30 +131,10 @@ const Collectibles = () => {
               />
               <br /> <br />
             </Grid>
-          </div>
+       </>
         ))}
 
-        {/* {Data1.map((curelem, index) => (
-          <>
-            <Grid item xs={12} lg={6} md={6} sm={12} key={index} >
-              <img src={curelem.img} alt="" width={"100%"} height={"auto"} />
-              <br />
-              <br />
-              <TypographyText
-                Typography={curelem.text1}
-                fontWeight="400"
-                variant={!isSmallScreen ? "h5" : "h5"}
-              />
-              <br />
-
-              <TypographyText
-                Typography={curelem.text2}
-                textAlign="center"
-                fontWeight="400"
-              />
-            </Grid>
-          </>
-        ))} */}
+        
       </Grid>
     </>
   );

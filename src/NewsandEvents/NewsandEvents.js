@@ -21,9 +21,11 @@ const NewsandEvents = () => {
   }, []);
   return (
     <>
-      < MetaComponent dynamicTitle="Toycity - News and events"  />
+      <MetaComponent dynamicTitle="Toycity - News and events" />
       {!isSmallScreen ? (
-        <Box sx={{ position: "relative", textAlign: "center",height:'100vh ' }}>
+        <Box
+          sx={{ position: "relative", textAlign: "center", height: "100vh " }}
+        >
           <img
             src={banner} // Replace with your image path
             alt="Your Image Alt Text"
@@ -55,9 +57,10 @@ const NewsandEvents = () => {
               color="#fff"
               Typography={
                 <>
-                  This is your Services section introductory title. Add a short
-                  text to introduce the types of services offered, and consider
-                  highlighting any special benefits or features.
+                  Directly engaging with the consumers is one of the strongest
+                  brand building activity. We conduct meet & greets using
+                  characters and we animate store fronts during
+                  weekends and holidays.
                 </>
               }
             />
@@ -65,8 +68,7 @@ const NewsandEvents = () => {
         </Box>
       ) : (
         <>
-        
-          <Box   sx={{ position: "relative", textAlign: "center" ,}}>
+          <Box sx={{ position: "relative", textAlign: "center" }}>
             <img
               src={banner1} // Replace with your image path
               alt="Your Image Alt Text"
@@ -96,14 +98,15 @@ const NewsandEvents = () => {
               {/* <br /> */}
             </Box>
           </Box>
-        
+
           <Box sx={{ pl: "8%", pr: "8%", pt: "2%", pb: "2%" }}>
             <TypographyText
               Typography={
                 <>
-                  This is your Services section introductory title. Add a short
-                  text to introduce the types of services offered, and consider
-                  highlighting any special benefits or features.
+                  Directly engaging with the consumers is one of the strongest
+                  brand building activity. We conduct meet & greets using
+                  characters and we animate store fronts during
+                  weekends and holidays.
                 </>
               }
             />
@@ -111,7 +114,7 @@ const NewsandEvents = () => {
         </>
       )}
 
-      <Grid container spacing={0} sx={{  pb: "5%" }}>
+      <Grid container spacing={0} sx={{ pb: "5%" }}>
         {Data.map((data, index) => (
           <Grid
             item
@@ -134,7 +137,7 @@ const NewsandEvents = () => {
                   Typography={data.tex1}
                   fontWeight="400"
                   variant={"h5"}
-                  textAlign="left"
+                  textAlign={"left" }
                   color="#fff"
                 />{" "}
                 <br />
@@ -142,7 +145,7 @@ const NewsandEvents = () => {
                   Typography={data.tex2}
                   fontWeight="400"
                   variant={"h5"}
-                  textAlign="left"
+                  textAlign={!isSmallScreen ?"left" :'centre'}
                   color="#fff"
                 />{" "}
                 <br />
@@ -150,7 +153,7 @@ const NewsandEvents = () => {
                   Typography={data.tex3}
                   fontWeight="400"
                   color="#fff"
-                  textAlign="left"
+                  textAlign={!isSmallScreen ?"left" :'centre'}
                 />
               </CardContent>
             </Card>
@@ -194,20 +197,18 @@ const NewsandEvents = () => {
                     boxShadow: "none",
                   }}
                 >
-               
                   <TypographyText
                     Typography={data.tex1}
                     fontWeight="400"
                     variant={"h1"}
-                    textAlign="left"
+                    textAlign={!isSmallScreen ?"left" :'centre'}
                     color="#EEEEEE"
                   />{" "}
                   <br />
-                  
                   <TypographyText
                     Typography={data.tex3}
                     fontWeight="400"
-                    textAlign="left"
+                    textAlign={!isSmallScreen ?"left" :'centre'}
                     variant={"h6"}
                   />
                   <br />
@@ -216,22 +217,18 @@ const NewsandEvents = () => {
                     image={data.img}
                     title="green iguana"
                   />
-              
-              
-                
                   <br />
                   <TypographyText
                     Typography={data.tex4}
                     fontSize=".9rem"
-                    textAlign="left"
+                    textAlign={!isSmallScreen ?"left" :'centre'}
                   />
-                     <br />
-                      <TypographyText
+                  <br />
+                  <TypographyText
                     Typography={data.tex2}
-                    textAlign="left"
+                    textAlign={!isSmallScreen ?"left" :'centre'}
                     fontSize=".8rem"
                   />{" "}
-               
                 </Card>
               </Grid>
             ))}

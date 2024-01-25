@@ -184,3 +184,22 @@ hr.new2 {
 }
    
   
+
+.responsive-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.lazy-load-image-background.blur.lazy-load-image-loaded {
+  height: 100vh !important;
+}

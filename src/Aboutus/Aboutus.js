@@ -8,7 +8,11 @@ import abou3 from "../Assets/abou/Header 1.webp";
 import desktop from "../Assets/abou/Desktop.webp";
 import team from "../Assets/abou/Team Meeting.webp";
 import eader11 from "../Assets/abou/Header11.webp";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+// import banner from "../Assets/About Us.webp";
 import banner from "../Assets/About Us.webp";
+import bannerd from "../Assets/about us_batcheditor_fotor (1).webp";
 import banner1 from "../Assets/1.webp";
 const Aboutus = () => {
   const theme = useTheme();
@@ -23,19 +27,26 @@ const Aboutus = () => {
   }, []);
   return (
     <>
-       < MetaComponent dynamicTitle="Toycity - About Us "  />
+      <MetaComponent dynamicTitle="Toycity - About Us " />
       {!isSmallScreen ? (
-        <Box sx={{ position: "relative", textAlign: "center" }}>
-          <img
-            src={banner} // Replace with your image path
+        <Box sx={{ position: "relative", textAlign: "center",    }}>
+          {/* <img
+            src={banner}
             alt="Your Image Alt Text"
             style={{
               width: "100%",
               height: "100vh",
 
-              // opacity: ".8",
             }}
-          />
+          /> */}
+    <LazyLoadImage src={banner}
+
+    PlaceholderSrc={bannerd}
+    effect="blur"
+     
+     width={'100%'} height={'100%'}
+/>
+
           <Box
             style={{
               position: "absolute",
@@ -80,11 +91,9 @@ const Aboutus = () => {
               style={{
                 width: "100%",
                 height: "100vh",
-
-             
               }}
-              />
-               <Box
+            />
+            <Box
               style={{
                 position: "absolute",
 
@@ -102,10 +111,9 @@ const Aboutus = () => {
 
               <br />
             </Box>
-            </Box>
-           
-            <Box sx={{pt: '5%',pb:'5%',pl:'10%',pr:'10%' }}>
-          <TypographyText
+          </Box>
+          <Box sx={{ pt: "5%", pb: "5%", pl: "10%", pr: "10%" }}>
+            <TypographyText
               Typography={
                 <>
                   As a specialized distributor in Saudi Arabia, we transcend
@@ -118,16 +126,21 @@ const Aboutus = () => {
                 </>
               }
               textAlign="centre"
-            
-              />
-              </Box>
+            />
+          </Box>
         </>
       )}
       {/********************************************************** */}
       <Grid container spacing={5}>
         <Grid item xs={12}>
-          <Box sx={{
-            pl: '10%',pr:'10%',pt:'5%',pb:'5%'}}>
+          <Box
+            sx={{
+              pl: "10%",
+              pr: "10%",
+              pt: "5%",
+              pb: "5%",
+            }}
+          >
             <TypographyText
               Typography={<>7 Years, 6.5 Million Happy Faces & Counting</>}
               textAlign="centre"
@@ -151,8 +164,7 @@ const Aboutus = () => {
                   stores, travel retail stores and much more.
                 </>
               }
-              
-              textAlign= "centre"
+              textAlign="centre"
               color="black"
               fontWeight="400"
               // variant={!isSmallScreen ? "h4" : "h5"}
@@ -161,7 +173,14 @@ const Aboutus = () => {
         </Grid>
         {/************************************ */}
         <Grid item xs={12} lg={7} md={7} sm={12}>
-          <Box sx={{ pl:'10%',pr:'10%',pb:'10%',pt:isSmallScreen?'0%':'10%' }}>
+          <Box
+            sx={{
+              pl: "10%",
+              pr: "10%",
+              pb: "10%",
+              pt: isSmallScreen ? "0%" : "10%",
+            }}
+          >
             <TypographyText
               Typography={
                 <>
@@ -169,7 +188,7 @@ const Aboutus = () => {
                   Brand Visibility in Kingdom of Saudi Arabia
                 </>
               }
-              textAlign={!isSmallScreen ? "left":'centre'}
+              textAlign={!isSmallScreen ? "left" : "centre"}
               color="black"
               fontWeight="400"
               variant={!isSmallScreen ? "h4" : "h5"}
@@ -195,7 +214,7 @@ const Aboutus = () => {
                   activations, and more!
                 </>
               }
-              textAlign={!isSmallScreen ?"left":"centre"}
+              textAlign={!isSmallScreen ? "left" : "centre"}
               color="black"
             />
           </Box>

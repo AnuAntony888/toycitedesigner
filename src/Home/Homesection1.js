@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import video from "../Assets/homepage/video1.mp4";
+import ReactPlayer from 'react-player'
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { TypographyText } from "../Reusable/Reusable";
@@ -71,8 +72,16 @@ const Homesection1 = () => {
             />
             Your browser does not support the video tag.
           </video>
-         
-    
+      
+ 
+
+{/* <iframe 
+	width="100%" height="100%" 
+	src="https://www.youtube.com/embed/ceo7hBDh-2M?autoplay=1&controls=0&mute=1&loop=1&playlist=ceo7hBDh-2M" 
+	frameborder="0" style={{pointerEvents:'none'}}>
+	
+</iframe> */}
+
         </Grid>
       </Grid>
     </>
