@@ -39,9 +39,9 @@ const Aboutus = () => {
 
             }}
           /> */}
-    <LazyLoadImage src={banner}
+    <LazyLoadImage src={'https://ik.imagekit.io/jlco9jzsq/toycity/About%20Us.webp?updatedAt=1706186556054'}
 
-    PlaceholderSrc={bannerd}
+    PlaceholderSrc={'https://ik.imagekit.io/jlco9jzsq/toycity/About%20Us.webp?updatedAt=1706186556054'}
     effect="blur"
      
      width={'100%'} height={'100%'}
@@ -86,7 +86,7 @@ const Aboutus = () => {
           {" "}
           <Box sx={{ position: "relative", textAlign: "center" }}>
             <img
-              src={banner1} // Replace with your image path
+              src={'https://ik.imagekit.io/jlco9jzsq/toycity/1.webp?updatedAt=1706186496768'} // Replace with your image path
               alt="Your Image Alt Text"
               style={{
                 width: "100%",

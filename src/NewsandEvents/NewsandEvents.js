@@ -27,7 +27,7 @@ const NewsandEvents = () => {
           sx={{ position: "relative", textAlign: "center", height: "100vh " }}
         >
           <img
-            src={banner} // Replace with your image path
+            src={'https://ik.imagekit.io/jlco9jzsq/toycity/News%20&%20Events.webp?updatedAt=1706186579306'} // Replace with your image path
             alt="Your Image Alt Text"
             style={{
               width: "100%",
@@ -70,7 +70,7 @@ const NewsandEvents = () => {
         <>
           <Box sx={{ position: "relative", textAlign: "center" }}>
             <img
-              src={banner1} // Replace with your image path
+              src={'https://ik.imagekit.io/jlco9jzsq/toycity/2.webp?updatedAt=1706186526836'} // Replace with your image path
               alt="Your Image Alt Text"
               style={{
                 width: "100%",

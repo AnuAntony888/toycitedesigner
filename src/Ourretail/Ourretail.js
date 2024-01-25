@@ -14,9 +14,16 @@ import img7 from "../Assets/logo/special partners/elc.jpg";
 import img8 from "../Assets/logo/special partners/hk kids.jpg";
 import img9 from "../Assets/logo/special partners/jarir.jpg";
 import img10 from "../Assets/logo/special partners/mothercare.jpg";
-import img11 from "../Assets/logo/special partners/nandi.jpg";
+import img11 from "../Assets/logo/special partners/r&b.jpg";
 import img12 from "../Assets/logo/special partners/nandi.jpg";
 import img13 from "../Assets/logo/special partners/new yr.jpg";
+import img14 from "../Assets/logo/special partners/danube.jpg";
+import img15 from "../Assets/logo/special partners/toysrus.jpg";
+import img16 from "../Assets/logo/special partners/virgin.jpg";
+import img17 from "../Assets/logo/special partners/toyslab.jpg";
+import img18 from "../Assets/logo/special partners/whsmith.jpg";
+import img19 from "../Assets/logo/special partners/squiggles.jpg";
+import img20 from "../Assets/logo/special partners/toy suprise.jpg";
 import re1 from "../Assets/logo/retail/al musbah.jpg";
 import re2 from "../Assets/logo/retail/catering.jpg";
 import re3 from "../Assets/logo/retail/chalhoub.jpg";
@@ -58,18 +65,19 @@ const Ourretail = () => {
   // console.log(loading,"loading")
   return (
     <div>
-       < MetaComponent dynamicTitle="Toycity - Our Retail Partners"  />
+      <MetaComponent dynamicTitle="Toycity - Our Retail Partners" />
       {!isSmallScreen ? (
         <Box sx={{ position: "relative", textAlign: "center" }}>
           <img
-            src={banner} // Replace with your image path
+            src={
+              "https://ik.imagekit.io/jlco9jzsq/toycity/Retail%20Partners%20(1).webp?updatedAt=1706186592547"
+            } // Replace with your image path
             alt="Your Image Alt Text"
             loading="lazy"
             style={{
               width: "100%",
               height: "100vh",
             }}
-         
           />
           <Box
             style={{
@@ -115,13 +123,15 @@ const Ourretail = () => {
           {" "}
           <Box sx={{ position: "relative", textAlign: "center" }}>
             <img
-              src={banner1} // Replace with your image path
+              src={
+                "https://ik.imagekit.io/jlco9jzsq/toycity/3.webp?updatedAt=1706186538323"
+              } // Replace with your image path
               alt="Your Image Alt Text"
               style={{
                 width: "100%",
                 height: "100vh",
-                }}
-                loading='lazy'
+              }}
+              loading="lazy"
             />
 
             <Box
@@ -143,28 +153,28 @@ const Ourretail = () => {
               <br />
             </Box>
           </Box>
-            <br />
-            <Box sx={{p:'8%'}}>
-          <TypographyText
-            textAlign="justify"
-           Typography={
-              <>
-                Toycity, a leading toy distribution company, proudly
-                collaborates with an extensive network of retail partners to
-                bring joy and excitement to children of all ages. Our retail
-                partners range from local independent toy stores to well-known
-                national chains, creating a diverse and widespread presence for
-                Toycity products. Through these valued partnerships, we ensure
-                that our innovative and high-quality toys reach every corner of
-                the market, providing families with access to the latest and
-                most beloved playthings. By working closely with our retail
-                partners, Toycity is committed to fostering a vibrant and
-                engaging toy-shopping experience, making playtime memorable for
-                children everywhere.
-              </>
-            }
-              />
-              </Box>
+          <br />
+          <Box sx={{ p: "8%" }}>
+            <TypographyText
+              textAlign="justify"
+              Typography={
+                <>
+                  Toycity, a leading toy distribution company, proudly
+                  collaborates with an extensive network of retail partners to
+                  bring joy and excitement to children of all ages. Our retail
+                  partners range from local independent toy stores to well-known
+                  national chains, creating a diverse and widespread presence
+                  for Toycity products. Through these valued partnerships, we
+                  ensure that our innovative and high-quality toys reach every
+                  corner of the market, providing families with access to the
+                  latest and most beloved playthings. By working closely with
+                  our retail partners, Toycity is committed to fostering a
+                  vibrant and engaging toy-shopping experience, making playtime
+                  memorable for children everywhere.
+                </>
+              }
+            />
+          </Box>
         </>
       )}
 
@@ -220,9 +230,9 @@ const Ourretail = () => {
                         src={curelem.img}
                         alt=""
                         width={"100%"}
-                        onLoad={handleImageLoad} 
+                        onLoad={handleImageLoad}
                         loading="lazy"
-                        style={{visibility:loading? "hidden" : "visible"}}
+                        style={{ visibility: loading ? "hidden" : "visible" }}
                       />
                     </Card>
                   </Grid>
@@ -253,6 +263,13 @@ const Datas = [
       { img: img11 },
       { img: img12 },
       { img: img13 },
+      { img: img14 },
+      { img: img15 },
+      { img: img16 },
+      { img: img17 },
+      { img: img18 },
+      { img: img19 },
+      { img: img20 },
     ],
   },
   {
