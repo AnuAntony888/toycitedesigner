@@ -46,25 +46,25 @@ const Primaryscool = () => {
 
   const Data1 = [
     {
-      img: img1,
+      img: 'https://ik.imagekit.io/jlco9jzsq/toycity/PPMM.jpg?updatedAt=1706714476653',
       text1: "PAW Patrol: The Mighty Movie",
       text2:
         "Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film.",
     },
     {
-      img: img2,
+      img: 'https://ik.imagekit.io/jlco9jzsq/toycity/Giggles.jpg?updatedAt=1706714473331',
       text1: "Funskool Giggles",
       text2:
         "From delightful plushies to interactive games, here are a curated selection of Funskool's Giggles line.",
     },
     {
-      img: img3,
+      img: 'https://ik.imagekit.io/jlco9jzsq/toycity/PLAYGO%20pOSTER-01.jpg?updatedAt=1706714472492',
       text1: "Play Go",
       text2:
         "Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film.",
     },
     {
-      img: img4,
+      img: 'https://ik.imagekit.io/jlco9jzsq/toycity/win.jpg?updatedAt=1706714470142',
       text1: "Winfun",
       text2:
         "WinFun Toys rage for interactive learning gadgets to whimsical playsets, WinFun Toys redefine playtime, sparking imagination and joy in every child.",

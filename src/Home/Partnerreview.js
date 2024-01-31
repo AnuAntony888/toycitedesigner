@@ -18,6 +18,7 @@ import Slider from "react-slick";
 import banner7 from "../Assets/homepage/banner7.jpg";
 import banner71 from "../Assets/homepage/banner71.webp";
 import brand from "../Assets/homepage/Brand Launch.webp";
+import axios from "axios";
 
 function SamplePrevArrow(props) {
   const { style, onClick } = props;
@@ -81,6 +82,34 @@ const Partnerreview = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const islarge = useMediaQuery(theme.breakpoints.down("lg"));
+
+
+
+
+
+const accessToken=`IGQWRPWjJrWEtwVDBWSlczdm85d3lXdnhpbkFiWmFIbmtsUE00M0VJUmtQSGxWR1h6SDNpaXNIekFienFtSF9TTEZA6cXNkSUFVOENRSDhvRXg4U2U1LUFBeDJ1WGxFZAm5NWUxHd1RTdGNsRkZAidEZAmTTdqOGJCYVUZD`
+const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get(
+          `https://graph.instagram.com/me/media?fields=id,media_url,permalink,caption&access_token=${accessToken}`
+        );
+        setPosts(response.data.data);
+      } catch (error) {
+        console.error('Error fetching Instagram posts:', error);
+      }
+    };
+
+    fetchPosts();
+  }, [accessToken]);
+
+
+
+  
+
+
   return (
     <>
       <Grid
@@ -247,6 +276,32 @@ const Partnerreview = () => {
           />
         </Grid>
       </Grid>
+      {/******************************************* */}
+    
+      <Grid container  spacing={3} sx={{padding:'5%'}}>
+      {posts.slice(0, 8).map((post) => (
+        <Grid item xs={12} lg={3} md={4} sm={6} key={post.id}>
+          {post.media_url.toLowerCase().includes('.mp4') ? (<>
+            
+            <video width="100%" minHeight='250px' controls height='250px'>
+              <source src={post.media_url} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+       
+            <a href={post.permalink} target="_blank" rel="noopener noreferrer">
+              <TypographyText
+                Typography={post.caption}/>
+              </a>
+         </> ) : (
+            <a href={post.permalink} target="_blank" rel="noopener noreferrer">
+                <img src={post.media_url} alt={post.caption} width="100%" height='250px' minHeight='250px' />
+                <TypographyText
+                Typography={post.caption}/>
+            </a>
+          )}
+        </Grid>
+      ))}
+    </Grid>
     </>
   );
 };

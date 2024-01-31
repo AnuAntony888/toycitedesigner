@@ -98,7 +98,7 @@ const Contact = () => {
             <TypographyText
               Typography={<>Contact Us</>}
               fontWeight="400"
-              variant={!isSmallScreen ? "h2" : "h4"}
+              variant={!isSmallScreen ? "h3" : "h4"}
               color="White"
             />
 
@@ -132,7 +132,7 @@ const Contact = () => {
               <TypographyText
                 Typography={<> Contact Us</>}
                 fontWeight="400"
-                variant={!isSmallScreen ? "h2" : "h4"}
+                variant={!isSmallScreen ? "h3" : "h4"}
                 color="White"
               />
 
@@ -155,7 +155,7 @@ const Contact = () => {
           pb: "2%",
         }}
       >
-        <Grid item xs={12} md={12} lg={12} sm={12}>
+        {/* <Grid item xs={12} md={12} lg={12} sm={12}>
           <TypographyText
             Typography={<>Have a Question?</>}
             fontWeight="400"
@@ -173,7 +173,7 @@ const Contact = () => {
               </>
             }
           />
-        </Grid>
+        </Grid> */}
         {/**********************section1************************************ */}
         <Grid item xs={12} md={12} lg={6} sm={12}>
           <Grid container spacing={2}>
@@ -403,7 +403,7 @@ const Contact = () => {
                       If you’re interested in wholesale orders or bulk purchase
                       opportunities and offers,
                       <Link
-                        to={`mailto:rajiv@toycity.me`}
+                        to={`mailto: info@toycity.me`}
                         style={{ textDecoration: "underline black" }}
                       >
                         {" "}
@@ -436,7 +436,7 @@ const Contact = () => {
                       bloggers or trendy moms that would love to share their
                       style with our matching models. Please,
                       <Link
-                        to={`mailto:rajiv@toycity.me`}
+                        to={`mailto:info@toycity.me`}
                         style={{ textDecoration: "underline black" }}
                       >
                         {" "}
@@ -453,52 +453,7 @@ const Contact = () => {
         </Grid>
       </Grid>
 
-      {/* <form action="" ref={form} onSubmit={sendEmail}>
-                    <Grid item xs={12} sx={{ pb: "2%" }}>
-                      <input
-                        fullWidth
-                        id="fullWidth"
-                        type="text"
-                        placeholder="Your Full Name"
-                        name="name"
-                        required
-                        
-                      />
-                    </Grid>
-                    <Grid item xs={12} sx={{ pb: "2%" }}>
-                      <input
-                        fullWidth
-                        type="email"
-                        placeholder="Your Email"
-                        name="email"
-                        required
-                   
-                      />
-                    </Grid>
-                    <Grid item xs={12} sx={{ pb: "2%" }}>
-                      <textarea
-                        placeholder="Your message"
-                        name="message"
-                        rows="7"
-                       
-                        required
-                      />
-                    </Grid>
-                    <Grid item xs={12} sx={{ pb: "2%" }}>
-                      <Button
-                        variant="contained"
-                        type="submit"
-                        sx={{
-                          bgcolor: "#f4af1b",
-                          color: "black",
-                          fontWeight: "bolder",
-                          border: "1px solid #f4af1b",
-                        }}
-                      >
-                        Send Message
-                      </Button>
-                    </Grid>
-                  </form> */}
+  
     </div>
   );
 };

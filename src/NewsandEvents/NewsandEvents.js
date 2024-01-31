@@ -133,14 +133,14 @@ const NewsandEvents = () => {
               }}
             >
               <CardContent>
-                <TypographyText
+                {/* <TypographyText
                   Typography={data.tex1}
                   fontWeight="400"
                   variant={"h5"}
                   textAlign={"left" }
                   color="#fff"
                 />{" "}
-                <br />
+                <br /> */}
                 <TypographyText
                   Typography={data.tex2}
                   fontWeight="400"
@@ -197,14 +197,14 @@ const NewsandEvents = () => {
                     boxShadow: "none",
                   }}
                 >
-                  <TypographyText
+                  {/* <TypographyText
                     Typography={data.tex1}
                     fontWeight="400"
                     variant={"h1"}
                     textAlign={!isSmallScreen ?"left" :'centre'}
                     color="#EEEEEE"
                   />{" "}
-                  <br />
+                  <br /> */}
                   <TypographyText
                     Typography={data.tex3}
                     fontWeight="400"

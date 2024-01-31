@@ -17,7 +17,7 @@ import banner1 from "../Assets/1.webp";
 const Aboutus = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const islargeScreen = useMediaQuery(theme.breakpoints.down("lg"));
+  const islargeScreen = useMediaQuery(theme.breakpoints.down("xl"));
   useEffect(() => {
     // Scroll to the top of the page on component mount (page load)
     window.scrollTo({
@@ -45,7 +45,7 @@ const Aboutus = () => {
 
               top: "50%",
               left: "50%",
-              transform: "translate(10%, -50%)",
+              transform:  islargeScreen ? "translate(10%, -50%)": "translate(50%, -50%)" ,
             }}
           >
             <TypographyText
@@ -109,20 +109,31 @@ const Aboutus = () => {
               pb: "5%",
             }}
           >
-   
+       <TypographyText
+              Typography={
+                <>
+               
+               Together, Let’s Inspire a child.
+
+
+                </>
+              }
+              textAlign={!isSmallScreen ? "left" : "centre"}
+              color="black"
+              fontWeight="400"
+              variant={!isSmallScreen ? "h4" : "h5"}
+            /><br/><br/>
             <TypographyText
               Typography={
                 <>
-                  We have been creating engaging experiences for kids of all
-                  ages over the last 7 years, bringing fun and curiosity to over
-                  6.5 million young minds. This achievement stems from the
-                  invaluable support of our esteemed partners and customers. It
-                  marks a milestone toward a brighter and more inspired future
-                  as we continue our journey to enrich the lives of children.
-                  Our brand portfolio is diverse and spans all key toy
-                  categories with favorable strategic placements in all relevant
-                  channels, including specialty stores, hypermarkets, book
-                  stores, travel retail stores and much more.
+               
+                  At Toycity, we believe in consistently delivering impactful results, striving to become an organization that garners pride from our employees, stakeholders, business partners, and cherished customers through our efficient practices.
+                  <br/><br/>
+
+Our passion lies in meticulously sourcing, developing, and promoting safe and top-quality children's products. Every product we endorse is intended to ignite creativity, enhance motor skills, spark imagination, and foster educational curiosity in every child. We are dedicated to enriching the lives of our consumers by adding value while ensuring that fun remains an integral part of the experience.      <br/>
+Headquartered in Jeddah, we are a specialized distributors of kids toys of all ages in Saudi Arabia, with 30+ brands and 500 retail outlets, in the last 7 years we have been creating engaging experiences for Kids and brought fun and curiosity to over 6.5 Million minds.  <br/>     <br/>
+Our corporate office houses a dedicated showroom for retail clients, complemented by a robust infrastructure featuring a 1500 sqm warehouse and a comprehensive delivery network across KSA. 
+
                 </>
               }
               textAlign={!isSmallScreen ? "left" : "centre"}
