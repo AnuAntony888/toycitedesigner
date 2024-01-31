@@ -30,15 +30,7 @@ const Aboutus = () => {
       <MetaComponent dynamicTitle="Toycity - About Us " />
       {!isSmallScreen ? (
         <Box sx={{ position: "relative", textAlign: "center",    }}>
-          {/* <img
-            src={banner}
-            alt="Your Image Alt Text"
-            style={{
-              width: "100%",
-              height: "100vh",
-
-            }}
-          /> */}
+       
     <LazyLoadImage src={'https://ik.imagekit.io/jlco9jzsq/toycity/About%20Us.webp?updatedAt=1706186556054'}
 
     PlaceholderSrc={'https://ik.imagekit.io/jlco9jzsq/toycity/About%20Us.webp?updatedAt=1706186556054'}
@@ -52,33 +44,21 @@ const Aboutus = () => {
               position: "absolute",
 
               top: "50%",
-              left: "71%",
-              transform: "translate(-29%, -50%)",
+              left: "50%",
+              transform: "translate(10%, -50%)",
             }}
           >
             <TypographyText
-              Typography={<>About Us</>}
+             Typography={<>7 Years, <br />
+             6.5 Million Happy Faces
+             <br/>& Counting...
+             </>}
               fontWeight="400"
-              variant={!isSmallScreen ? "h2" : "h4"}
+              variant={!isSmallScreen ? "h3" : "h4"}
               color="White"
             />
 
-            <br />
-            <TypographyText
-              Typography={
-                <>
-                  As a specialized distributor in Saudi Arabia, we transcend
-                  conventional'selling' by addressing the unique needs of
-                  specialty stores, standalone outlets, and travel retail
-                  venues. Our unwavering focus on the Saudimarket drives our
-                  success, forging strong partnerships with retailersand
-                  securing widespread brand visibility nationwide, resulting in
-                  primein-store positioning.
-                </>
-              }
-              textAlign="centre"
-              color="White"
-            />
+    
           </Box>
         </Box>
       ) : (
@@ -98,12 +78,15 @@ const Aboutus = () => {
                 position: "absolute",
 
                 top: "25%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
+                left: "35%",
+                transform: "translate(-20%, -50%)",
               }}
             >
               <TypographyText
-                Typography={<> About Us</>}
+               Typography={<>7 Years, <br />
+               6.5 Million Happy Faces
+               <br/>& Counting...
+               </>}
                 fontWeight="400"
                 variant={!isSmallScreen ? "h2" : "h4"}
                 color="White"
@@ -112,22 +95,7 @@ const Aboutus = () => {
               <br />
             </Box>
           </Box>
-          <Box sx={{ pt: "5%", pb: "5%", pl: "10%", pr: "10%" }}>
-            <TypographyText
-              Typography={
-                <>
-                  As a specialized distributor in Saudi Arabia, we transcend
-                  conventional'selling' by addressing the unique needs of
-                  specialty stores, standalone outlets, and travel retail
-                  venues. Our unwavering focus on the Saudimarket drives our
-                  success, forging strong partnerships with retailersand
-                  securing widespread brand visibility nationwide, resulting in
-                  primein-store positioning.
-                </>
-              }
-              textAlign="centre"
-            />
-          </Box>
+ 
         </>
       )}
       {/********************************************************** */}
@@ -141,14 +109,7 @@ const Aboutus = () => {
               pb: "5%",
             }}
           >
-            <TypographyText
-              Typography={<>7 Years, 6.5 Million Happy Faces & Counting</>}
-              textAlign="centre"
-              color="black"
-              fontWeight="400"
-              variant={!isSmallScreen ? "h4" : "h5"}
-            />
-            <br />
+   
             <TypographyText
               Typography={
                 <>
@@ -164,10 +125,10 @@ const Aboutus = () => {
                   stores, travel retail stores and much more.
                 </>
               }
-              textAlign="centre"
+              textAlign={!isSmallScreen ? "left" : "centre"}
               color="black"
               fontWeight="400"
-              // variant={!isSmallScreen ? "h4" : "h5"}
+          
             />
           </Box>
         </Grid>
@@ -182,13 +143,13 @@ const Aboutus = () => {
             }}
           >
             <TypographyText
-              Typography={
-                <>
-                  Innovative Retail Strategies and Implementations: Elevating
-                  Brand Visibility in Kingdom of Saudi Arabia
-                </>
-              }
-              textAlign={!isSmallScreen ? "left" : "centre"}
+                   Typography={
+                    <>
+                      Elevating Brand Visibility in Kingdom of  Saudi Arabia
+    
+                    </>
+                  }
+                  textAlign={!isSmallScreen ? "left" : "centre"}
               color="black"
               fontWeight="400"
               variant={!isSmallScreen ? "h4" : "h5"}
@@ -197,21 +158,15 @@ const Aboutus = () => {
             <TypographyText
               Typography={
                 <>
-                  Collaborating with 30+ brands with a distribution network of
-                  500 retail outlets, our team excels in introducing
-                  international brands to local markets. With seasoned
-                  professionals delivering exceptional results across multiple
-                  scales, we maintain a high-quality experience. Headquartered
-                  in Jeddah, our corporate office houses a dedicated showroom
-                  for retail clients, complemented by a robust infrastructure
-                  featuring a 1500 sqm warehouse and a comprehensive delivery
-                  network across KSA. Our field executives cover major cities,
-                  ensuring seamless sales and service in the region. Working
-                  alongside a team of proficient professionals who've excelled
-                  in sales, operations, and marketing for over 7 years, we offer
-                  end-to-end services crafting complete strategies inclusive of
-                  ATL and BTL activities, such as merchandising, retail
-                  activations, and more!
+                  <>
+                "As a specialized distributor in Saudi Arabia, we transcend conventional 'selling' by addressing the unique needs of specialty stores, standalone outlets, and travel retail venues. Our unwavering focus on the Saudi market drives our success, forging strong partnerships with retailers and securing widespread brand visibility nationwide, resulting in prime in-store positioning.
+<br/><br/>
+With seasoned professionals delivering exceptional results across multiple scales, we maintain a high-quality experience.
+<br/><br/>
+Working alongside a team of proficient professionals who've excelled in sales, operations, and marketing for over 7 years, we offer end-to-end services crafting complete strategies inclusive of ATL and BTL activities, such as merchandising, retail activations, and more!“
+
+
+                </>
                 </>
               }
               textAlign={!isSmallScreen ? "left" : "centre"}

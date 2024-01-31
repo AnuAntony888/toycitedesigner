@@ -16,10 +16,14 @@ const RCToys = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: 'BK1Pg1auvDc',
-      text1: "Airhog",
-      text2:
-        "Experience the thrill of high-speed racing and precision control with these innovative remote-controlled vehicles. From sleek designs to powerful performance, Airhogs RC toy cars bring excitement to every twist and turn.",
+      video: 'LWLZrS9EzlY',
+      text1: "Airhoggs",
+      text2:<>
+      Air Hogs is the classic remote control brand that puts YOU in the driver’s seat! 
+<br/>
+        Experience the heart-pumping adrenaline of pushing beyond your limits to do things you thought were impossible!
+        </>
+      
     },
   
   ];
@@ -29,13 +33,16 @@ const RCToys = () => {
       img: img1,
       text1: "Monster Jam RC",
       text2:
-        "Experience the pulse-pounding excitement of Monster Jam in the palm of your hands. These remote-controlled beasts bring iconic monster trucks to life, conquering obstacles with power and precision.",
+        <>Monster Jam lets you create your own epic stunts, just like the live show! <br/>
+        Take control with our RC vehicles, go all out with our playsets, and collect all of our authentic trucks. Real toys, real action, Monster Jam!
+        </>
     },
     {
       img: img2,
       text1: "Funny Box RC",
       text2:
-        "Unleash laughter and excitement with Funny Box RC toys. Discover a world of whimsical remote-controlled wonders that bring joy to every playtime. From quirky characters to hilarious movements, Funny Box RC toys add a dose of fun to your adventures.",
+     " Unleash laughter and excitement with Funny Box RC toys. Discover a world of whimsical remote-controlled wonders that bring joy to every playtime. From quirky characters to hilarious movements, Funny Box RC toys add a dose of fun to your adventures."
+
     },
     
   ];

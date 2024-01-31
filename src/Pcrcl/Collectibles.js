@@ -19,16 +19,16 @@ const Collectibles = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: 'G0WSGiwToVE',
+      video: 'lBG_ndh6quw',
       text1: "Monster JAM",
       text2:
-        "Monster Jam lets you create your own epic stunts, just like the live show! Take control with our RC vehicles, go all out with our playsets, and collect all of our authentic trucks. Real toys, real action, Monster Jam!",
+        "Monster Jam let’s you create your own epic stunts, just like the live show! Take control with our RC vehicles, go all out with our playsets, and collect all of our authentic trucks. Real toys, real action, Monster Jam!"
     },
     {
-      video: 'fQJOR8ZkUh4',
+      video: 'u2gzeNsfy-4',
       text1: "Bakugan",
       text2:
-        "Inspired by the hit animated series, Bakugan toys offer thrilling strategic gameplay and fierce competition. Collect, roll, and transform these magnetic creatures to conquer the Bakugan battlefield. Dive into the action-packed world of Bakugan with our extensive collection of Bakugan toys.",
+        "Battle like you've never battled before with the all-NEW Bakugan anime! Join the adventures of Dan Kouzo and The Misfit clan as they join forces with alien creatures called Bakugan in epic battles for the fate of the world. Then bring all of the action home with NEW Bakugan toys!"
     },
   ];
 

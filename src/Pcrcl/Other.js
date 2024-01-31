@@ -26,7 +26,7 @@ const Other = () => {
       video: "SPhQIN7iOAo",
       text1: "Bitzee",
       text2:
-        "What’s in the box? Introducing Bitzee: the digital pet you can really touch™! Bitzee reacts to your swipes, tilts, shakes and touch. With your love and care, help your pets grow from baby, to adult, to Super Bitzee!!",
+        "What’s in the box? Introducing Bitzee: the digital pet you can really touch™! Bitzee reacts to your swipes, tilts, shakes and touch. With your love and care, help your pets grow from baby, to adult, to Super Bitzee!!"
     },
   ];
 
@@ -35,13 +35,13 @@ const Other = () => {
       img: img3,
       text1: "WWF",
       text2:
-        "WWF Collection! You don’t have to be a little person to love our WWF luxury super cuddly soft toys – enjoy your very own wild animal at home and support them in the wild.",
+        "You don’t have to be a little person to love our WWF luxury super cuddly soft toys – enjoy your very own wild animal at home and support them in the wild.",
     },
     {
       img: img4,
       text1: "Bonikka Collection",
       text2:
-        "Our beautifully handcrafted soft dolls and rag dolls are created using soft and comforting fabrics, perfect for lots of cuddles and to take away on childhood adventures. They make perfect presents and will encourage imaginative child play which is valuable for learning and development skills.",
+        "Soft dolls, rag dolls and cloth dolls hand made with beautiful fabrics. Traditional and contemporary dolls that are soft and huggable, safe for babies, toddlers and children. Also comforting empathy dolls for all age groups. A timeless and classic soft toy that will comfort and delight."
     },
   ];
 

@@ -21,28 +21,22 @@ const Homesection1 = () => {
           <Box
             sx={{
               position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
+              top: "65%",
+              left: "25%",
+              transform: "translate(-10%, -50%)",
               textAlign: "center",
 
               zIndex: "1",
             }}
           >
             <div data-aos="fade-up" data-aos-duration="3000">
-              <TypographyText
-                Typography={<>TOYCITY</>}
-                color="#fff"
-                fontWeight="900"
-                variant={!isSmallScreen ? "h2" : "h4"}
-              />
-              <br />
+      
               <TypographyText
                 Typography={
                   <>
                     Together,
-                    <br />
-                    Let's Inspire a Child
+               
+                    Let's Inspire a Child.
                   </>
                 }
                 color="#fff"

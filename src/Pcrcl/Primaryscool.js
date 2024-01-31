@@ -24,15 +24,15 @@ const Primaryscool = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
-    // {
-    //   video: pp1,
-    //   text1: "PAW Patrol",
-    //   text2:
-    //     "Dive into action-packed adventures with Paw Patrol toys at Toycity! Our collection features beloved characters and thrilling playsets inspired by the hit animated series. From daring rescues to imaginative missions, Paw Patrol toys bring the excitement of Adventure Bay to life.",
-    // },
+    {
+      video: "i5tS6oEeGO4",
+      text1: "PAW Patrol",
+      text2:
+        "Dive into action-packed adventures with Paw Patrol toys at Toycity! Our collection features beloved characters and thrilling playsets inspired by the hit animated series. From daring rescues to imaginative missions, Paw Patrol toys bring the excitement of Adventure Bay to life.",
+    },
     {
       video: "VrBveg5b-t4",
-      text1: "Gabby’s Purrfect Dollhouse!",
+      text1: "Gabby’s  Dollhouse!",
       text2:
         "Time to get tiny! With its cat-inspired shape and colorful details, Gabby’s Purrfect Dollhouse looks just like the one from the show! This fantastical kids’ dollhouse includes a Dollhouse Delivery tower, working Cat-A-Vator, sounds and songs, and so much more!",
     },
@@ -40,7 +40,7 @@ const Primaryscool = () => {
     //   video: "pp3",
     //   text1: "IMC Toys: Club Petz",
     //   text2:
-    //     "Experience the whimsical charm of Club Petz toys by IMC Toys! These delightful companions bring joy to playtime with their interactive features and lovable personalities.",
+    //     "Sweet and adorable interactive plush, we will be your new best friends!  Each has a variety of functions and special features!",
     // },
   ];
 
@@ -49,25 +49,25 @@ const Primaryscool = () => {
       img: img1,
       text1: "PAW Patrol: The Mighty Movie",
       text2:
-        "Toy Collection! Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film",
+        "Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film.",
     },
     {
       img: img2,
       text1: "Funskool Giggles",
       text2:
-        "Toy Collection! From delightful plushies to interactive games, Toycity brings you a curated selection of Funskool's Giggles line.",
+        "From delightful plushies to interactive games, here are a curated selection of Funskool's Giggles line.",
     },
     {
       img: img3,
       text1: "Play Go",
       text2:
-        "Toy Collection! Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film.",
+        "Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film.",
     },
     {
       img: img4,
       text1: "Winfun",
       text2:
-        "WinFun Toys captivate young minds with innovative designs, educational value, and endless fun. From interactive learning gadgets to whimsical playsets, WinFun Toys redefine playtime, sparking imagination and joy in every child.",
+        "WinFun Toys rage for interactive learning gadgets to whimsical playsets, WinFun Toys redefine playtime, sparking imagination and joy in every child.",
     },
   ];
   return (
@@ -122,49 +122,9 @@ const Primaryscool = () => {
           pb: "5%",
         }}
       >
-        <Grid item xs={12} lg={12} md={12} sm={12}>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{ width: "100%", height: "100%" }}
-          >
-            <source src={pp1} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-
-          <br />
-          <br />
-        </Grid>
-
-        <Grid item xs={12} lg={12} md={12} sm={12}>
-          <TypographyText
-            Typography="PAW Patrol"
-            fontWeight="400"
-            variant={!isSmallScreen ? "h5" : "h5"}
-          />
-          <br />
-          <TypographyText
-            Typography="Toy Collection! Dive into the action-packed world of Adventure City with our exclusive range of toys inspired by the blockbuster film"
-            textAlign="center"
-            fontWeight="400"
-          />
-          <br /> <br />
-        </Grid>
         {Data.map((curelem, index) => (
           <>
             <Grid item xs={12} lg={12} md={12} sm={12} key={index}>
-              {/* <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                style={{ width: "100%", height: "100%" }}
-              >
-                <source src={curelem.video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>  */}
               <div class="responsive-container">
                 <iframe
                   class="responsive-iframe"
@@ -193,7 +153,7 @@ const Primaryscool = () => {
             </Grid>
           </>
         ))}
- <Grid item xs={12} lg={12} md={12} sm={12}>
+        <Grid item xs={12} lg={12} md={12} sm={12}>
           <video
             autoPlay
             loop
@@ -217,7 +177,8 @@ const Primaryscool = () => {
           />
           <br />
           <TypographyText
-            Typography="Experience the whimsical charm of Club Petz toys by IMC Toys! These delightful companions bring joy to playtime with their interactive features and lovable personalities."
+            Typography="Sweet and adorable interactive plush, we will be your new best friends!  Each has a variety of functions and special features!
+            "
             textAlign="center"
             fontWeight="400"
           />

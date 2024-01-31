@@ -324,7 +324,7 @@ const Data = [
     imges: banner1,
     Typography: "Pre-School",
     Typography1:
-      "Ignite young minds with our captivating preschool toys collection! Specially designed for early learners, these toys blend fun and education seamlessly. Explore the joy of learning with our thoughtfully curated selection for the littlest adventurers.",
+      "The early learners’ collection, where education meets play in the most delightful way! These pre-school toys are crafted to make learning a fun-filled adventure for early learners. Each toy is a unique blend of entertainment and education, ensuring that your little ones not only have a blast but also develop essential skills.",
     links: `/Pre-School`,
     imagelogo: [
       { img: pp1 },
@@ -343,7 +343,8 @@ const Data = [
     imge1: banner2,
     Typography: "Collectibles",
     Typography1:
-      "Dive into a world of enchantment with our exclusive Collectible Toys. Unearth rare gems and cherished editions that elevate your collection to new heights. From iconic franchises to limited releases, our carefully curated selection promises to delight enthusiasts and collectors alike.",
+    "Embark on a journey of nostalgia and discovery with our captivating collection of collectible toys. Whether you're a seasoned collector or just starting your journey, our collectible toys promise to add a touch of magic to your collection. Explore the stories, relive the memories, and find that special piece that speaks to your heart. We celebrate the joy of collecting and invite you to immerse yourself in a world where each toy holds a unique tale..",
+
 
     imagelogo: [
       {
@@ -363,7 +364,7 @@ const Data = [
     imge1: banner31,
     Typography: "RC Toys",
     Typography1:
-      "Explore the thrill of remote-controlled excitement with our RC (Remote Control) section at Toycity. Unleash the power of imaginative play as you navigate a world of high-speed racing, precision maneuvers, and airborne adventures.",
+     "Unleash the thrill of speed and control with our extraordinary collection of remote control cars. Whether you're a novice seeking your first RC adventure or a seasoned pro craving high-performance machines, our selection caters to all levels of expertise. Zoom through challenging terrains, master sharp turns, and experience the adrenaline rush of precise manoeuvring. From realistic replicas to futuristic models, our remote control cars promise an unparalleled blend of precision, power, and pure fun. Explore our range and let the excitement of remote control racing ignite your passion for unparalleled driving experiences.",
 
     imagelogo: [
       {

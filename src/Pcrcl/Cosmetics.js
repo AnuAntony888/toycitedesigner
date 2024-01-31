@@ -23,7 +23,7 @@ const Cosmetics = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const Data = [
     {
-      video: 'JqWHzbardE0',
+      video: "EBd0ltL_oX8",
       text1: "Townley",
       text2:
         "Explore a world of beauty and fun with Townley Girl, the captivating kids' cosmetics brand at Toycity. Offering a kaleidoscope of colors and safe formulations, Townley Girl lets young imaginations shine, transforming playtime into a vibrant and magical experience.",
@@ -35,13 +35,15 @@ const Cosmetics = () => {
       img: img1,
       text1: "Twinkle Twinkle",
       text2:
-        "Twinkle Twinkle, the enchanting kids' cosmetics line at Toycity, adds a touch of magic to playtime. With vibrant colors and gentle formulas, these cosmetics are specially designed for little ones to explore their creativity and sparkle with joy.",
+        "Experience boundless enjoyment with our Twinkle Twinkle Nail Polish Deluxe Set, featuring a lively and safe assortment of nail hues that are ideal for playdates and imaginative escapades. These kid-friendly nail polishes are simple to put on and easy to remove, guaranteeing a carefree and colorful journey for your young ones. Prepare for countless hours of imaginative nail art with our highly-rated, secure, and exhilarating nail polish collection designed for children!",
     },
     {
       img: img2,
       text1: "Hot Focus",
       text2:
-        "Shush, the delightful kids' cosmetics collection with us, whispers fun and imagination into playtime. Featuring safe and colorful formulations, Shush lets little ones express their creativity with a hush of excitement, making every moment enchanting.",
+      <><br/>
+      Shush, the delightful kids' cosmetics collection that whispers fun and imagination into playtime. Featuring safe and colorful formulations, Shush lets little ones express their creativity with a hush of excitement, making every moment enchanting.
+      <br/><br/> <br/><br/><br/> </>
     },
   ];
   const Data2 = [
@@ -49,12 +51,12 @@ const Cosmetics = () => {
       img: img4,
       text1: "Shush!",
       text2:
-        "Specially crafted for little stars, these kits offer a playful blend of safe, vibrant cosmetics, allowing kids to embrace their inner sparkle in the most delightful way.",
+       "Encourage your little one's imagination with this Fruitopia Nail Polish set. Let them express themselves through dazzling nail designs that will leave them feeling like budding artists. The Shush! Fruitopia Water Nail Polish Set is a peel-off, water based nail polish formulated specifically for kids, ensuring hassle-free application and easy cleanup."
     },
   ];
   return (
     <>
-           < MetaComponent dynamicTitle="Toycity - Cosmetics "  />
+      <MetaComponent dynamicTitle="Toycity - Cosmetics " />
       <Box
         sx={{
           display: "flex",
@@ -171,7 +173,13 @@ const Cosmetics = () => {
         {Data2.map((curelem, index) => (
           <>
             <Grid item xs={12} lg={6} md={6} sm={12} key={index}>
-              <img src={curelem.img} alt="" width={"100%"} height={"auto"}  loading="lazy"/>
+              <img
+                src={curelem.img}
+                alt=""
+                width={"100%"}
+                height={"auto"}
+                loading="lazy"
+              />
               <br />
               <br />
               <TypographyText
