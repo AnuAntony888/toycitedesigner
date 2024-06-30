@@ -144,7 +144,7 @@ const Learning = () => {
             playsInline
             style={{ width: "100%", height: "100%" }}
           >
-            <source src={pp1} type="video/mp4" />
+            <source src='https://ik.imagekit.io/f0lwh775f5/Toycity/Pre%20School/spain.mp4?updatedAt=1706762522272' type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 

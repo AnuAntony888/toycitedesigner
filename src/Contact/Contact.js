@@ -244,7 +244,7 @@ const Contact = () => {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
+                  {/* <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
                     <p className="contacttext">Street Address</p>
                     <input
                       fullWidth
@@ -258,7 +258,7 @@ const Contact = () => {
                         backgroundColor: "#F7F7F7",
                       }}
                     />
-                  </Grid>
+                  </Grid> */}
 
                   <Grid item xs={12} lg={12} md={12} sx={{ pr: "16px" }}>
                     <p className="contacttext">Message</p>

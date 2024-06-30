@@ -273,7 +273,7 @@ const Data1 = [
     ),
 
     tex3: "PAW Patrol Mighty Movie Launch Event",
-    img: news1,
+    img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/news/News%201.webp?updatedAt=1706762682278',
     tex4: "We organized movie launch event wherein we invited influencers and general crowd via voucher promos that were given away at the stores. This launch event took place for 2 days at 2 different locations. We distributed goody bags, and had a photo booth installed.",
   },
   {
@@ -296,7 +296,7 @@ const Data1 = [
       </>
     ),
     tex3: "PAW Patrol Meet And Greet ",
-    img: news2,
+    img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/news/News%202.webp?updatedAt=1706762682373',
     tex4: "To promote the might movie we also organized meet and greet in Riyadh and Jeddah. We identified few malls  with that had good footfall and organized meet and greets where children and parents can have a direct connect with the movie characters.",
   },
   {
@@ -318,7 +318,7 @@ const Data1 = [
       </>
     ),
     tex3: "Gabby Meet And Greet ",
-    img: news3,
+    img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/news/News%203.webp?updatedAt=1706762682249',
     tex4: "A meet and greet was organized for Gabby in the major malls of Jeddah and Riyadh",
   },
 ];

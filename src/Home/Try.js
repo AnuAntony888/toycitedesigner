@@ -320,119 +320,130 @@ export default Try;
 
 const Data = [
   {
-    imge1: banner1,
-    imges: banner1,
+    imge1:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner1%20.jpg?updatedAt=1706766250919",
+    imges:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner1%20.jpg?updatedAt=1706766250919",
     Typography: "Pre-School",
     Typography1:
       "The early learners’ collection, where education meets play in the most delightful way! These pre-school toys are crafted to make learning a fun-filled adventure for early learners. Each toy is a unique blend of entertainment and education, ensuring that your little ones not only have a blast but also develop essential skills.",
     links: `/Pre-School`,
     imagelogo: [
-      { img: pp1 },
+      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/14.png?updatedAt=1706762258385' },
       {
-        img: pp2,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/26.png?updatedAt=1706762264586',
       },
-      { img: pp3 },
-      { img: pp4 },
-      { img: pp5 },
-      { img: pp6 },
+      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/23.png?updatedAt=1706762264402' },
+      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/22.png?updatedAt=1706762264693' },
+      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/25.png?updatedAt=1706762264757' },
+      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/17.png?updatedAt=1706762258352' },
     ],
   },
   {
     links: "/collectibles",
-    imges: banner2,
-    imge1: banner2,
+    imges:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner2.jpg?updatedAt=1706766251221",
+    imge1:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner2.jpg?updatedAt=1706766251221",
     Typography: "Collectibles",
     Typography1:
-    "Embark on a journey of nostalgia and discovery with our captivating collection of collectible toys. Whether you're a seasoned collector or just starting your journey, our collectible toys promise to add a touch of magic to your collection. Explore the stories, relive the memories, and find that special piece that speaks to your heart. We celebrate the joy of collecting and invite you to immerse yourself in a world where each toy holds a unique tale..",
-
+      "Embark on a journey of nostalgia and discovery with our captivating collection of collectible toys. Whether you're a seasoned collector or just starting your journey, our collectible toys promise to add a touch of magic to your collection. Explore the stories, relive the memories, and find that special piece that speaks to your heart. We celebrate the joy of collecting and invite you to immerse yourself in a world where each toy holds a unique tale..",
 
     imagelogo: [
       {
-        img: cc1,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/4.png?updatedAt=1706762269928',
       },
       {
-        img: cc2,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/2.png?updatedAt=1706762263176',
       },
       {
-        img: cc3,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/WWO_HP_Wand_Logo.webp?updatedAt=1706762283494',
       },
     ],
   },
   {
     links: "/rctoys",
-    imges: banner3,
-    imge1: banner31,
+    imges:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner3.png?updatedAt=1706766252178",
+    imge1:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner31.webp?updatedAt=1706766250306",
     Typography: "RC Toys",
     Typography1:
-     "Unleash the thrill of speed and control with our extraordinary collection of remote control cars. Whether you're a novice seeking your first RC adventure or a seasoned pro craving high-performance machines, our selection caters to all levels of expertise. Zoom through challenging terrains, master sharp turns, and experience the adrenaline rush of precise manoeuvring. From realistic replicas to futuristic models, our remote control cars promise an unparalleled blend of precision, power, and pure fun. Explore our range and let the excitement of remote control racing ignite your passion for unparalleled driving experiences.",
+      "Unleash the thrill of speed and control with our extraordinary collection of remote control cars. Whether you're a novice seeking your first RC adventure or a seasoned pro craving high-performance machines, our selection caters to all levels of expertise. Zoom through challenging terrains, master sharp turns, and experience the adrenaline rush of precise manoeuvring. From realistic replicas to futuristic models, our remote control cars promise an unparalleled blend of precision, power, and pure fun. Explore our range and let the excitement of remote control racing ignite your passion for unparalleled driving experiences.",
 
     imagelogo: [
       {
-        img: rc1,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/29.png?updatedAt=1706762268727',
       },
       {
-        img: rc2,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/28.png?updatedAt=1706762266657',
       },
       {
-        img: rc3,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/30.png?updatedAt=1706762269391',
       },
     ],
   },
 
   {
     links: "/cosmetics",
-    imges: banner4,
-    imge1: banner41,
+    imges:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner4.jpg?updatedAt=1706766251545",
+    imge1:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner41.webp?updatedAt=1706766251051",
     Typography: "Cosmetics",
     Typography1:
       "Transform playtime into a magical makeover with our Kids Cosmetics collection. Specially crafted for little ones, our vibrant and safe products let imaginations soar. From glittery lip gloss to washable nail polish, we offer a delightful range of kid-friendly cosmetics that add a touch of sparkle to their world. Explore the joy of creative expression with our quality and non-toxic formulations, making beauty play both enchanting and worry-free.",
 
     imagelogo: [
       {
-        img: cs1,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/9.png?updatedAt=1706762272586',
       },
       {
-        img: cs2,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/8.png?updatedAt=1706762272671',
       },
       {
-        img: cs3,
+        img:'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/10.png?updatedAt=1706762258580',
       },
       {
-        img: cs4,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/7.png?updatedAt=1706762271958',
       },
     ],
   },
 
   {
-    imges: banner5,
+    imges:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner5.webp?updatedAt=1706766250295",
     links: "/learningartandcrafts",
-    imge1: banner51,
+    imge1:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner51.webp?updatedAt=1706766250572",
     Typography: "Learning, Art and Crafts",
     Typography1:
       "Discover a wide array of learning toys designed to make education enjoyable. At our toy distribution company, we believe that play is a powerful teacher, and our learning, art, and crafts toys are carefully chosen to inspire creativity and curiosity. Explore our collection today and witness the joy of learning and self-expression through the magic of play.",
 
     imagelogo: [
       {
-        img: la1,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/5.png?updatedAt=1706762270931',
       },
       {
-        img: la2,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/18.png?updatedAt=1706762258547'
       },
       {
-        img: la3,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/15.png?updatedAt=1706762258185',
       },
       {
-        img: la4,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/Etch%20a%20sketch.png?updatedAt=1706762281206',
       },
       {
-        img: la5,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/Coolmaker.png?updatedAt=1706762275541',
       },
     ],
   },
 
   {
-    imges: banner6,
-    imge1: banner61,
+    imges:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner6.jpg?updatedAt=1706766250506",
+    imge1:
+      "https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner61.jpg?updatedAt=1706766250299",
     Typography: "Other",
     links: "/other",
     Typography1:
@@ -440,13 +451,13 @@ const Data = [
 
     imagelogo: [
       {
-        img: o1,
+        img:'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/Bitzee.png?updatedAt=1706762276410',
       },
       {
-        img: o2,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/16.png?updatedAt=1706762258429',
       },
       {
-        img: o3,
+        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/19.png?updatedAt=1706762260823',
       },
     ],
   },

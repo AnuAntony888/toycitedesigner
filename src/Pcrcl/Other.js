@@ -32,13 +32,13 @@ const Other = () => {
 
   const Data1 = [
     {
-      img: img3,
+      img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/Pre%20School/WWF.webp?updatedAt=1706762520155',
       text1: "WWF",
       text2:
         "You don’t have to be a little person to love our WWF luxury super cuddly soft toys – enjoy your very own wild animal at home and support them in the wild.",
     },
     {
-      img: img4,
+      img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/Pre%20School/Bonikka.webp?updatedAt=1706762513882',
       text1: "Bonikka Collection",
       text2:
         "Soft dolls, rag dolls and cloth dolls hand made with beautiful fabrics. Traditional and contemporary dolls that are soft and huggable, safe for babies, toddlers and children. Also comforting empathy dolls for all age groups. A timeless and classic soft toy that will comfort and delight."

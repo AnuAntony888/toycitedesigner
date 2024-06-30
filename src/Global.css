@@ -6,7 +6,6 @@
   background-size: cover;
   background-position: center center;
   z-index: 1;
-
 }
 
 .contactbox {
@@ -19,7 +18,7 @@
   text-align: left !important;
   padding-bottom: 1px !important;
   color: black !important;
-  font-size: .8rem;
+  font-size: 0.8rem;
 
   margin-block-end: 0 !important;
   margin-block-start: 0px !important;
@@ -41,7 +40,7 @@ main > section {
   display: flex;
   justify-content: center;
   align-items: center;
-   color:rgb(251, 227, 132);
+  color: rgb(251, 227, 132);
 }
 
 @media screen and (max-width: 900px) {
@@ -60,27 +59,23 @@ main > section {
   width: 100% !important;
 } */
 
-  .fixediconsize{
-    width: 29px !important;
-    height: 29px !important;
-    object-fit: cover;
-  }
+.fixediconsize {
+  width: 29px !important;
+  height: 29px !important;
+  object-fit: cover;
+}
 
-  .slickheight {
-    height: 100% !important; /* You may adjust this value */
-  }
+.slickheight {
+  height: 100% !important; /* You may adjust this value */
+}
 
-
-  .verticalline {
-
-    border-left: solid 2px !important;
-    height: 20px !important;
-    margin: auto !important;
+.verticalline {
+  border-left: solid 2px !important;
+  height: 20px !important;
+  margin: auto !important;
   margin-right: 20px !important;
   margin-left: 20px !important;
 }
-
-
 
 .image-container {
   position: relative;
@@ -104,12 +99,8 @@ main > section {
   margin: auto;
   width: 500px;
   height: 300px;
-  transform: translate(60px,20px);
-
+  transform: translate(60px, 20px);
 }
-
-
-
 
 .bottom-image {
   z-index: 1;
@@ -120,7 +111,7 @@ main > section {
   width: 600px;
   height: auto;
   transform: translateX(10px);
-  }
+}
 
 /*****************lessscreen size**********************/
 .image-container1 {
@@ -128,62 +119,52 @@ main > section {
   width: 100%;
   height: 100%;
   text-align: center;
-
- 
 }
-  .base-image1 {
-    width: 100%;
-    height: 100%;
-  
-    z-index: -1;
-  }
+.base-image1 {
+  width: 100%;
+  height: 100%;
 
+  z-index: -1;
+}
 
-  .overlay-image1 {
-    z-index: 1;
-    position: absolute;
-    top: 21%;
-    left: 0;
-    margin: auto;
-    width: 74%;
-    height:auto ;
-    transform: translate(18%,4%);
-  
-  }
-  
-  
-  
-  
-  .bottom-image1 {
-    z-index: 1;
-    position: absolute;
-    top: 20%;
-    left: 0;
-    margin: auto;
-    width: 90%;
-    height: auto;
-    transform: translateX(6%);
-    }
+.overlay-image1 {
+  z-index: 1;
+  position: absolute;
+  top: 21%;
+  left: 0;
+  margin: auto;
+  width: 74%;
+  height: auto;
+  transform: translate(18%, 4%);
+}
 
-    .buttton_eader{
-      font-family: 'Poppins', sans-serif !important;
-   color: white !important;
-   font-size: .9rem !important;
-text-transform: capitalize !important;
-min-width: 150px;
-background-color: transparent !important;
-  
-    }
+.bottom-image1 {
+  z-index: 1;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  margin: auto;
+  width: 90%;
+  height: auto;
+  transform: translateX(6%);
+}
 
-    .buttton_eader:active {
-      background-color: transparent !important;
-    }
+.buttton_eader {
+  font-family: "Poppins", sans-serif !important;
+  color: white !important;
+  font-size: 0.9rem !important;
+  text-transform: capitalize !important;
+  min-width: 150px;
+  background-color: transparent !important;
+}
+
+.buttton_eader:active {
+  background-color: transparent !important;
+}
 
 hr.new2 {
   border-top: 2px dashed lightgray;
 }
-   
-  
 
 .responsive-container {
   position: relative;
@@ -198,7 +179,6 @@ hr.new2 {
   width: 100%;
   height: 100%;
 }
-
 
 .lazy-load-image-background.blur.lazy-load-image-loaded {
   height: 100vh !important;

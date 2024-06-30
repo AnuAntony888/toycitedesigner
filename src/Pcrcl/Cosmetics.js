@@ -32,13 +32,13 @@ const Cosmetics = () => {
 
   const Data1 = [
     {
-      img: img1,
+      img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/Pre%20School/Cosmetics%20Twinkle.webp?updatedAt=1706762514630',
       text1: "Twinkle Twinkle",
       text2:
         "Experience boundless enjoyment with our Twinkle Twinkle Nail Polish Deluxe Set, featuring a lively and safe assortment of nail hues that are ideal for playdates and imaginative escapades. These kid-friendly nail polishes are simple to put on and easy to remove, guaranteeing a carefree and colorful journey for your young ones. Prepare for countless hours of imaginative nail art with our highly-rated, secure, and exhilarating nail polish collection designed for children!",
     },
     {
-      img: img2,
+      img:'https://ik.imagekit.io/f0lwh775f5/Toycity/Pre%20School/Cosmetics.webp?updatedAt=1706762515155',
       text1: "Hot Focus",
       text2:
       <><br/>
@@ -48,7 +48,7 @@ const Cosmetics = () => {
   ];
   const Data2 = [
     {
-      img: img4,
+      img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/Pre%20School/Cosmetics%20Shush.webp?updatedAt=1706762514709',
       text1: "Shush!",
       text2:
        "Encourage your little one's imagination with this Fruitopia Nail Polish set. Let them express themselves through dazzling nail designs that will leave them feeling like budding artists. The Shush! Fruitopia Water Nail Polish Set is a peel-off, water based nail polish formulated specifically for kids, ensuring hassle-free application and easy cleanup."

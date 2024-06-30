@@ -15,9 +15,7 @@ import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 
-import banner7 from "../Assets/homepage/banner7.jpg";
-import banner71 from "../Assets/homepage/banner71.webp";
-import brand from "../Assets/homepage/Brand Launch.webp";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import axios from "axios";
 
 function SamplePrevArrow(props) {
@@ -83,32 +81,27 @@ const Partnerreview = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   const islarge = useMediaQuery(theme.breakpoints.down("lg"));
 
-
-
-
-
-const accessToken=`IGQWRPWjJrWEtwVDBWSlczdm85d3lXdnhpbkFiWmFIbmtsUE00M0VJUmtQSGxWR1h6SDNpaXNIekFienFtSF9TTEZA6cXNkSUFVOENRSDhvRXg4U2U1LUFBeDJ1WGxFZAm5NWUxHd1RTdGNsRkZAidEZAmTTdqOGJCYVUZD`
-const [posts, setPosts] = useState([]);
+  const accessToken = `IGQWRQWFljWXR6YU5tVTJNVVFhT3pMbUFxLWEtRmxITnAyZATBNQWN3emhJdktITzhpNVV3T0ZAZASVdLbjdPVHZAqU2FRbWFIbG8xX0dUeWJuckJhRjNfdk9GSnI1Qkhvd1QtTGdhWkY1U0JOVGo3aXI1Wm5NVHJRN2cZD`;
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `https://graph.instagram.com/me/media?fields=id,media_url,permalink,caption&access_token=${accessToken}`
+          `https://graph.instagram.com/me/media?fields=id,media_url,permalink,caption,timestamp&access_token=${accessToken}`
         );
         setPosts(response.data.data);
       } catch (error) {
-        console.error('Error fetching Instagram posts:', error);
+        console.error("Error fetching Instagram posts:", error);
       }
     };
 
     fetchPosts();
   }, [accessToken]);
-
-
-
-  
-
+  const formatTimestamp = (timestamp) => {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString(); // Adjust format as needed
+  };
 
   return (
     <>
@@ -128,8 +121,8 @@ const [posts, setPosts] = useState([]);
           xs={12}
           sx={{
             backgroundImage: !isSmallScreen
-              ? `url(${banner7})`
-              : `url( ${banner71})`,
+              ? `url(https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner7.jpg?updatedAt=1706766255728)`
+              : `url( https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/banner71.webp?updatedAt=1706766254865)`,
             backgroundSize: "cover",
             objectFit: "cover",
             height: "100vh",
@@ -176,7 +169,7 @@ const [posts, setPosts] = useState([]);
                       sx={{
                         bgcolor: "white",
                         margin: "10px",
-                        minHeight:isSmallScreen?"300px": "380px",
+                        minHeight: isSmallScreen ? "300px" : "380px",
                         p: "5%",
                       }}
                     >
@@ -208,7 +201,7 @@ const [posts, setPosts] = useState([]);
                             fontSize=".8rem"
                             // fontWeight="400"
                           />
-                  
+
                           <br />
                           <TypographyText
                             Typography={post.text1}
@@ -266,7 +259,7 @@ const [posts, setPosts] = useState([]);
         </Grid>
         <Grid item xs={12} lg={6} md={6} sm={12}>
           <img
-            src={!isSmallScreen ? brand : brand}
+            src="https://ik.imagekit.io/f0lwh775f5/Toycity/homepage/Brand%20Launch.webp?updatedAt=1706766255080"
             alt=""
             width={"100%"}
             height={
@@ -277,31 +270,53 @@ const [posts, setPosts] = useState([]);
         </Grid>
       </Grid>
       {/******************************************* */}
-    
-      <Grid container  spacing={3} sx={{padding:'5%'}}>
-      {posts.slice(0, 8).map((post) => (
-        <Grid item xs={12} lg={3} md={4} sm={6} key={post.id}>
-          {post.media_url.toLowerCase().includes('.mp4') ? (<>
-            
-            <video width="100%" minHeight='250px' controls height='250px'>
-              <source src={post.media_url} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-       
-            <a href={post.permalink} target="_blank" rel="noopener noreferrer">
-              <TypographyText
-                Typography={post.caption}/>
-              </a>
-         </> ) : (
-            <a href={post.permalink} target="_blank" rel="noopener noreferrer">
-                <img src={post.media_url} alt={post.caption} width="100%" height='250px' minHeight='250px' />
-                <TypographyText
-                Typography={post.caption}/>
-            </a>
-          )}
+
+      <Grid container spacing={3} sx={{ padding: "5%" }}>
+        <Grid item xs={12} lg={12} md={12} sm={12}>
+          <TypographyText
+            Typography={<>Follow Us On Instagram</>}
+            fontWeight="400"
+            variant={!isSmallScreen ? "h2" : "h4"}
+          />{" "}
+          <InstagramIcon sx={{ fontSize: "3rem" }} />
         </Grid>
-      ))}
-    </Grid>
+        {posts.slice(0, 8).map((post) => (
+          <Grid item xs={12} lg={3} md={4} sm={6} key={post.id}>
+            {post.media_url.toLowerCase().includes(".mp4") ? (
+              <>
+                  <a
+                  href={post.permalink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                <video width="100%" minHeight="250px" controls height="250px">
+                  <source src={post.media_url} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+
+              
+                 <p>Date: {formatTimestamp(post.timestamp)}</p>
+                </a>
+              </>
+            ) : (
+              <a
+                href={post.permalink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={post.media_url}
+                  alt={post.caption}
+                  width="100%"
+                  height="250px"
+                  minHeight="250px"
+                  />
+                   <p>Date: {formatTimestamp(post.timestamp)}</p>
+              </a>
+            )}
+          </Grid>
+        ))}
+      </Grid>
     </>
   );
 };

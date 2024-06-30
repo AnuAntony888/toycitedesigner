@@ -30,15 +30,15 @@ const RCToys = () => {
 
   const Data1 = [
     {
-      img: img1,
+      img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/Pre%20School/Giggles-01-04.jpg?updatedAt=1706762527103',
       text1: "Monster Jam RC",
       text2:
-        <>Monster Jam lets you create your own epic stunts, just like the live show! <br/>
+        <><br/>Monster Jam lets you create your own epic stunts, just like the live show! <br/>
         Take control with our RC vehicles, go all out with our playsets, and collect all of our authentic trucks. Real toys, real action, Monster Jam!
         </>
     },
     {
-      img: img2,
+      img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/Pre%20School/Funnybox-01.jpg?updatedAt=1706762515849',
       text1: "Funny Box RC",
       text2:
      " Unleash laughter and excitement with Funny Box RC toys. Discover a world of whimsical remote-controlled wonders that bring joy to every playtime. From quirky characters to hilarious movements, Funny Box RC toys add a dose of fun to your adventures."

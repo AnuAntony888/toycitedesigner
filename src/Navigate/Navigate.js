@@ -15,11 +15,7 @@ import NewsandEvents from "../NewsandEvents/NewsandEvents";
 import Contactus from "../Contact/Contactus";
 import Ourretail from "../Ourretail/Ourretail";
 import Contact from "../Contact/Contact";
-
-
-
-
-
+import Pent from "../Brandingpages/Pent";
 
 const Navigate = () => {
   return (
@@ -29,17 +25,19 @@ const Navigate = () => {
       </div>
 
       <Routes>
-      <Route path="/" element={<Home/>}></Route> 
-      <Route path="/aboutus" element={<Aboutus/>}></Route> 
-        <Route path="/pre-school" element={<Primaryscool />}></Route>  
-        <Route path="/collectibles" element={<Collectibles/>}></Route>  
-        <Route path="/rctoys" element={<RCToys />}></Route> 
-        <Route path="/cosmetics" element={<Cosmetics />}></Route> 
-        <Route path="/learningartandcrafts" element={<Learning />}></Route> 
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/aboutus" element={<Aboutus />}></Route>
+        <Route path="/pre-school" element={<Primaryscool />}></Route>
+        <Route path="/collectibles" element={<Collectibles />}></Route>
+        <Route path="/rctoys" element={<RCToys />}></Route>
+        <Route path="/cosmetics" element={<Cosmetics />}></Route>
+        <Route path="/learningartandcrafts" element={<Learning />}></Route>
         <Route path="/other" element={<Other />}></Route>
         <Route path="/newsandevents" element={<NewsandEvents />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/retailpartners" element={<Ourretail />}></Route>
+
+        <Route  path="/pent" element={<Pent  type="pent" />}></Route>
         {/* <Route path="/Contactus" element={<Contactus />}></Route> */}
       </Routes>
 
@@ -47,7 +45,6 @@ const Navigate = () => {
         {/* <Footer/> */}
         <Footers />
       </div>
-
     </Router>
   );
 };
