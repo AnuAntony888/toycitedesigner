@@ -35,17 +35,21 @@ const Pent = ({ type }) => {
 
   const { vahaforms } = useVahaForm();
 
-  const [collectname, setCollectName] = useState("");
-  const [emirates, setEmirates] = useState("");
+  const [name, setName] = useState("");
+  const [gender, setGender] = useState("");
+  const [age,setAge] = useState("");
   const [mobileno, setMobileNo] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errors, seterrors] = useState({});
-  const handlesetCollectName = (e) => {
-    setCollectName(e.target.value);
+  const handlesetName = (e) => {
+    setName(e.target.value);
   };
-  const handlesetEmirates = (e) => {
-    setEmirates(e.target.value);
+  const handlesetGender = (e) => {
+    setGender(e.target.value);
+  };
+  const handlesetAge = (e) => {
+    setAge(e.target.value);
   };
   const handlesetMobileNo = (e) => {
     setMobileNo(e.target.value);
@@ -55,10 +59,12 @@ const Pent = ({ type }) => {
 
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!e.target.value) {
-      console.log("Email is required!");
+      // console.log("Email is required!");
+
       seterrors((prev) => ({ ...prev, email: "Email is required!" }));
     } else if (!regex.test(e.target.value)) {
-      console.log("This is not a valid email format!");
+      // console.log("This is not a valid email format!");
+
       seterrors((prev) => ({
         ...prev,
         email: "This is not a valid email format!",
@@ -77,7 +83,7 @@ const Pent = ({ type }) => {
   const handleApi = async () => {
     try {
       const formData = new FormData();
-      if (!collectname || !email || !message || !emirates || !mobileno) {
+      if (!name || !email || !message || !gender ||!age || !mobileno) {
         toast.success("Please fill your Details", {
           position: "top-right",
           autoClose: 3000, // Duration in milliseconds
@@ -85,12 +91,13 @@ const Pent = ({ type }) => {
         return;
       }
       // Assuming these variables are defined somewhere in your code
-      formData.append("collectionname", collectname);
-      formData.append("emirates", emirates);
+      formData.append("name", name);
+      formData.append("gender", gender);
+      formData.append("age", age);
       formData.append("mobileno", mobileno);
       formData.append("emailid", email);
       formData.append("message", message);
-      formData.append("type", type);
+      // formData.append("type", type);
       await vahaforms(formData);
       toast.success("Thank you for contact us", {
         position: "top-right",
@@ -110,9 +117,10 @@ const Pent = ({ type }) => {
       });
       //   Toastsucess(error.message);
     }
-    setCollectName("");
-    setEmail("");
-    setEmirates("");
+    setName("");  
+    setGender("");
+    setAge("");
+    setEmail(""); 
     setMobileNo("");
     setMessage("");
   };
@@ -134,31 +142,32 @@ const Pent = ({ type }) => {
     contactform;
   // console.log(type, "type");
   switch (type) {
-    case "pent":
+    case "rubiks":
       head = "PENT.";
       formheading = " Get In Touch With Us For PENT ";
       contactform = [
         {
           label: "Name",
           txt: "Name",
-          value: collectname,
-          onChange: handlesetCollectName,
+          value: name,
+          onChange: handlesetName,
         },
         {
-          txt: "Emirates",
-          value: emirates,
-          onChange: handlesetEmirates,
+          label: "Gender",
+          txt: "Gender",
+          value: gender,
+          onChange: handlesetGender,
           datas: [
-            { emivalue: "AbuDhabi", eminame: "Abu Dhabi" },
-            { emivalue: "Dubai", eminame: "Dubai" },
-            { emivalue: "Ajman", eminame: "Ajman" },
-            { emivalue: "UmmAlQuwain", eminame: "Umm Al Quwain" },
-            { emivalue: "RasAlKhaimah ", eminame: "Ras Al Khaimah " },
-            { emivalue: "Fujairah ", eminame: "Fujairah " },
-            { emivalue: " Sharjah ", eminame: " Sharjah " },
-            // Add more data objects here if needed
-          ],
+            { emivalue: "male", eminame: "Male" },
+            { emivalue: "female", eminame: "Female" },]
         },
+        {
+          label: "Age",
+          txt: "Age",
+          value: age,
+          onChange: handlesetAge,
+        },
+
         {
           txt: " Mobile No",
           label: "Mobile No",
@@ -288,23 +297,36 @@ const Pent = ({ type }) => {
   // console.log(head, "head");
   return (
     <div>
-      <Grid container spacing={0} sx={{ height: "calc(100vh - 65px)" }}>
+      <Grid
+        container
+        spacing={0}
+        sx={{
+          height: "calc(100vh - 1px)",
+          // "calc(100vh - 65px)"
+        }}
+      >
         <Grid
           xs={12}
           md={12}
           lg={12}
           sm={12}
           className="large-header"
-          sx={{ height: "100%", display: "grid", placeItems: "center" }}
+          sx={{
+            height: "100%",
+
+            display: "grid",
+            placeItems: "center",
+          }}
         >
           <Box
             sx={{
               pl: "5%",
               pr: "5%",
+
               zIndex: "1",
             }}
           >
-            <TypographyText
+            {/* <TypographyText
               Typography={head}
               className="mybrands "
               fontSize={isSmallScreen ? "1.5rem" : "2rem"}
@@ -323,7 +345,7 @@ const Pent = ({ type }) => {
               color="white"
               fontWeight="100"
             />
-            <br />
+            <br /> */}
           </Box>
           <video
             autoPlay
@@ -333,14 +355,14 @@ const Pent = ({ type }) => {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: "unset",
               zIndex: "-1",
               position: "absolute",
               inset: 0,
             }}
           >
             <source
-              src="https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/PENT.%20The%20Most%20Exquisite%20Fitness%20Equipment%20You've%20Ever%20Seen.mp4?updatedAt=1713511358868"
+              src="https://ik.imagekit.io/f0lwh775f5/Toycity/Rubik's%20/WhatsApp%20Video%202024-07-02%20at%2016.02.34_99a579a7.mp4?updatedAt=1719918042532"
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -354,7 +376,7 @@ const Pent = ({ type }) => {
         sx={{
           pl: "5%",
           pr: "5%",
-          pt: "2%",
+          pt: "3%",
           pb: "3%",
         }}
       >
@@ -370,56 +392,54 @@ const Pent = ({ type }) => {
           <br />
         </Grid>
         {Data.map((data, index) => (
-         
-            <Grid item xs={12} lg={3} md={6} sm={12} key={index}>
-              <div style={{ position: "relative" }}>
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
-                  }}
-                ></div>
-                <CardMedia
-                  component="img"
-                  image={data?.imageUrl}
-                  height={280}
-                  sx={{
-                    margin: "auto",
-                    objectFit: "cover",
-                  }}
-                  alt="img"
-                  className="imag_card"
-                />
-                <p
-                  className="mybrands "
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: isSmallScreen ? "50%" : "42%",
-                    transform: isSmallScreen
-                      ? "translate(-50%, -50%)"
-                      : "translate(-40%, -50%)",
-                    color: "White",
-                    fontWeight: 500,
-                    fontSize: "1.2rem",
-                  }}
-                >
-                  {data.name}
-                </p>
-              </div>
-            </Grid>
-       
+          <Grid item xs={12} lg={3} md={6} sm={12} key={index}>
+            <div style={{ position: "relative" }}>
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                }}
+              ></div>
+              <CardMedia
+                component="img"
+                image={data?.imageUrl}
+                height={280}
+                sx={{
+                  margin: "auto",
+                  objectFit: "cover",
+                }}
+                alt="img"
+                className="imag_card"
+              />
+              <p
+                className="mybrands "
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: isSmallScreen ? "50%" : "42%",
+                  transform: isSmallScreen
+                    ? "translate(-50%, -50%)"
+                    : "translate(-40%, -50%)",
+                  color: "White",
+                  fontWeight: 500,
+                  fontSize: "1.2rem",
+                }}
+              >
+                {data.name}
+              </p>
+            </div>
+          </Grid>
         ))}
       </Grid>
       {/*******section3***** */}
 
       <Grid
         container
-        spacing={4}
+        spacing={2}
         sx={{ pl: "5%", pr: "5%", pt: "2%", pb: "5%" }}
       >
         <Grid item xs={12}>
@@ -431,16 +451,16 @@ const Pent = ({ type }) => {
           />
         </Grid>
         <Grid item xs={12} lg={6} md={6} sm={12}>
-          <Grid container spacing={4}>
+          <Grid container spacing={2}>
             {contactform.map((data, index) => (
               <Grid
                 item
-                lg={index === 4 ? 12 : 6}
+                lg={ 6}
                 xs={12}
-                md={index === 4 ? 12 : 6}
+                md={6}
                 sm={12}
                 key={index}
-                sx={{ pb: "10px" }}
+                sx={{ pb:'5px' }}
               >
                 <TypographyText
                   Typography={data.txt}
@@ -449,14 +469,14 @@ const Pent = ({ type }) => {
                   paddingBottom="5px"
                 />
                 {index === 1 ? (
-                  <FormControl fullWidth>
+                  <FormControl fullWidth >
                     <InputLabel id="location-select-label">
-                      Select Location
+                      Select Gender
                     </InputLabel>
                     <Select
                       labelId="location-select-label"
                       id="location-select"
-                      label="Select Location"
+                      label="Select Gender"
                       value={data.value}
                       onChange={data.onChange}
                     >
@@ -467,11 +487,11 @@ const Pent = ({ type }) => {
                       ))}
                     </Select>
                   </FormControl>
-                ) : index === 4 ? (
+                ) : index === 5 ? (
                   <TextareaAutosize
                     className="Addressinputtxt"
                     aria-label={data.label}
-                    minRows={5}
+                    minRows={4}
                     maxRows={20}
                     placeholder={data.label}
                     value={data.value}
@@ -485,9 +505,13 @@ const Pent = ({ type }) => {
                     type="text"
                     value={data.value}
                     onChange={data.onChange}
-                    fullWidth
+                    fullWidth     
                   />
                 )}
+              {index === 4 && errors && errors.email ? (
+  <p style={{color:'red',fontSize:'.9rem'}}>{errors.email}</p>
+) : ''}
+
               </Grid>
             ))}
 
@@ -578,7 +602,7 @@ const Pent = ({ type }) => {
               className="mybrands "
               color="white"
               fontWeight="100"
-            //   fontSize="1.05rem"
+              //   fontSize="1.05rem"
             />
           </Box>
           <video

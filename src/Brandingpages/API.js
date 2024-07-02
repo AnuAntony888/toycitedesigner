@@ -2,10 +2,10 @@ import axios from "axios";
 import { useQuery, useInfiniteQuery, useMutation } from "react-query";
 
 
-const API = "https://admin.myfamilyfitness.com/api/v1";
+const API = "https://admin.toycity.me/api/v1";
 export function useVahaForm() {
     const VahaForm = async (formData) => {
-      const res = await axios.post(`${API}/vaha-form`, formData, {
+      const res = await axios.post(`${API}/contactus`, formData, {
         method: "POST",
   
         headers: {

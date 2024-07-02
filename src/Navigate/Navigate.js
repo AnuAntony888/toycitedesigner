@@ -37,7 +37,7 @@ const Navigate = () => {
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/retailpartners" element={<Ourretail />}></Route>
 
-        <Route  path="/pent" element={<Pent  type="pent" />}></Route>
+        <Route  path="/rubiks" element={<Pent  type="rubiks" />}></Route>
         {/* <Route path="/Contactus" element={<Contactus />}></Route> */}
       </Routes>
 

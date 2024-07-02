@@ -1,7 +1,7 @@
-import { Box, Grid, Typography, Fab, Skeleton } from "@mui/material";
+import { Box, Grid, Fab, Skeleton } from "@mui/material";
 import React, { useEffect, useState, useRef } from "react";
 import { TypographyText } from "../Reusable/Reusable";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import "aos/dist/aos.css";
@@ -10,47 +10,6 @@ import { Parallax } from "react-parallax";
 import Homesection1 from "./Homesection1";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { Link } from "react-router-dom";
-
-import banner1 from "../Assets/homepage/banner1 .jpg";
-import banner2 from "../Assets/homepage/banner2.jpg";
-import banner3 from "../Assets/homepage/banner3.png";
-import banner31 from "../Assets/homepage/banner31.webp";
-import banner4 from "../Assets/homepage/banner4.jpg";
-import banner41 from "../Assets/homepage/banner41.webp";
-import banner5 from "../Assets/homepage/banner5.webp";
-import banner51 from "../Assets/homepage/banner51.webp";
-import banner61 from "../Assets/homepage/banner61.jpg";
-import banner6 from "../Assets/homepage/banner6.jpg";
-
-import pp1 from "../Assets/homelogo/14.png";
-import pp2 from "../Assets/homelogo/26.png";
-import pp3 from "../Assets/homelogo/23.png";
-import pp4 from "../Assets/homelogo/22.png";
-import pp5 from "../Assets/homelogo/25.png";
-import pp6 from "../Assets/homelogo/17.png";
-
-import cc1 from "../Assets/homelogo/4.png";
-import cc2 from "../Assets/homelogo/2.png";
-import cc3 from "../Assets/homelogo/WWO_HP_Wand_Logo.webp";
-
-import rc1 from "../Assets/homelogo/29.png";
-import rc2 from "../Assets/homelogo/28.png";
-import rc3 from "../Assets/homelogo/30.png";
-
-import cs1 from "../Assets/homelogo/9.png";
-import cs2 from "../Assets/homelogo/8.png";
-import cs3 from "../Assets/homelogo/10.png";
-import cs4 from "../Assets/homelogo/7.png";
-
-import la1 from "../Assets/homelogo/5.png";
-import la2 from "../Assets/homelogo/18.png";
-import la3 from "../Assets/homelogo/15.png";
-import la4 from "../Assets/homelogo/Etch a sketch.png";
-import la5 from "../Assets/homelogo/Coolmaker.png";
-
-import o1 from "../Assets/homelogo/o1.webp";
-import o2 from "../Assets/homelogo/o2.webp";
-import o3 from "../Assets/homelogo/o3.webp";
 
 const Try = () => {
   const [loading, setLoading] = useState(true);
@@ -329,14 +288,24 @@ const Data = [
       "The early learners’ collection, where education meets play in the most delightful way! These pre-school toys are crafted to make learning a fun-filled adventure for early learners. Each toy is a unique blend of entertainment and education, ensuring that your little ones not only have a blast but also develop essential skills.",
     links: `/Pre-School`,
     imagelogo: [
-      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/14.png?updatedAt=1706762258385' },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/26.png?updatedAt=1706762264586',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/14.png?updatedAt=1706762258385",
       },
-      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/23.png?updatedAt=1706762264402' },
-      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/22.png?updatedAt=1706762264693' },
-      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/25.png?updatedAt=1706762264757' },
-      { img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/17.png?updatedAt=1706762258352' },
+      {
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/26.png?updatedAt=1706762264586",
+      },
+      {
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/23.png?updatedAt=1706762264402",
+      },
+      {
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/22.png?updatedAt=1706762264693",
+      },
+      {
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/25.png?updatedAt=1706762264757",
+      },
+      {
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/17.png?updatedAt=1706762258352",
+      },
     ],
   },
   {
@@ -351,13 +320,13 @@ const Data = [
 
     imagelogo: [
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/4.png?updatedAt=1706762269928',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/4.png?updatedAt=1706762269928",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/2.png?updatedAt=1706762263176',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/2.png?updatedAt=1706762263176",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/WWO_HP_Wand_Logo.webp?updatedAt=1706762283494',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/WWO_HP_Wand_Logo.webp?updatedAt=1706762283494",
       },
     ],
   },
@@ -373,13 +342,13 @@ const Data = [
 
     imagelogo: [
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/29.png?updatedAt=1706762268727',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/29.png?updatedAt=1706762268727",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/28.png?updatedAt=1706762266657',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/28.png?updatedAt=1706762266657",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/30.png?updatedAt=1706762269391',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/30.png?updatedAt=1706762269391",
       },
     ],
   },
@@ -396,16 +365,16 @@ const Data = [
 
     imagelogo: [
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/9.png?updatedAt=1706762272586',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/9.png?updatedAt=1706762272586",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/8.png?updatedAt=1706762272671',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/8.png?updatedAt=1706762272671",
       },
       {
-        img:'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/10.png?updatedAt=1706762258580',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/10.png?updatedAt=1706762258580",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/7.png?updatedAt=1706762271958',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/7.png?updatedAt=1706762271958",
       },
     ],
   },
@@ -422,19 +391,19 @@ const Data = [
 
     imagelogo: [
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/5.png?updatedAt=1706762270931',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/5.png?updatedAt=1706762270931",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/18.png?updatedAt=1706762258547'
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/18.png?updatedAt=1706762258547",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/15.png?updatedAt=1706762258185',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/15.png?updatedAt=1706762258185",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/Etch%20a%20sketch.png?updatedAt=1706762281206',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/Etch%20a%20sketch.png?updatedAt=1706762281206",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/Coolmaker.png?updatedAt=1706762275541',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/Coolmaker.png?updatedAt=1706762275541",
       },
     ],
   },
@@ -451,13 +420,13 @@ const Data = [
 
     imagelogo: [
       {
-        img:'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/Bitzee.png?updatedAt=1706762276410',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/Bitzee.png?updatedAt=1706762276410",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/16.png?updatedAt=1706762258429',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/16.png?updatedAt=1706762258429",
       },
       {
-        img: 'https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/19.png?updatedAt=1706762260823',
+        img: "https://ik.imagekit.io/f0lwh775f5/Toycity/homelogo/19.png?updatedAt=1706762260823",
       },
     ],
   },
