@@ -5,7 +5,7 @@ import DialogContent from "@mui/material/DialogContent";
 import { useTheme } from "@mui/material/styles";
 import CancelIcon from "@mui/icons-material/Cancel";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Contactus from "./Contact/Contactus";
+
 import { usePoPupContext } from "./PopupContext";
 
 function Popups() {
@@ -60,7 +60,7 @@ function Popups() {
             }}
           ></CancelIcon>
 
-          <Contactus setopenpopup={setopenpopup} />
+          {/* <Contactus setopenpopup={setopenpopup} /> */}
         {/* </DialogContent> */}
       </Dialog>
     </div>

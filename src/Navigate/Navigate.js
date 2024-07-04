@@ -12,7 +12,7 @@ import Cosmetics from "../Pcrcl/Cosmetics";
 import Learning from "../Pcrcl/Learning";
 import Other from "../Pcrcl/Other";
 import NewsandEvents from "../NewsandEvents/NewsandEvents";
-import Contactus from "../Contact/Contactus";
+
 import Ourretail from "../Ourretail/Ourretail";
 import Contact from "../Contact/Contact";
 import Pent from "../Brandingpages/Pent";

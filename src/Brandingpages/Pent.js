@@ -37,7 +37,7 @@ const Pent = ({ type }) => {
 
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
-  const [age,setAge] = useState("");
+  const [age, setAge] = useState("");
   const [mobileno, setMobileNo] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -54,17 +54,15 @@ const Pent = ({ type }) => {
   const handlesetMobileNo = (e) => {
     setMobileNo(e.target.value);
   };
+
+
   const handlesetEmail = (e) => {
-    const errors = {};
+    const value = e.target.value;
 
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!e.target.value) {
-      // console.log("Email is required!");
-
+    if (!value) {
       seterrors((prev) => ({ ...prev, email: "Email is required!" }));
-    } else if (!regex.test(e.target.value)) {
-      // console.log("This is not a valid email format!");
-
+    } else if (!regex.test(value)) {
       seterrors((prev) => ({
         ...prev,
         email: "This is not a valid email format!",
@@ -72,8 +70,7 @@ const Pent = ({ type }) => {
     } else {
       seterrors((prev) => ({ ...prev, email: "" }));
     }
-
-    setEmail(e.target.value);
+    setEmail(value);
   };
 
   const handlesetsetMessage = (e) => {
@@ -81,21 +78,31 @@ const Pent = ({ type }) => {
   };
 
   const handleApi = async () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    if (!name || !email || !gender || !age || !mobileno || !message) {
+      toast.success("Please fill your Details", {
+        position: "top-right",
+        autoClose: 3000, // Duration in milliseconds
+      });
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      return;
+    }
     try {
       const formData = new FormData();
-      if (!name || !email || !message || !gender ||!age || !mobileno) {
-        toast.success("Please fill your Details", {
-          position: "top-right",
-          autoClose: 3000, // Duration in milliseconds
-        });
-        return;
-      }
+
       // Assuming these variables are defined somewhere in your code
       formData.append("name", name);
+      formData.append("email", email);
+      formData.append("phone", mobileno);
       formData.append("gender", gender);
       formData.append("age", age);
-      formData.append("mobileno", mobileno);
-      formData.append("emailid", email);
+
       formData.append("message", message);
       // formData.append("type", type);
       await vahaforms(formData);
@@ -117,13 +124,14 @@ const Pent = ({ type }) => {
       });
       //   Toastsucess(error.message);
     }
-    setName("");  
+    setName("");
     setGender("");
     setAge("");
-    setEmail(""); 
+    setEmail("");
     setMobileNo("");
     setMessage("");
   };
+
 
   let txt1,
     sectxt2,
@@ -143,8 +151,8 @@ const Pent = ({ type }) => {
   // console.log(type, "type");
   switch (type) {
     case "rubiks":
-      head = "PENT.";
-      formheading = " Get In Touch With Us For PENT ";
+     
+      formheading = " Make Your Move";
       contactform = [
         {
           label: "Name",
@@ -159,7 +167,8 @@ const Pent = ({ type }) => {
           onChange: handlesetGender,
           datas: [
             { emivalue: "male", eminame: "Male" },
-            { emivalue: "female", eminame: "Female" },]
+            { emivalue: "female", eminame: "Female" },
+          ],
         },
         {
           label: "Age",
@@ -198,32 +207,28 @@ const Pent = ({ type }) => {
       );
       sectxt2 = (
         <>
-          EXPERIENCE THE PENT. DIFFERENCE - WHERE LUXURY MEETS FITNESS. JOIN US
-          ON THIS EXCITING JOURNEY TOWARDS A HEALTHIER, MORE LUXURIOUS YOU.
+        Join Us As We Celebrate The 50th Anniversary 
+
         </>
       );
 
       Data = [
         {
           imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/HOME%20GYM?updatedAt=1713513998985",
-          name: "HOME GYM",
+            "https://tse2.mm.bing.net/th?id=OIP.yucPD9NU9dp9XRvHAkz3qAHaEK&pid=Api&P=0&h=180",
+          name: "Rubik’s Mosiac Wall ",
         },
         {
           imageUrl:
-            " https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/IN-ROOMFITNESS?updatedAt=1713514177430",
-          name: "IN-ROOM FITNESS",
+            "https://images.hdqwalls.com/wallpapers/rubik-cube-abstract-4k-g8.jpg ",
+          name: "Share your Rubik’s Moment ",
         },
         {
           imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/HOTELGYM?updatedAt=1713514236440",
-          name: "HOTEL GYM",
+            "https://wallpapercave.com/wp/wp1984126.jpg",
+          name: "Rubik’s competition ",
         },
-        {
-          imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/YACHTGYM?updatedAt=1713514283937",
-          name: "YACHT GYM ",
-        },
+    
       ];
 
       se4txt1 = (
@@ -242,48 +247,38 @@ const Pent = ({ type }) => {
       se5txt = "BEST SELLERS";
       se5txt1 =
         "PENT. Luxury Gym Equipment - Check out best selling products. Whether you are a private individual seeking an elegant and space-efficient workout solution or a professional trainer aiming to provide clients with the best tools, our exercise bench, dumbbells, kettlebells, weighted balls, barbells, wall bars, push up bars, gym balls, fitness mats, skipping ropes is a versatile choice that adds both style and functionality to your fitness regimen. Elevate your fitness experience with PENT. and discover a new level of sophistication and performance.";
-
+        head = "Upcoming Rubik’s Cube";
       Datas = [
         {
           imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/ANA%E2%84%A2COMBOSetWithGymEquipment?updatedAt=1713514404409",
-          name: "ANA™ COMBO Set With Gym Equipment",
+            "https://m.media-amazon.com/images/I/7130foXHOpL.jpg",
+          name: "RUBIK'S CUBE 2*2 MIN ",
         },
         {
           imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/BANKA%E2%84%A2AdvanceGymWeightBench?updatedAt=1713514468024",
-          name: "BANKA™ Advance Gym Weight Bench",
+            "https://clicktoys-webapp.azurewebsites.net/images/thumbs/0007867_spin-master-rubiks-cube-mini-22-cdu_550.png",
+          name: "RUBIK'S CUBE 2*2 MIN CDU",
         },
         {
-          imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/LOVA%E2%84%A2SET-KettlebellsWithHorizontalRack?updatedAt=1713514507026",
-          name: "LOVA™ SET - Kettlebells With Horizontal Rack",
+          imageUrl: 'https://images.amain.com/images/large/smy/smy6064000.jpg',
+          name:"RUBIK'S CUBE 3*3 KEYCHAIN CDU"
         },
         {
-          imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/SCALA%E2%84%A2ADVANCEPLUS-FitnessWallBar?updatedAt=1713514433418",
-          name: "SCALA™ ADVANCE PLUS - Fitness Wall Bar",
+          imageUrl: "https://i5.walmartimages.com/asr/65cd0400-3b9b-4e74-9500-01b1ae9c5768.6c793c9f3b736a632044e29f9fd0efdf.jpeg",
+                name:"RUBIK'S CUBE 4*4 MASTER"
         },
+       
         {
           imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/LESNA%E2%84%A2SET-BARBELLSSET?updatedAt=1713514553167",
-          name: "LESNA™ SET - BARBELLS SET",
+            "https://www.toyworldcairns.com.au/wp-content/uploads/2022/05/Rubiks-Family-Pack-1.jpg",
+          name: "RUBIK'S CUBE FAMILY PACK",
         },
         {
-          imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/SOPHIA%E2%84%A2SetWithGymEquipment?updatedAt=1713514705507",
-          name: "SOPHIA ™ Set With Gym Equipment",
-        },
-        {
-          imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/RAXA%E2%84%A2SETHandcraftedLeatherPunchingBag&Gloves?updatedAt=1713514756348",
-          name: "RAXA™ SET Handcrafted Leather Punching Bag & Gloves",
-        },
-        {
-          imageUrl:
-            "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/COLMIA%E2%84%A2SET-DumbbellsWithHorizontalRack?updatedAt=1713514813769",
-          name: "COLMIA™ SET - Dumbbells With Horizontal Rack",
-        },
+          imageUrl: 'https://products.blains.com/600/142/1421934.jpg',
+          name: "RUBIK'S THE ORIGINAL 3*3 CUBE CDU",
+        }
+     
+     
       ];
       break;
 
@@ -326,26 +321,7 @@ const Pent = ({ type }) => {
               zIndex: "1",
             }}
           >
-            {/* <TypographyText
-              Typography={head}
-              className="mybrands "
-              fontSize={isSmallScreen ? "1.5rem" : "2rem"}
-              color="White"
-            />
-            <TypographyText
-              Typography={txt1}
-              className="mybrands "
-              fontSize={isSmallScreen ? "1.5rem" : "2rem"}
-              color="White"
-            />
-            <br />
-            <TypographyText
-              Typography={txt2}
-              className="mybrands "
-              color="white"
-              fontWeight="100"
-            />
-            <br /> */}
+            
           </Box>
           <video
             autoPlay
@@ -385,14 +361,15 @@ const Pent = ({ type }) => {
           <TypographyText
             Typography={sectxt2}
             textAlign={"centre"}
-            fontWeight="500"
+            fontWeight="600"
+            textTransform='uppercase'
           />
 
           <br />
           <br />
         </Grid>
         {Data.map((data, index) => (
-          <Grid item xs={12} lg={3} md={6} sm={12} key={index}>
+          <Grid item xs={12} lg={4} md={6} sm={6} key={index} sx={{margin:'auto'}}>
             <div style={{ position: "relative" }}>
               <div
                 style={{
@@ -427,6 +404,7 @@ const Pent = ({ type }) => {
                   color: "White",
                   fontWeight: 500,
                   fontSize: "1.2rem",
+                  textTransform:'uppercase'
                 }}
               >
                 {data.name}
@@ -439,15 +417,15 @@ const Pent = ({ type }) => {
 
       <Grid
         container
-        spacing={2}
+        spacing={4}
         sx={{ pl: "5%", pr: "5%", pt: "2%", pb: "5%" }}
       >
         <Grid item xs={12}>
           <TypographyText
             Typography={formheading}
             textAlign={"centre"}
-            fontSize={!isSmallScreen ? "1.9rem" : "1.5rem"}
-            fontWeight="600"
+            fontSize={!isSmallScreen ? "2rem" : "1.5rem"}
+            // fontWeight="600"
           />
         </Grid>
         <Grid item xs={12} lg={6} md={6} sm={12}>
@@ -455,12 +433,12 @@ const Pent = ({ type }) => {
             {contactform.map((data, index) => (
               <Grid
                 item
-                lg={ 6}
+                lg={index === 0 || index === 5 ? 12 : 6}
                 xs={12}
-                md={6}
+                md={12}
                 sm={12}
                 key={index}
-                sx={{ pb:'5px' }}
+                sx={{ pb: "5px" }}
               >
                 <TypographyText
                   Typography={data.txt}
@@ -469,16 +447,26 @@ const Pent = ({ type }) => {
                   paddingBottom="5px"
                 />
                 {index === 1 ? (
-                  <FormControl fullWidth >
-                    <InputLabel id="location-select-label">
+                  <FormControl fullWidth size="small">
+                    <InputLabel
+                      id="location-select-label"
+                      sx={{
+                        fontFamily: "Poppins !important",
+                        fontSize: ".85rem",
+                      }}
+                    >
                       Select Gender
                     </InputLabel>
                     <Select
                       labelId="location-select-label"
                       id="location-select"
-                      label="Select Gender"
                       value={data.value}
                       onChange={data.onChange}
+                      sx={{
+                        backgroundColor: "#F7F7F7",
+                        fontFamily: "Poppins !important",
+                        fontSize: ".9rem",
+                      }}
                     >
                       {data.datas.map((datas, index) => (
                         <MenuItem key={index} value={datas.emivalue}>
@@ -491,27 +479,44 @@ const Pent = ({ type }) => {
                   <TextareaAutosize
                     className="Addressinputtxt"
                     aria-label={data.label}
-                    minRows={4}
+                    minRows={5}
                     maxRows={20}
                     placeholder={data.label}
                     value={data.value}
                     onChange={data.onChange}
-                    style={{ width: "100%" }} // Set width to 100%
+                    style={{
+                      width: "100%",
+                      backgroundColor: "#F7F7F7",
+                      border: "none",
+                    }} // Set width to 100%
                   />
                 ) : (
-                  <TextField
+                  <input
+                    fullWidth
                     className="Addressinputtxt"
-                    label={data.label}
+                    // label={data.label}
+                    placeholder={data.label}
                     type="text"
                     value={data.value}
                     onChange={data.onChange}
-                    fullWidth     
+                    required
+                    style={{
+                      height: "35px",
+                      width: "100%",
+                      border: "none",
+                      backgroundColor: "#F7F7F7",
+                      fontFamily: "Poppins",
+                    }}
                   />
+                  // <TextField
+                  //   className="Addressinputtxt"
+                  //   label={data.label}
+                  //   type="text"
+                  //   value={data.value}
+                  //   onChange={data.onChange}
+                  //   fullWidth
+                  // />
                 )}
-              {index === 4 && errors && errors.email ? (
-  <p style={{color:'red',fontSize:'.9rem'}}>{errors.email}</p>
-) : ''}
-
               </Grid>
             ))}
 
@@ -543,7 +548,7 @@ const Pent = ({ type }) => {
           <CardMedia
             component="img"
             image={
-              "https://ik.imagekit.io/thmmwwbpc/MFF%20E%20Commerce/pent/HOTELGYM?updatedAt=1713514236440"
+              "https://wallpapercave.com/wp/wp1984058.jpg"
             }
             sx={{
               margin: "auto",
@@ -559,7 +564,7 @@ const Pent = ({ type }) => {
 
       {/*section 4 */}
 
-      <Grid
+      {/* <Grid
         container
         spacing={5}
         sx={{ pl: "5%", pr: "5%", pt: "5%", pb: "5%" }}
@@ -640,10 +645,10 @@ const Pent = ({ type }) => {
 
           <TypographyText Typography={se41txt3} fontSize=".8rem" />
         </Grid>
-      </Grid>
+      </Grid> */}
 
       {/**************section5**************** */}
-      <Grid
+      {/* <Grid
         container
         spacing={2}
         sx={{
@@ -688,15 +693,21 @@ const Pent = ({ type }) => {
             />
           </Box>
         </Grid>
-      </Grid>
+      </Grid> */}
 
       <Grid
         container
         spacing={3}
         sx={{ pl: "5%", pr: "5%", pt: "3%", pb: "5%" }}
       >
+        <Grid xs={12}>
+        <TypographyText
+              Typography={head}
+              className="mybrands "
+              fontSize={isSmallScreen ? "1.5rem" : "2rem"}/>
+        </Grid>
         {Datas.map((data, index) => (
-          <Grid item xs={12} lg={3} md={3} sm={6} key={index}>
+          <Grid item xs={12} lg={4} md={4} sm={6} key={index} sx={{margin:'auto'}}>
             <CardMedia
               component="img"
               image={data?.imageUrl}
@@ -705,6 +716,8 @@ const Pent = ({ type }) => {
 
                 objectFit: "contain",
                 borderRadius: "15px",
+                minHeight: '350px',
+                maxHeight:'350px'
               }}
               alt="img"
               className="imag_card"
@@ -714,7 +727,7 @@ const Pent = ({ type }) => {
               Typography={data.name}
               className="mybrands "
               fontSize={".9rem"}
-              textAlign={!isSmallScreen ? "left" : "centre"}
+              // textAlign={!isSmallScreen ? "left" : "centre"}
             />
           </Grid>
         ))}
